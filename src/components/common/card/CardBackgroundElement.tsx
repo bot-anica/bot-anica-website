@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { BGImages, BackgroundImagePositions } from "../../../types/sections";
+
 import BackgroundImageDefault from "../background/BackgroundImageDefault";
+import BackgroundImageSources from "../background/BackgroundImageSources";
+import { BGImages, BackgroundImagePositions } from "@/types/sections";
 
 interface CardBackgroundElementProps {
   images: BGImages;
@@ -10,7 +12,10 @@ interface CardBackgroundElementProps {
 
 const CardBackgroundElement: FC<CardBackgroundElementProps> = ({ images, position, lazy }) => {
   return (
-    <BackgroundImageDefault position={position} images={images} lazy={lazy}/>
+    <picture>
+      <BackgroundImageSources images={images}/>
+      <BackgroundImageDefault position={position} images={images} lazy={lazy}/>
+    </picture>
   );
 };
 

@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ToastProvider } from "@/context/ToastContext";
+import ScrollToAnchor from "@/components/common/ScrollToAnchor";
 
 export const metadata: Metadata = {
   title: "Bot Anica",
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         <ToastProvider>
+          <ScrollToAnchor />
           <Header />
           <main>
             {children}

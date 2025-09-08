@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 
 import { SEOService } from '@/services/SEOService';
@@ -10,13 +10,12 @@ import { PricingService } from '@/services/PricingService';
 import { FaqService } from '@/services/FaqService';
 import { CourseService } from '@/services/CourseService';
 
-const Hero = lazy(() => import('@/components/pages/landing/Hero').then(module => ({ default: module.default })));
-const ProblemSolution = lazy(() => import('@/components/pages/landing/ProblemSolution').then(module => ({ default: module.default })));
-const WhySpecial = lazy(() => import('@/components/pages/landing/WhySpecial').then(module => ({ default: module.default })));
-const CourseProgram = lazy(() => import('@/components/pages/landing/CourseProgram').then(module => ({ default: module.default })));
-const PricingPlans = lazy(() => import('@/components/pages/landing/PricingPlans').then(module => ({ default: module.default })));
-const FAQ = lazy(() => import('@/components/pages/landing/FAQ').then(module => ({ default: module.default })));
-const LazyLoadSection = lazy(() => import('@/components/common/LazyLoadSection').then(module => ({ default: module.default })));
+import CourseProgram from '@/components/pages/landing/CourseProgram';
+import FAQ from '@/components/pages/landing/FAQ';
+import Hero from '@/components/pages/landing/Hero';
+import PricingPlans from '@/components/pages/landing/PricingPlans';
+import ProblemSolution from '@/components/pages/landing/ProblemSolution';
+import WhySpecial from '@/components/pages/landing/WhySpecial';
 
 export async function generateMetadata({ params }: { params: Promise<{ courseUrlParam: string }> }): Promise<Metadata> {
   const { courseUrlParam } = await params
@@ -62,21 +61,11 @@ export default async function LandingPage({ params }: { params: Promise<{ course
   return (
     <Suspense fallback={<div className="min-h-screen" />}>
       <Hero data={heroData} />
-      <LazyLoadSection>
-        <ProblemSolution data={problemSolutionData} />
-      </LazyLoadSection>
-      <LazyLoadSection>
-        <WhySpecial data={whySpecialData} />
-      </LazyLoadSection>
-      <LazyLoadSection>
-        <CourseProgram data={courseProgramData} />
-      </LazyLoadSection>
-      <LazyLoadSection>
-        <PricingPlans data={pricingData} course={course} />
-      </LazyLoadSection>
-      <LazyLoadSection>
-        <FAQ data={faqData} course={course} />
-      </LazyLoadSection>
+      <ProblemSolution data={problemSolutionData} />
+      <WhySpecial data={whySpecialData} />
+      <CourseProgram data={courseProgramData} />
+      <PricingPlans data={pricingData} course={course} />
+      <FAQ data={faqData} course={course} />
     </Suspense>
   );
 }

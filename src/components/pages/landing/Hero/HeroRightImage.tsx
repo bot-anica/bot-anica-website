@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { HeroImages } from "../../../../types/sections";
+
 import RightImageDefault from "./rightImage/RightImageDefault";
+import RightImageSources from "./rightImage/RightImageSources";
+import { HeroImages } from "@/types/sections";
 
 interface HeroRightImageProps {
   images: HeroImages;
@@ -11,7 +13,10 @@ const HeroRightImage: FC<HeroRightImageProps> = ({ images }) => {
   const minSize = availableSizes[availableSizes.length - 1]
 
   return (
-    <RightImageDefault images={images} minSize={minSize as keyof HeroImages}/>
+    <picture>
+      <RightImageSources images={images}/>
+      <RightImageDefault images={images} minSize={minSize as keyof HeroImages}/>
+    </picture>
   );
 };
 

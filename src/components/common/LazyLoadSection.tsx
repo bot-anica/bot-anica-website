@@ -1,7 +1,7 @@
 "use client";
 
 import React, { Suspense } from 'react';
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 interface LazyLoadSectionProps {
   children: React.ReactNode;

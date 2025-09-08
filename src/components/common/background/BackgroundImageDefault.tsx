@@ -1,6 +1,5 @@
-import { FC, memo } from 'react';
-import Image from 'next/image';
-
+import type { FC } from 'react';
+import { memo } from 'react';
 import { BackgroundImagePositions, BGImages } from '../../../types/sections';
 
 interface BackgroundImageDefaultProps {
@@ -22,14 +21,8 @@ const positionStyles: Record<BackgroundImagePositions, string> = {
 }
 
 const BackgroundImageDefault: FC<BackgroundImageDefaultProps> = ({position, images, lazy}) => {
-  const image = images.small || images.smallVertical || images.medium || images.mediumVertical || images.large || images.extraLarge
-
-  if (!image) return null;
-
   return (
-    <div className={`absolute ${positionStyles[position]} w-full h-full`}>
-      <Image src={image} alt="" fill style={{ objectFit: 'cover' }} loading={lazy ? "lazy" : "eager"} sizes="100vw" />
-    </div>
+    <img src={images.small || images.smallVertical || images.medium || images.mediumVertical || images.large || images.extraLarge} alt="" className={`absolute ${positionStyles[position]}`} loading={lazy ? "lazy" : undefined} />
   );
 };
 

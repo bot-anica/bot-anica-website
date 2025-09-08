@@ -13,8 +13,8 @@ interface PrePaymentPageProps {
 }
 
 export default async function PrePaymentPage({ params, searchParams }: PrePaymentPageProps) {
-  const { courseUrlParam } = params;
-  const { tariffId } = searchParams;
+  const { courseUrlParam } = await params;
+  const { tariffId } = await searchParams;
 
   if (!tariffId) {
     return <div className="text-center p-10">Ошибка: Тариф не выбран.</div>;

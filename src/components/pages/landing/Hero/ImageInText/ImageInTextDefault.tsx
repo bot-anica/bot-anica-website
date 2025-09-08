@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { memo } from 'react';
-import { HeroImages } from '../../../../../types/sections';
-import Image from 'next/image';
+
+import { HeroImages } from '@/types/sections';
 
 interface ImageInTextDefaultProps {
   images: HeroImages,
@@ -20,15 +20,15 @@ const mediaStyles = {
 const ImageInTextDefault: FC<ImageInTextDefaultProps> = ({images, maxSize}) => {
   const defaultImage = images[maxSize]
 
+  console.log(`relative z-10 md:m-auto ${mediaStyles[maxSize]}`)
+
   return (
-    <Image 
-      src={defaultImage!} 
+    <img 
+      src={defaultImage} 
       alt="Course illustration" 
       className={`relative z-10 ${mediaStyles[maxSize]}`} 
       loading="lazy"
       decoding="async"
-      width={400}
-      height={400}
     />
   );
 };

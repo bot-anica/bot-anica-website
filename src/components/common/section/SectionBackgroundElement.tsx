@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { BackgroundImagePositions, BGImages } from "../../../types/sections";
+
 import BackgroundImageDefault from "../background/BackgroundImageDefault";
+import BackgroundImageSources from "../background/BackgroundImageSources";
+import { BGImages, BackgroundImagePositions } from "@/types/sections";
 
 interface SectionBackgroundElementProps {
   images: BGImages;
@@ -10,7 +12,10 @@ interface SectionBackgroundElementProps {
 
 const SectionBackgroundElement: FC<SectionBackgroundElementProps> = ({ images, position, lazy }) => {
   return (
-    <BackgroundImageDefault position={position} images={images} lazy={lazy}/>
+    <picture>
+      <BackgroundImageSources images={images}/>
+      <BackgroundImageDefault position={position} images={images} lazy={lazy}/>
+    </picture>
   );
 };
 

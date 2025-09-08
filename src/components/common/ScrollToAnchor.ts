@@ -1,27 +1,52 @@
 "use client";
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 function ScrollToAnchor() {
   const pathname = usePathname();
-  const lastHash = useRef('');
 
-  // listen to location change using useEffect with location as dependency
-  // https://jasonwatmore.com/react-router-v6-listen-to-location-route-change-without-history-listen
+  const scrollTo = (hash: string) => {
+    const element = document.getElementById(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleHashChange = () => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+
+    const element = document.getElementById(hash);
+    if (element) {
+      scrollTo(hash);
+    } else {
+      // Poll for the element to appear
+      let attempts = 0;
+      const maxAttempts = 50; // roughly 5 seconds
+      const interval = 100;
+
+      const poll = () => {
+        const el = document.getElementById(hash);
+        if (el) {
+          scrollTo(hash);
+        } else {
+          attempts++;
+          if (attempts < maxAttempts) {
+            setTimeout(poll, interval);
+          }
+        }
+      };
+      poll();
+    }
+  };
+
   useEffect(() => {
-    if (pathname) {
-      lastHash.current = pathname.slice(1); // safe hash for further use after navigation
-    }
-
-    if (lastHash.current && document.getElementById(lastHash.current)) {
-      setTimeout(() => {
-        document
-          .getElementById(lastHash.current)
-          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        lastHash.current = '';
-      }, 100);
-    }
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, [pathname]);
 
   return null;

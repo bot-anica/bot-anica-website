@@ -13,7 +13,7 @@ interface CourseProgramProps {
 }
 
 const CourseProgram: FC<CourseProgramProps> = ({data}) => {
-  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean];
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { handlePrevSlide, handleNextSlide, setSwiperRef } = useCourseProgram();
 
   const {header, lessons, breakpoints, bgImages} = data

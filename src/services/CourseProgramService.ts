@@ -10,14 +10,23 @@ export class CourseProgramService {
 
   static getSwiperBreakpoints() {
     return {
-      320: {
-        spaceBetween: 16,
+      '(min-width: 320px)': {
+        slides: {
+          perView: 'auto',
+          spacing: 16,
+        },
       },
-      640: {
-        spaceBetween: 20,
+      '(min-width: 640px)': {
+        slides: {
+          perView: 'auto',
+          spacing: 20,
+        },
       },
-      1024: {
-        spaceBetween: 24,
+      '(min-width: 1024px)': {
+        slides: {
+          perView: 'auto',
+          spacing: 24,
+        },
       },
     };
   }

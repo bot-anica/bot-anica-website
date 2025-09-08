@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useImageDimensions } from "@/hooks/useImageDimensions";
 
 export interface SectionSplitterProps {
   top?: boolean;
@@ -6,10 +9,12 @@ export interface SectionSplitterProps {
 }
 
 const SectionSplitter: React.FC<SectionSplitterProps> = ({top = true, bottom = true}) => {
+  const dimensions = useImageDimensions("/images/line_stroke.png");
+
   return (
     <>
-      {top && <Image src="/images/line_stroke.png" alt="" className="absolute -top-[5px] left-1/2 -translate-x-1/2 opacity-50" width={1920} height={10} />}
-      {bottom && <Image src="/images/line_stroke.png" alt="" className="absolute -bottom-[5px] left-1/2 -translate-x-1/2 opacity-50" width={1920} height={10} />}
+      {top && dimensions && <Image src="/images/line_stroke.png" alt="" className="absolute -top-[5px] left-1/2 -translate-x-1/2 opacity-50" width={dimensions.width} height={dimensions.height} />}
+      {bottom && dimensions && <Image src="/images/line_stroke.png" alt="" className="absolute -bottom-[5px] left-1/2 -translate-x-1/2 opacity-50" width={dimensions.width} height={dimensions.height} />}
     </>
   )
 }

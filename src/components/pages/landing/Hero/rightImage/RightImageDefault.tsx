@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { memo } from 'react';
-import { HeroImages } from '../../../../../types/sections';
-import Image from 'next/image';
+
+import { HeroImages } from '@/types/sections';
 
 interface RightImageDefaultProps {
   images: HeroImages,
@@ -18,17 +18,13 @@ const mediaStyles = {
 }
 
 const RightImageDefault: FC<RightImageDefaultProps> = ({images, minSize}) => {
-  const image = images.small || images.smallVertical || images.medium || images.mediumVertical || images.large || images.extraLarge
-
   return (
-    <Image 
-      src={image!} 
+    <img 
+      src={images.small || images.smallVertical || images.medium || images.mediumVertical || images.large || images.extraLarge} 
       alt="Course illustration" 
       className={`relative z-10 ${mediaStyles[minSize]}`} 
       loading="lazy"
       decoding="async"
-      width={400}
-      height={400}
     />
   );
 };
