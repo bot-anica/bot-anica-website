@@ -26,22 +26,22 @@ const CustomInput: FC<CustomInputProps> = ({
   helperText,
   required,
 }) => (
-  <div className="mb-6">
-    <label htmlFor={id} className="block text-gray-700 text-sm font-bold mb-2">
-      {label} {required && '*'}
+  <div className="mb-4 md:mb-5 lg:mb-6">
+    <label htmlFor={id} className="block text-gray-700 text-xs md:text-sm font-medium mb:font-semibold lg:font-bold md:mb-1 lg:mb-2">
+      {label} {!required && "(необязательно)"}
     </label>
     <input
       type={type}
       id={id}
       name={name}
-      className={`appearance-none border ${error ? 'border-red-500' : 'border-primary-blue/15'} rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none`}
+      className={`appearance-none border ${error ? 'border-red-500' : 'border-primary-blue/15'} rounded w-full py-1.5 px-2 md:py-2 md:px-3 text-gray-700 text-sm md:text-base leading-tight focus:outline-none`}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
       required={required}
     />
-    {helperText && <p className="text-xs text-gray-500 mt-1">{helperText}</p>}
-    {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+    {helperText && <p className="text-xs text-gray-500 sm:mt-0.5 md:mt-1">{helperText}</p>}
+    {error && <p className="text-red-500 text-xs md:text-sm sm:mt-0.5 md:mt-1">{error}</p>}
   </div>
 );
 

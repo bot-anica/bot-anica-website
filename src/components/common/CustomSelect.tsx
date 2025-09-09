@@ -97,15 +97,15 @@ const CustomSelect: FC<CustomSelectProps> = ({
   }, [isOpen, focusedIndex]);
 
   return (
-    <div className="relative mb-6" ref={selectRef}> {/* Added mb-6 for spacing */}
+    <div className="relative mb-4 md:mb-5 lg:mb-6" ref={selectRef}> {/* Added mb-6 for spacing */}
       {label && (
-        <label id={id ? `${id}-label` : undefined} htmlFor={id} className="block text-gray-700 text-sm font-bold mb-2">
+        <label id={id ? `${id}-label` : undefined} htmlFor={id} className="block text-gray-700 text-xs md:text-sm font-medium mb:font-semibold lg:font-bold md:mb-1 lg:mb-2">
           {label}
         </label>
       )}
       <div
         id={id}
-        className={`appearance-none border ${error ? 'border-red-500' : 'border-primary-blue/15'} rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
+        className={`appearance-none border ${error ? 'border-red-500' : 'border-primary-blue/15'} rounded w-full py-1.5 px-2 md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
         onClick={handleToggle}
         onKeyDown={handleKeyDown as any} // Cast to any to satisfy TS, as KeyboardEvent is not directly assignable
         tabIndex={0} // Make div focusable
@@ -115,10 +115,10 @@ const CustomSelect: FC<CustomSelectProps> = ({
         aria-labelledby={id ? `${id}-label` : undefined} // Assuming label has an ID or is associated
         aria-activedescendant={focusedIndex !== -1 ? `${id}-option-${focusedIndex}` : undefined}
       >
-        {selectedOption ? selectedOption.label : 'Select an option'}
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+        <span className="text-sm md:text-base">{selectedOption ? selectedOption.label : 'Select an option'}</span>
+        <ChevronDown className={`w-3 h-3 md:w-4 md:h-4 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
       </div>
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>} {/* Error display */}
+      {error && <p className="text-red-500 text-xs md:text-sm sm:mt-0.5 md:mt-1">{error}</p>} {/* Error display */}
       {isOpen && (
         <div
           role="listbox"
@@ -130,13 +130,13 @@ const CustomSelect: FC<CustomSelectProps> = ({
               id={`${id}-option-${index}`}
               role="option"
               aria-selected={option.value === selectedValue}
-              className={`px-3 py-2 cursor-pointer hover:bg-gray-100 ${focusedIndex === index ? 'bg-gray-100' : ''}`}
+              className={`py-1.5 px-2 md:py-2 md:px-3 cursor-pointer hover:bg-gray-100 ${focusedIndex === index ? 'bg-gray-100' : ''}`}
               onClick={() => handleOptionClick(option.value)}
               onMouseDown={(e) => e.preventDefault()} // Prevent blur on click
               tabIndex={-1} // Make options focusable programmatically
               ref={el => { if (el) optionsRef.current[index] = el; }}
             >
-              {option.label}
+              <span className="text-sm md:text-base">{option.label}</span>
             </div>
           ))}
         </div>

@@ -60,10 +60,10 @@ const PaymentForm: FC<PaymentFormProps> = ({
 
   return (
     <form onSubmit={formik.handleSubmit} className="flex-1">
-      <h2 className="text-2xl font-bold text-primary-dark mb-6">Данные для оплаты</h2>
+      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-dark mb-4 md:mb-5 lg:mb-6">Данные для оплаты</h2>
       <CustomSelect
         id="selectedCurrencyCode"
-        label="Валюта оплаты *"
+        label="Валюта оплаты"
         options={availableCurrencies.map(currency => ({ value: currency.code, label: `${currency.name} (${currency.code})` }))}
         selectedValue={formik.values.selectedCurrencyCode}
         onValueChange={(value: string) => {
@@ -75,7 +75,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
       <CustomInput
         id="name"
         name="name" // Added name prop
-        label="Имя (необязательно)"
+        label="Имя"
         type="text"
         placeholder="Введите ваше имя"
         value={formik.values.name}
@@ -86,7 +86,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
       <CustomInput
         id="email"
         name="email" // Added name prop
-        label="Email *"
+        label="Email"
         type="email"
         placeholder="your.email@example.com"
         value={formik.values.email}
@@ -97,18 +97,15 @@ const PaymentForm: FC<PaymentFormProps> = ({
         error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
       />
       {apiError && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-          <strong className="font-bold">Ошибка!</strong>
-          <span className="block sm:inline ml-2">{apiError}</span>
-          <span className="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onClick={() => formik.setFieldError('apiError', undefined)}> {/* Using setFieldError to clear apiError */}
-            <X className="h-6 w-6 text-red-500" />
-          </span>
+        <div className="bg-red-100 border border-red-400 test-sm md:text-base text-red-700 px-1.5 py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 rounded relative mb-4" role="alert">
+          <strong className="font-medium md:font-semibold lg:font-bold">Ошибка!</strong>
+          <span className="inline ml-2">{apiError}</span>
         </div>
       )}
       <Button
         type="submit"
         disabled={isLoading || (!formik.isValid && formik.submitCount > 0)} // Disable only if loading or form is invalid after first submission attempt
-        className="w-full mb-4"
+        className="w-full mb-2 md:mb-3 lg:mb-4"
       >
         {isLoading ? (
           <>
@@ -119,7 +116,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
           "Перейти к оплате"
         )}
       </Button>
-      <p className="max-w-sm text-xs text-gray-500 text-center mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
+      <p className="max-w-sm text-xs text-gray-500 text-center mb-4 md:mb-6 lg:mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
     </form>
   );
 };

@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 
-import { CourseService } from '@/services/CourseService';
-import PrePaymentClientPage from '@/components/pages/prePayment/PrePaymentClientPage';
+import PrePayment from '@/components/pages/prePayment/PrePayment';
+import PrePaymentLoader from '@/components/pages/prePayment/PrePaymentLoader';
+import CourseNotFound from '@/components/pages/prePayment/CourseNotFound';
 
 interface PrePaymentPageProps {
   params: {
@@ -17,20 +18,12 @@ export default async function PrePaymentPage({ params, searchParams }: PrePaymen
   const { tariffId } = await searchParams;
 
   if (!tariffId) {
-    return <div className="text-center p-10">Ошибка: Тариф не выбран.</div>;
-  }
-
-  const course = await CourseService.getCourseByUrlParam(courseUrlParam);
-  
-  const selectedTariff = course.tariffs.find(t => t.id.toString() === tariffId);
-
-  if (!selectedTariff) {
-    return <div className="text-center p-10">Ошибка: Выбранный тариф не найден.</div>;
+    return <CourseNotFound message='Ошибка: Тариф не выбран.' />;
   }
 
   return (
-    <Suspense fallback={<div className="text-center p-10">Загрузка...</div>}>
-      <PrePaymentClientPage course={course} tariff={selectedTariff} />
+    <Suspense fallback={<PrePaymentLoader />}>
+      <PrePayment courseUrlParam={courseUrlParam} tariffId={tariffId} />
     </Suspense>
   );
 }

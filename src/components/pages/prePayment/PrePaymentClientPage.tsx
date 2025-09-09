@@ -1,14 +1,16 @@
 "use client";
 
-import { FC, useState, useMemo, useCallback } from 'react';
+import { FC } from 'react';
 
-import { InvoiceService } from '@/services/InvoiceService';
-import { Course, Tariff, Currency } from '@/types/sections';
+import { Course, Tariff } from '@/types/sections';
+import { usePrePayment } from '@/hooks/usePrePayment';
 
 import OrderDetails from './OrderDetails';
-import PaymentForm, { PaymentFormValues } from './PaymentForm';
+import PaymentForm from './PaymentForm';
 import VerticalSplitter from './VerticalSplitter';
 import SecurityMessage from './SecurityMessage';
+
+import { useImageDimensions } from '@/hooks/useImageDimensions';
 
 interface PrePaymentClientPageProps {
   course: Course;
@@ -16,53 +18,18 @@ interface PrePaymentClientPageProps {
 }
 
 const PrePaymentClientPage: FC<PrePaymentClientPageProps> = ({ course, tariff }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [apiError, setApiError] = useState<string | null>(null);
-  const [formSelectedCurrencyCode, setFormSelectedCurrencyCode] = useState<string>('');
-
-  const handleCurrencyCodeChange = useCallback((currencyCode: string) => {
-    setFormSelectedCurrencyCode(currencyCode);
-  }, []);
-
-  const availableCurrencies = useMemo((): Currency[] => {
-    return tariff.prices.map(price => price.currency);
-  }, [tariff]);
-
-  const selectedCurrencyForOrderDetails = useMemo(() => {
-    const currencyCodeToDisplay = formSelectedCurrencyCode || availableCurrencies[0]?.code || '';
-    return availableCurrencies.find(c => c.code === currencyCodeToDisplay) || null;
-  }, [availableCurrencies, formSelectedCurrencyCode]);
-
-  const handleSubmit = async (values: PaymentFormValues) => {
-    setIsLoading(true);
-    setApiError(null);
-    
-    try {
-      const priceInfo = tariff.prices.find(p => p.currency.code === values.selectedCurrencyCode);
-      if (!priceInfo) {
-        throw new Error("Информация о цене для выбранной валюты не найдена.");
-      }
-
-      const paymentUrl = await InvoiceService.createInvoice({
-        courseId: course.id,
-        tariffId: tariff.id,
-        currencyCode: values.selectedCurrencyCode,
-        amount: +(priceInfo.discount_price || priceInfo.price),
-        email: values.email,
-        name: values.name || undefined,
-      });
-      window.location.href = paymentUrl;
-    } catch (err) {
-      console.error('Failed to create invoice:', err);
-      setApiError(err instanceof Error ? err.message : 'Не удалось создать счет. Попробуйте снова.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const {
+    isLoading,
+    apiError,
+    availableCurrencies,
+    selectedCurrencyForOrderDetails,
+    handleCurrencyCodeChange,
+    handleSubmit,
+  } = usePrePayment(course, tariff);
 
   return (
-    <section className="pb-24 pt-38 lg:pt-42 xl:pt-50 lg:pb-28 xl:pb-32 relative overflow-hidden bg-gradient-to-br from-primary-pink/15 to-primary-blue/5">
-      <div className="max-w-5xl h-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-white p-8 rounded-lg border border-primary-blue/15 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8">
+    <section className="pt-14 sm:pb-6 sm:pt-20 md:pb-14 md:pt-28 lg:pt-42 xl:pt-50 lg:pb-28 xl:pb-32 relative overflow-hidden bg-gradient-to-br from-primary-pink/15 to-primary-blue/5">
+      <div className="sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto pt-8 px-8 pb-16 sm:py-8 relative z-10 bg-white sm:rounded-lg sm:border sm:border-primary-blue/15 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8">
         <OrderDetails course={course} tariff={tariff} selectedCurrency={selectedCurrencyForOrderDetails} />
         <VerticalSplitter />
         <div>

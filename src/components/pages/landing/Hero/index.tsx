@@ -28,7 +28,7 @@ const Hero: FC<HeroProps> = ({data}) => {
   }
 
   return (
-    <section className={`bg-white relative min-h-screen flex items-center justify-center overflow-hidden pt-[56px] lg:pt-[72px]`}>
+    <section className={`bg-white relative min-h-screen flex items-center justify-center overflow-hidden pt-14 lg:pt-18`}>
       <SectionBackground bgImages={bgImages} />
       <SectionSplitter top={false} />
 
