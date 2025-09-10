@@ -10,8 +10,6 @@ import PaymentForm from './PaymentForm';
 import VerticalSplitter from './VerticalSplitter';
 import SecurityMessage from './SecurityMessage';
 
-import { useImageDimensions } from '@/hooks/useImageDimensions';
-
 interface PrePaymentClientPageProps {
   course: Course;
   tariff: Tariff;

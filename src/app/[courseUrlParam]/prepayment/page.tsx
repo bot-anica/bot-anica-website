@@ -25,5 +25,6 @@ export default async function PrePaymentPage({ params, searchParams }: PrePaymen
     <Suspense fallback={<PrePaymentLoader />}>
       <PrePayment courseUrlParam={courseUrlParam} tariffId={tariffId} />
     </Suspense>
+    // <PrePaymentLoader />
   );
 }

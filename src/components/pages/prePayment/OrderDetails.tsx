@@ -24,7 +24,7 @@ const OrderDetails: FC<OrderDetailsProps> = ({ course, tariff, selectedCurrency 
       <ul className="space-y-1 md:space-y-2 lg:space-y-3 mb-4 md:mb-6 lg:mb-8">
         {tariff.features.split('\n').map((feature, index) => (
           <li key={index} className="flex items-center text-gray-700 text-sm md:text-base">
-            <Check className="w-4 sm:h-4 md:w-5 md:h-5 text-primary-pink mr-2 flex-shrink-0" />
+            <Check className="w-4 h-4 md:w-5 md:h-5 text-primary-pink mr-2 flex-shrink-0" />
             <span>{feature}</span>
           </li>
         ))}
