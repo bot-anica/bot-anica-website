@@ -33,6 +33,7 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
 
       const paymentUrl = await InvoiceService.createInvoice({
         courseId: course.id,
+        courseUrlParam: course.urlParam,
         tariffId: tariff.id,
         currencyCode: values.selectedCurrencyCode,
         amount: +(priceInfo.discount_price || priceInfo.price),

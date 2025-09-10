@@ -22,31 +22,37 @@ interface CreatePaymentResponse {
 }
 
 export class InvoiceService {
-  private static API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'; // Default to localhost
-  private static PAYMENT_SUCCESS_URL = process.env.NEXT_PUBLIC_PAYMENT_SUCCESS_URL || 'http://localhost:5173/success'; // Default for development
-  private static PAYMENT_FAIL_URL = process.env.NEXT_PUBLIC_PAYMENT_FAIL_URL || 'http://localhost:5173/fail'; // Default for development
+  private static API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'; // Default to localhost
 
   static async createInvoice(data: {
-    tariffId: number;
     courseId: number;
+    courseUrlParam: string;
+    tariffId: number;
     amount: number;
     currencyCode: string;
     email: string;
     name?: string;
   }): Promise<string> {
+    const PAYMENT_SUCCESS_URL = `${process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000'}/${data.courseUrlParam}/payment/success`; // Default for development
+    const PAYMENT_FAIL_URL = `${process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000'}/${data.courseUrlParam}/payment/fail`; // Default for development
+
     const createPaymentDto: CreatePaymentDto = {
-      amount: data.amount,
-      currency: data.currencyCode,
-      paymentSystem: "Test", // Default to "Test" as per Swagger
-      urlSuccess: InvoiceService.PAYMENT_SUCCESS_URL,
-      urlFail: InvoiceService.PAYMENT_FAIL_URL,
+      // TODO: change back to dynamic amount and currency
+      // amount: data.amount,
+      amount: 1000,
+      // currency: data.currencyCode,
+      currency: "RUB",
+      
+      paymentSystem: "P2R",
+      urlFail: PAYMENT_SUCCESS_URL,
+      urlSuccess: PAYMENT_FAIL_URL,
       courseId: data.courseId,
       tariffId: data.tariffId,
       email: data.email,
       customerName: data.name,
     };
 
-    const response = await fetch(`${InvoiceService.API_URL}/payments`, {
+    const response = await fetch(`/api/payments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
