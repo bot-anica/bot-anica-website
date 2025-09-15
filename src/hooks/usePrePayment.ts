@@ -40,6 +40,7 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
         email: values.email,
         name: values.name || undefined,
       });
+      localStorage.setItem('userEmail', values.email);
       window.location.href = paymentUrl;
     } catch (err) {
       console.error('Failed to create invoice:', err);
