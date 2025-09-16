@@ -31,7 +31,11 @@ import {
   User,
   Microscope,
   Monitor,
-  Trophy
+  Trophy,
+  MailCheck,
+  FileDown,
+  Users,
+  Code
 } from "lucide-react";
 
 const iconMap: Record<string, ComponentType < any >> = {
@@ -61,7 +65,11 @@ const iconMap: Record<string, ComponentType < any >> = {
   User,
   Microscope,
   Monitor,
-  Trophy
+  Trophy,
+  MailCheck,
+  FileDown,
+  Users,
+  Code
 };
 
 interface IconProps {

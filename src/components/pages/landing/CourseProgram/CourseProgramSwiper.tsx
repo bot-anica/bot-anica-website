@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import { SwiperOptions } from 'swiper/types';
 
 import { Lesson } from '@/types/sections';
 import LessonCard from './LessonCard';
@@ -10,9 +12,9 @@ import 'swiper/css/pagination';
 
 interface CourseProgramSwiperProps {
   lessons: Lesson[];
-  breakpoints: any;
+  breakpoints: SwiperOptions['breakpoints'];
   isIntersecting: boolean;
-  setSwiperRef: (swiper: any) => void;
+  setSwiperRef: (swiper: SwiperType) => void;
 }
 
 const CourseProgramSwiper: React.FC<CourseProgramSwiperProps> = ({

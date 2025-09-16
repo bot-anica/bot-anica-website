@@ -1,7 +1,8 @@
 import { useRef } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
 
-export const useCourseProgram = () => {
-  const swiperRef = useRef<any>(null);
+export const useSwiper = () => {
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const handlePrevSlide = () => {
     swiperRef.current?.slidePrev();
@@ -11,7 +12,7 @@ export const useCourseProgram = () => {
     swiperRef.current?.slideNext();
   };
 
-  const setSwiperRef = (swiper: any) => {
+  const setSwiperRef = (swiper: SwiperType) => {
     swiperRef.current = swiper;
   };
 

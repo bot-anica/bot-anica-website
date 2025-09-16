@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import { SwiperOptions } from "swiper/types";
 import { ButtonVariant, ButtonSize, ButtonIconPosition } from "./common";
 
 export interface Stat {
@@ -183,8 +183,20 @@ export interface Lesson {
 export interface CourseProgramData {
   header: SectionHeaderProps;
   lessons: Lesson[];
-  breakpoints: any;
+  breakpoints: SwiperOptions['breakpoints'];
   bgImages: PartialSectionBGImagesProps
+}
+
+export interface NextStep {
+    title: string;
+    description: string;
+    icon: any;
+}
+  
+export interface NextStepsData {
+    header: SectionHeaderProps;
+    nextSteps: NextStep[];
+    breakpoints: SwiperOptions['breakpoints'];
 }
 
 export interface FAQItem {

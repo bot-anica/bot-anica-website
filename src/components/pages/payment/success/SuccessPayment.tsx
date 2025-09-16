@@ -2,15 +2,13 @@
 'use client';
 
 import { FC } from 'react';
-import { Check } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Check, Shield, Users, Zap } from 'lucide-react';
 
 import { Card } from '@/components/common';
 import { PaymentLog } from '@/hooks/usePaymentSuccess';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
+import NextSteps from './NextSteps';
+import { NextStepsService } from '@/services/NextStepsService';
+import InfoCard from '@/components/common/card/InfoCard';
 
 interface SuccessPaymentProps {
   paymentLog: PaymentLog | null;
@@ -20,44 +18,7 @@ const SuccessPayment: FC<SuccessPaymentProps> = ({ paymentLog }) => {
   const { course, tariff, orderId } = paymentLog || {};
 
   const features = tariff?.features.split('\n') || [];
-
-  const nextSteps = [
-    {
-      title: 'Проверьте почту',
-      description: 'Материалы будут отправлены на указанный email',
-    },
-    {
-      title: 'Скачайте файлы',
-      description: 'Скачайте конспекты и дополнительные материалы',
-    },
-    {
-      title: 'Присоединяйтесь к сообществу',
-      description: 'Получите поддержку в нашем телеграм-канале',
-    },
-    {
-      title: 'Начните практику',
-      description: 'Применяйте знания и создавайте своих ботов',
-    },
-  ];
-
-  const swiperBreakpoints = {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 16,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 24,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 24,
-    },
-    1280: {
-      slidesPerView: 4,
-      spaceBetween: 24,
-    },
-  };
+  const nextStepsData = NextStepsService.getNextStepsData();
 
   return (
     <section className="pt-14 sm:pb-6 sm:pt-20 md:pb-14 md:pt-28 lg:pt-42 xl:pt-50 lg:pb-28 xl:pb-32 relative overflow-hidden bg-gradient-to-br from-primary-pink/15 to-primary-blue/5">
@@ -130,50 +91,27 @@ const SuccessPayment: FC<SuccessPaymentProps> = ({ paymentLog }) => {
           )}
         </Card>
         
-        <Card padding="lg">
-            <h3 className='text-center text-2xl font-bold text-gray-900'>Что дальше?</h3>
-            <p className='mt-2 text-center text-gray-600 mb-8'>Следуйте этим простым шагам, чтобы начать обучение</p>
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={24}
-              slidesPerView="auto"
-              watchOverflow={true}
-              breakpoints={swiperBreakpoints}
-              className="!pb-10"
-            >
-              {nextSteps.map((step, index) => (
-                <SwiperSlide key={index} className="!w-auto">
-                  <Card variant='gradient' padding='md' className='h-full'>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-transparent border-2 border-primary-blue/30 rounded-full flex items-center justify-center text-primary-blue font-bold text-sm flex-shrink-0">
-                        {index + 1}
-                      </div>
-                      <h4 className="text-md font-bold text-primary-dark leading-tight">
-                        {step.title}
-                      </h4>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {step.description}
-                    </p>
-                  </Card>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-        </Card>
+        <NextSteps data={nextStepsData} />
 
         <div className='grid grid-cols-1 gap-8 md:grid-cols-3'>
-          <Card padding="md" className="text-center">
-            <h4 className='font-bold text-gray-800'>Гарантия качества</h4>
-            <p className='mt-2 text-sm text-gray-600'>Материалы проверены на практике. Доступ навсегда.</p>
-          </Card>
-          <Card padding="md" className="text-center">
-            <h4 className='font-bold text-gray-800'>Сообщество</h4>
-            <p className='mt-2 text-sm text-gray-600'>Присоединяйтесь к телеграм-каналу для поддержки.</p>
-          </Card>
-          <Card padding="md" className="text-center">
-            <h4 className='font-bold text-gray-800'>Мгновенный доступ</h4>
-            <p className='mt-2 text-sm text-gray-600'>Материалы доступны сразу после оплаты.</p>
-          </Card>
+            <InfoCard 
+                icon={<Shield className="w-5 h-5 md:w-6 md:h-6 text-orange-600" />}
+                title="Гарантия качества"
+                description="Материалы проверены на практике. Доступ навсегда."
+                color="orange"
+            />
+            <InfoCard 
+                icon={<Users className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />}
+                title="Сообщество"
+                description="Присоединяйтесь к телеграм-каналу для поддержки."
+                color="blue"
+            />
+            <InfoCard 
+                icon={<Zap className="w-5 h-5 md:w-6 md:h-6 text-green-600" />}
+                title="Мгновенный доступ"
+                description="Материалы доступны сразу после оплаты."
+                color="green"
+            />
         </div>
       </div>
     </section>

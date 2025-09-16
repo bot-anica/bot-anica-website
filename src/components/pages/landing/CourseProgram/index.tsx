@@ -2,7 +2,7 @@
 
 import type { FC } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { useCourseProgram } from '../../../../hooks/useCourseProgram';
+import { useSwiper } from '../../../../hooks/useSwiper';
 import { useIntersectionObserver } from '../../../../hooks/useIntersectionObserver';
 import { SectionBackground, SectionHeader, SectionSplitter } from '../../../common';
 import { CourseProgramData } from '@/types/sections';
@@ -14,7 +14,7 @@ interface CourseProgramProps {
 
 const CourseProgram: FC<CourseProgramProps> = ({data}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
-  const { handlePrevSlide, handleNextSlide, setSwiperRef } = useCourseProgram();
+  const { handlePrevSlide, handleNextSlide, setSwiperRef } = useSwiper();
 
   const {header, lessons, breakpoints, bgImages} = data
 
