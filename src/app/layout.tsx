@@ -19,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" data-scroll-behavior="smooth">
-      <body>
+      <body className="min-h-screen flex flex-col">
         <ToastProvider>
           <ScrollToAnchor />
           <Header />
-          <main>
+          <main className="flex-grow">
             {children}
           </main>
           <Footer />

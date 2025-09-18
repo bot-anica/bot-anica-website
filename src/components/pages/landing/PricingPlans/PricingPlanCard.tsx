@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 import CardHeader from './PricingPlanCard/CardHeader';
 import CardPrice from './PricingPlanCard/CardPrice';
-import CardFeatures from './PricingPlanCard/CardFeatures';
 import CardButton from './PricingPlanCard/CardButton';
 import CardDescription from './PricingPlanCard/CardDescription';
 
 import { Card } from '@/components/common';
 import { Tariff, PartialSectionBGImagesProps, Currency } from '@/types/sections';
+import FeatureList from '@/components/common/FeatureList';
 
 interface PricingPlanCardProps {
   plan: Tariff;
@@ -45,7 +45,9 @@ const PricingPlanCard: FC<PricingPlanCardProps> = ({ plan, bgImages, isIntersect
           <CardHeader name={plan.name} />
           <CardPrice price={price} />
           <CardDescription description={plan.description} />
-          <CardFeatures features={plan.features} isIntersecting={isIntersecting} cardIndex={index} />
+          <div className='mb-6 xl:mb-8'>
+            <FeatureList features={plan.features} isIntersecting={isIntersecting} cardIndex={index} />
+          </div>
         </div>
         <div className="mt-auto">
           <CardButton isPopular={plan.is_popular} plan={plan} />

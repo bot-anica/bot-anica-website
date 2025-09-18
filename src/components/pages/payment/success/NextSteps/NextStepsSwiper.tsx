@@ -31,7 +31,7 @@ const NextStepsSwiper: React.FC<NextStepsSwiperProps> = ({
         slidesPerView="auto"
         watchOverflow={true}
         breakpoints={breakpoints}
-        className="!pb-10"
+        className="!pb-1 !sm:pb-0"
       >
         {nextSteps.map((step, index) => (
           <SwiperSlide key={index} className="!w-80">

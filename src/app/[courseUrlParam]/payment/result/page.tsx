@@ -1,4 +1,3 @@
-
 import { FC } from 'react';
 import PaymentResultPage from '@/components/pages/payment/PaymentResultPage';
 

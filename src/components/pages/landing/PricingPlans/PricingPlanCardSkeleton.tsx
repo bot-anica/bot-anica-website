@@ -3,10 +3,10 @@ import { FC } from "react";
 import CardHeaderSkeleton from "./PricingPlanCardSkeleton/CardHeaderSkeleton";
 import CardPriceSkeleton from "./PricingPlanCardSkeleton/CardPriceSkeleton";
 import CardDescriptionSkeleton from "./PricingPlanCardSkeleton/CardDescriptionSkeleton";
-import CardFeaturesSkeleton from "./PricingPlanCardSkeleton/CardFeaturesSkeleton";
 import CardButtonSkeleton from "./PricingPlanCardSkeleton/CardButtonSkeleton";
 
 import { Card } from "@/components/common";
+import FeatureListSkeleton from "@/components/common/FeatureListSkeleton";
 
 export interface PricingPlanCardSkeletonProps {
   is_popular?: boolean;
@@ -29,7 +29,7 @@ const PricingPlanCardSkeleton: FC<PricingPlanCardSkeletonProps> = ({
           <CardHeaderSkeleton />
           <CardPriceSkeleton />
           <CardDescriptionSkeleton />
-          <CardFeaturesSkeleton />
+          <FeatureListSkeleton />
         </div>
         <div className="mt-auto">
           <CardButtonSkeleton isPopular={is_popular} />

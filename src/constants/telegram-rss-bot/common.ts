@@ -88,6 +88,33 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
     topRight: {
       smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
     },
+  },
+  successPayment: {
+    left: {
+      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
+      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+    },
+    right: {
+      small: "/images/rightSideBG/RightSideBG-Small.jpg",
+      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
+      large: "/images/rightSideBG/RightSideBG-Large.jpg",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+    },
+    topRight: {
+      extraLarge: '/images/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/heroBG/HeroBG-Large.png',
+      medium: '/images/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
+    },
+    bottom: {
+      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
+      medium: "/images/courseProgramBG/CourseProgramBG-Medium.jpg",
+      large: "/images/courseProgramBG/CourseProgramBG-Large.jpg",
+    } 
   }
 };
 

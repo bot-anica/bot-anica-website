@@ -15,7 +15,7 @@ interface CourseProgramProps {
 }
 
 const PricingPlans: FC<CourseProgramProps> = ({data, course}) => {
-  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean];
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const [selectedCurrency, setSelectedCurrency] = useState<Currency | null>(null);
 
   const { header, bgImages, popularPlanImages } = data

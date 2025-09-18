@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const CardFeaturesSkeleton: FC = () => {
+const FeatureListSkeleton: FC = () => {
   return (
     <ul className="space-y-2 xl:space-y-3 mb-6 xl:mb-8 flex-grow">
       {[...Array(5)].map((_, i) => (
@@ -13,4 +13,4 @@ const CardFeaturesSkeleton: FC = () => {
   );
 };
 
-export default CardFeaturesSkeleton;
+export default FeatureListSkeleton;

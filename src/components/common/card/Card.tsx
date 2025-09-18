@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({
     elevated: "bg-white border-2 border-primary-pink/80",
     outlined: "bg-transparent border-2 border-primary-pink/20",
     gradient:
-      "bg-gradient-to-br from-primary-pink/5 via-primary-blue/5 to-primary-pink/5 border border-primary-pink/15",
+      "bg-gradient-to-br from-primary-pink/5 via-white to-primary-pink/5 border border-primary-pink/15",
     popular: "bg-white border-2 border-primary-pink/80",
   };
 

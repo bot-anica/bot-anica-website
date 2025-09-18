@@ -1,10 +1,8 @@
-
 "use client";
 
 import type { FC } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useSwiper } from '@/hooks/useSwiper';
-import { Card } from '@/components/common';
 import NextStepsSwiper from './NextStepsSwiper';
 import { NextStepsData } from '@/types/sections';
 
@@ -17,11 +15,11 @@ const NextSteps: FC<NextStepsProps> = ({ data }) => {
   const { header, nextSteps, breakpoints } = data;
 
   return (
-    <Card padding="lg">
+    <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 sm:py-8 relative z-10 bg-white sm:rounded-lg sm:border sm:border-primary-blue/15">
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 md:gap-4 mb-4 md:mb-6">
-        <div>
-          <h3 className='text-2xl font-bold text-gray-900'>{header.title}</h3>
-          <p className='mt-2 text-gray-600 mb-8'>{header.subtitle}</p>
+        <div className='md:mb-2 lg:mb-4'>
+          <h3 className='text-lg md:text-xl lg:text-2xl font-bold text-gray-900'>{header.title}</h3>
+          <p className='mt-2 text-sm md:text-base text-gray-600'>{header.subtitle}</p>
         </div>
 
         <div className="flex gap-3 md:gap-4">
@@ -45,7 +43,7 @@ const NextSteps: FC<NextStepsProps> = ({ data }) => {
         breakpoints={breakpoints}
         setSwiperRef={setSwiperRef}
       />
-    </Card>
+    </div>
   );
 };
 
