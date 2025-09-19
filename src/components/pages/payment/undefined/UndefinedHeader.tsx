@@ -10,7 +10,7 @@ const UndefinedHeader: FC = () => {
         </div>
       </div>
       <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900'>Не удалось определить статус</h1>
-      <p className='mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600'>
+      <p className='mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed'>
         Мы не смогли найти информацию о вашем последнем платеже. Пожалуйста, проверьте вашу почту или свяжитесь с поддержкой.
       </p>
     </div>

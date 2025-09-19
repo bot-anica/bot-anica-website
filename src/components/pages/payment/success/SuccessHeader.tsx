@@ -13,7 +13,7 @@ const SuccessHeader: FC = () => {
       <p className='mt-2 text-base sm:text-lg md:text-xl font-medium md:font-semibold text-green-600'>
         Оплата прошла успешно
       </p>
-      <p className='mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600'>
+      <p className='mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed'>
         Ваш платеж был успешно обработан. Вся информация о доступе к курсу была отправлена на вашу электронную почту.
       </p>
     </div>

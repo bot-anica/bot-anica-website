@@ -13,7 +13,7 @@ const FailHeader: FC = () => {
       <p className='mt-2 text-base sm:text-lg md:text-xl font-medium md:font-semibold text-red-600'>
         Оплата не прошла
       </p>
-      <p className='mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600'>
+      <p className='mt-4 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed'>
         К сожалению, произошла ошибка при обработке платежа или оплата была отменена. Не переживайте — мы поможем вам решить эту проблему.
       </p>
     </div>
