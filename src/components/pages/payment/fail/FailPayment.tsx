@@ -10,35 +10,7 @@ const FailPayment: FC = () => {
     <section className="pt-24 pb-16 sm:pb-20 sm:pt-24 md:pb-24 md:pt-28 lg:pt-42 lg:pb-28 xl:pt-50 xl:pb-32 relative overflow-hidden">
       <div className="sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto relative z-10 grid grid-cols-1 gap-2 sm:gap-6 md:gap-8">
         
-        {/* <FailHeader /> */}
-        
-        <Card variant="gradient" padding="lg" className="text-center">
-          <div className='mb-4 inline-block'>
-            <div className='flex h-20 w-20 items-center justify-center rounded-full bg-red-500'>
-              <svg
-                className='h-12 w-12 text-white'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              </svg>
-            </div>
-          </div>
-          <h1 className='text-4xl font-bold text-gray-900'>Что-то пошло не так</h1>
-          <p className='mt-2 text-lg font-medium text-red-600'>
-            Оплата не прошла
-          </p>
-          <p className='mt-4 max-w-2xl mx-auto text-lg text-gray-600'>
-            К сожалению, произошла ошибка при обработке платежа или оплата была отменена. Не переживайте — мы поможем вам решить эту проблему.
-          </p>
-        </Card>
+        <FailHeader />
 
         <Card padding="lg">
           <h3 className='text-xl font-bold text-gray-900'>Анализ проблемы</h3>

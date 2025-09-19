@@ -1,6 +1,5 @@
 
 import { FC } from 'react';
-import { Card } from '@/components/common';
 import UndefinedHeader from './UndefinedHeader';
 
 const UndefinedPayment: FC = () => {
