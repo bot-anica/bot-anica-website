@@ -6,13 +6,13 @@ import { usePaymentSuccess } from '@/hooks/usePaymentSuccess';
 import SuccessPayment from '@/components/pages/payment/success/SuccessPayment';
 import FailPayment from '@/components/pages/payment/fail/FailPayment';
 import UndefinedPayment from '@/components/pages/payment/undefined/UndefinedPayment';
-import SuccessPaymentSkeleton from '@/components/pages/payment/success/SuccessPaymentSkeleton';
+import PaymentResultSkeleton from '@/components/pages/payment/common/PaymentResultSkeleton';
 
 const PaymentResultContent: FC = () => {
   const { paymentLog, isLoading, error } = usePaymentSuccess();
 
   if (isLoading) {
-    return <SuccessPaymentSkeleton />;
+    return <PaymentResultSkeleton />;
   }
 
   if (error || !paymentLog) {
@@ -29,7 +29,7 @@ const PaymentResultContent: FC = () => {
 
 const PaymentResultPage: FC = () => {
   return (
-    <Suspense fallback={<SuccessPaymentSkeleton />}>
+    <Suspense fallback={<PaymentResultSkeleton />}>
       <PaymentResultContent />
     </Suspense>
   );
