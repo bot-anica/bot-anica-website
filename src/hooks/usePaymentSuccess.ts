@@ -10,6 +10,7 @@ export interface PaymentLog {
   email: string;
   status: 'success' | 'fail';
   createdAt: Date;
+  currency?: string;
 }
 
 export const usePaymentSuccess = () => {

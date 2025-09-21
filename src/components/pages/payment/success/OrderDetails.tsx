@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { PaymentLog } from '@/hooks/usePaymentSuccess';
 import FeatureList from '@/components/common/FeatureList';
+import { TariffPrice } from '@/types/sections';
 
 interface OrderDetailsProps {
   paymentLog: PaymentLog | null;
@@ -9,6 +10,12 @@ interface OrderDetailsProps {
 
 const OrderDetails: FC<OrderDetailsProps> = ({ paymentLog }) => {
   const { course, tariff, orderId } = paymentLog || {};
+
+  const currencyCode = paymentLog?.currency || 'USD';
+  const priceInfo = tariff?.prices.find((p: TariffPrice) => p.currency.code === currencyCode);
+  
+  const price = priceInfo?.discount_price || priceInfo?.price || '0.00';
+  const currencySymbol = priceInfo?.currency.symbol || '$';
 
   return (
     <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 sm:py-8 relative z-10 bg-white sm:rounded-lg sm:border sm:border-primary-blue/15">
@@ -25,7 +32,7 @@ const OrderDetails: FC<OrderDetailsProps> = ({ paymentLog }) => {
             </span>
             <div className="my-2">
               <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-pink">
-                <span className="text-primary-pink/50">$</span>{tariff?.prices[0].discount_price || tariff?.prices[0].price}
+                <span className="text-primary-pink/50">{currencySymbol}</span>{price}
               </span>
             </div>
           </div>

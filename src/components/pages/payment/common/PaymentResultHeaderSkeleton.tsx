@@ -12,7 +12,7 @@ const PaymentResultHeaderSkeleton: FC = () => {
 
       <div className='mb-2 h-3 sm:h-5 md:h-6 w-full sm:w-full md:w-full lg:w-2/3 xl:w-8/12 mx-auto bg-gray-300 rounded'></div>
       <div className='mb-2 md:mb-0 h-3 sm:h-5 md:h-6 w-4/5 sm:w-full md:w-2/3 lg:w-1/2 xl:w-2/5 mx-auto bg-gray-300 rounded'></div>
-      <div className='h-3 sm:h-5 md:h-6 w-full sm:w-1/3 md:w-2/3 lg:w-1/2 xl:w-2/5 mx-auto bg-gray-300 rounded'></div>
+      <div className='h-3 sm:h-5 md:h-0 w-full sm:w-1/3 md:w-2/3 lg:w-1/2 xl:w-2/5 mx-auto bg-gray-300 rounded'></div>
     </div>
   );
 };
