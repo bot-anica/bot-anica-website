@@ -23,19 +23,19 @@ const FailPayment: FC = () => {
             <h4 className="font-semibold text-gray-800">Частые причины:</h4>
             <ul className="mt-2 space-y-2 xl:space-y-3 text-gray-700">
               <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
                 <span className="text-sm">Недостаточно средств на карте</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
                 <span className="text-sm">Технические неполадки платежной системы</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
                 <span className="text-sm">Ограничения банка на онлайн-платежи</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
                 <span className="text-sm">Оплата была отменена пользователем</span>
               </li>
             </ul>
@@ -44,19 +44,19 @@ const FailPayment: FC = () => {
             <h4 className="font-semibold text-gray-800">Что можно сделать:</h4>
             <ul className="mt-2 space-y-2 xl:space-y-3 text-gray-700">
               <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-sm">Проверьте баланс карты</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-sm">Попробуйте другую карту</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-sm">Обратитесь в банк</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-sm">Свяжитесь с поддержкой</span>
               </li>
             </ul>
