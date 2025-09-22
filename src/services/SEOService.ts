@@ -1,4 +1,4 @@
-import { AVAILABLE_PAGES, PageSEOCongfig, SEOConfig, SEOData } from '../types/sections';
+import { AVAILABLE_PAGES, PageSEOConfig, SEOConfig, SEOData } from '../types/sections';
 import { COURSES } from "@/constants/courseRegistry";
 
 const isValidCourse = (courseUrlParam: string) => COURSES.some(course => course.urlParam === courseUrlParam);
@@ -16,7 +16,7 @@ export class SEOService {
     return DEFAULT_SEO_CONFIG;
   }
 
-  static async getPageSEOConfigs(courseUrlParam: string): Promise<Record<AVAILABLE_PAGES, PageSEOCongfig>> {
+  static async getPageSEOConfigs(courseUrlParam: string): Promise<Record<AVAILABLE_PAGES, PageSEOConfig>> {
     const { PAGE_SEO_CONFIGS } = await this.importCommonModule(courseUrlParam);
     return PAGE_SEO_CONFIGS;
   }

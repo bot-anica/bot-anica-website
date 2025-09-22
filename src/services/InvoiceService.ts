@@ -31,7 +31,7 @@ export class InvoiceService {
     email: string;
     name?: string;
   }): Promise<string> {
-    const PAYMENT_RESULT_URL = `${process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000'}/${data.courseUrlParam}/payment/result`; // Default for development
+    const PAYMENT_RESULT_URL = `${process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000'}/payment/result`; // Default for development
 
     const createPaymentDto: CreatePaymentDto = {
       // TODO: change back to dynamic amount and currency

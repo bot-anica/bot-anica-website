@@ -17,7 +17,7 @@ const CardButton: FC<CardButtonProps> = ({ isPopular, plan }) => {
   const {courseUrlParam} = useParams();
 
   const handleBuyButton = () => {
-    router.push(`/${courseUrlParam}/prepayment?tariffId=${plan.id}`);
+    router.push(`/course/${courseUrlParam}/prepayment?tariffId=${plan.id}`);
   }
 
   return (

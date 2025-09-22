@@ -16,29 +16,44 @@ import Hero from '@/components/pages/landing/Hero';
 import PricingPlans from '@/components/pages/landing/PricingPlans';
 import ProblemSolution from '@/components/pages/landing/ProblemSolution';
 import WhySpecial from '@/components/pages/landing/WhySpecial';
+import CourseNotFound from '@/components/pages/course/CourseNotFound';
 
 export async function generateMetadata({ params }: { params: Promise<{ courseUrlParam: string }> }): Promise<Metadata> {
-  const { courseUrlParam } = await params
-  const seoData = await SEOService.getData(courseUrlParam);
-  const pageConfig = seoData.pageSEOConfigs.home;
-  return {
-    title: `${pageConfig.title} | ${seoData.defaultSEOConfig.siteName}`,
-    description: pageConfig.description,
-    keywords: pageConfig.keywords,
-    openGraph: {
-      title: pageConfig.title,
+  try {
+    const { courseUrlParam } = await params
+    const seoData = await SEOService.getData(courseUrlParam);
+    const pageConfig = seoData.pageSEOConfigs.home;
+    return {
+      title: `${pageConfig.title} | ${seoData.defaultSEOConfig.siteName}`,
       description: pageConfig.description,
-      type: 'website',
-    },
-    twitter: {
-      title: pageConfig.title,
-      description: pageConfig.description,
-    },
-  };
+      keywords: pageConfig.keywords,
+      openGraph: {
+        title: pageConfig.title,
+        description: pageConfig.description,
+        type: 'website',
+      },
+      twitter: {
+        title: pageConfig.title,
+        description: pageConfig.description,
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Курс не найден",
+      description: "Запрашиваемый курс не найден.",
+    };
+  }
 }
 
 export default async function LandingPage({ params }: { params: Promise<{ courseUrlParam: string }> }) {
   const { courseUrlParam } = await params
+
+  let course;
+  try {
+    course = await CourseService.getCourseByUrlParam(courseUrlParam);
+  } catch (error) {
+    return <CourseNotFound />;
+  }
 
   const [
     heroData,
@@ -47,7 +62,6 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     courseProgramData,
     pricingData,
     faqData,
-    course
   ] = await Promise.all([
     HeroService.getData(courseUrlParam),
     ProblemSolutionService.getData(courseUrlParam),
@@ -55,7 +69,6 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     CourseProgramService.getData(courseUrlParam),
     PricingService.getData(courseUrlParam),
     FaqService.getData(courseUrlParam),
-    CourseService.getCourseByUrlParam(courseUrlParam)
   ]);
 
   return (

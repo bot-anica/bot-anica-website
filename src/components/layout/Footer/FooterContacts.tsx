@@ -20,7 +20,7 @@ const FooterContacts: FC = () => {
 
   
   return (
-    <div className="flex flex-row gap-5 mb-4 md:mb-0">
+    <div className="flex flex-row gap-5 md:mb-0">
       <a
         href="https://github.com/bot-anica"
         target="_blank"

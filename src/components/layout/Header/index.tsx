@@ -15,7 +15,7 @@ import { usePathname } from 'next/navigation';
 const Header: FC = () => {
   const headerData = useHeader();
   const pathname = usePathname();
-  const isPrepaymentPage = /^\/[^/]+\/prepayment$/.test(pathname);
+  const isPrepaymentPage = /^\/course\/[^/]+\/prepayment$/.test(pathname);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,11 +47,8 @@ const Header: FC = () => {
     setIsOpen(false)
   }
 
-  if (!headerData) {
-    return null; // Or a loading spinner
-  }
-
-  const { ctaButtons, navigationLinks } = headerData;
+  const ctaButtons = headerData?.ctaButtons || [];
+  const navigationLinks = headerData?.navigationLinks || [];
 
   return (
     <motion.header
@@ -70,10 +67,10 @@ const Header: FC = () => {
           <HeaderLogoLink />
           
           {/* Desktop Navigation */}
-          <HeaderNavigation links={navigationLinks} />
+          {ctaButtons && <HeaderNavigation links={navigationLinks} />}
           
           {/* CTA Button */}
-          <HeaderCTAButtons ctaButtons={ctaButtons} />
+          {navigationLinks && <HeaderCTAButtons ctaButtons={ctaButtons} />}
           
           {/* Mobile menu button */}
           <HeaderMobileMenuButton isOpen={isOpen} onClick={handleClick} />
