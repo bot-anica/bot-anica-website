@@ -1,0 +1,148 @@
+import { PartialSectionBGImagesProps } from '@/types/sections';
+
+export const SECTION_HEADERS = {
+  whySpecial: {
+    title: "Почему наш курс особенный?",
+    subtitle: "Мы учим основам Python с нуля и даем практические навыки программирования",
+  },
+  features: {
+    title: "Что вы получите",
+    subtitle: "Структурированный подход к обучению, который даст вам необходимые навыки для старта в программировании",
+  },
+  pathToSuccess: {
+    title: 'Как освоить Python с нуля',
+    subtitle: 'Следуйте нашему пути от основ до практического применения',
+  },
+  problemSolution: {
+    title: "Проблемы и решения",
+    subtitle: "Начинающие программисты сталкиваются с этими вызовами. Мы знаем, как их преодолеть.",
+  },
+  successStories: {
+    title: "Истории успеха наших студентов",
+    subtitle: "Реальные результаты людей, которые прошли курс и применили знания на практике",
+  },
+  courseProgram: {
+    title: "Программа курса",
+    subtitle: "50+ уроков, охватывающих все основы Python от простого к сложному",
+  },
+  faq: {
+    title: "Частые вопросы",
+    subtitle: "Ответы на самые популярные вопросы о курсе Python",
+  },
+  pricingPlans: {
+    title: "Выберите свой пакет",
+    subtitle: "Все материалы предоставляются с доступом навсегда. Никаких подписок или скрытых платежей.",
+  }
+};
+
+export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
+  hero: {
+    topRight: {
+      extraLarge: '/images/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/heroBG/HeroBG-Large.png',
+      medium: '/images/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
+    },
+  },
+  problemSolution: {
+    left: {
+      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
+      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+    },
+    right: {
+      small: "/images/rightSideBG/RightSideBG-Small.jpg",
+      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
+      large: "/images/rightSideBG/RightSideBG-Large.jpg",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+    }
+  },
+  whySpecial: {
+    left: {
+      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
+      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+    },
+    right: {
+      small: "/images/rightSideBG/RightSideBG-Small.jpg",
+      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
+      large: "/images/rightSideBG/RightSideBG-Large.jpg",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+    }
+  },
+  courseProgram: {
+    bottom: {
+      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
+      medium: "/images/courseProgramBG/CourseProgramBG-Medium.jpg",
+      large: "/images/courseProgramBG/CourseProgramBG-Large.jpg",
+    } 
+  },
+  popularCard: {
+    bottom: {
+      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
+    },
+    topRight: {
+      smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
+    },
+  },
+  successPayment: {
+    left: {
+      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
+      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+    },
+    right: {
+      small: "/images/rightSideBG/RightSideBG-Small.jpg",
+      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
+      large: "/images/rightSideBG/RightSideBG-Large.jpg",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+    },
+    topRight: {
+      extraLarge: '/images/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/heroBG/HeroBG-Large.png',
+      medium: '/images/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
+    },
+    bottom: {
+      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
+      medium: "/images/courseProgramBG/CourseProgramBG-Medium.jpg",
+      large: "/images/courseProgramBG/CourseProgramBG-Large.jpg",
+    } 
+  }
+};
+
+// Глобальные настройки SEO для сайта
+export const DEFAULT_SEO_CONFIG = {
+  title: undefined as string | undefined,
+  siteName: 'Курс по основам Python для начинающих',
+  description: 'Изучите основы Python с нуля. Полный курс для начинающих с пошаговыми инструкциями и практическими заданиями. Получите навыки программирования и создавайте собственные проекты.',
+  keywords: 'python, курс программирования, основы python, python для начинающих, обучение программированию, программирование с нуля, python уроки, python онлайн',
+  image: '/og-cover.jpg',
+  url: undefined as string | undefined,
+  locale: 'ru_RU',
+  twitterCard: 'summary_large_image' as const,
+  type: 'website' as 'website' | 'article',
+  noIndex: undefined as boolean | undefined
+};
+
+// Предустановленные конфигурации для разных страниц
+export const PAGE_SEO_CONFIGS = {
+  home: {
+    title: 'Основы Python для начинающих - полный курс с нуля',
+    description: 'Изучите основы Python с нуля. Полный курс для начинающих с 60+ практическими заданиями. Освойте программирование на Python и создавайте собственные проекты.',
+    keywords: 'python, курс программирования, основы python, python для начинающих, обучение программированию, программирование с нуля, python уроки, python онлайн'
+  },
+  payment: {
+    title: 'Оплата курса по основам Python',
+    description: 'Выберите подходящий тариф и начните изучение основ Python. Безопасная оплата, мгновенный доступ к материалам курса.',
+    keywords: 'оплата курса, python, тарифы, обучение программированию, курс python',
+    noIndex: true // Скрываем страницу оплаты от индексации
+  },
+};
