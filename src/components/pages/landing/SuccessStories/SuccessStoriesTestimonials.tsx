@@ -1,5 +1,7 @@
+"use client";
+
 import type { FC } from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 import { Testimonial } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
@@ -7,18 +9,29 @@ import Icon from '@/components/ui/Icon';
 interface SuccessStoriesTestimonialsProps {
   testimonials: Testimonial[];
   isIntersecting: boolean;
-  testimonialVariants: Variants;
 }
 
-const renderIcon = (iconName: string, color: string) => {
-  return <Icon name={iconName} className="w-10 h-10" style={{ color: color }} />
+const testimonialVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+      ease: easeOut,
+    },
+  }),
 };
 
 export const SuccessStoriesTestimonials: FC<SuccessStoriesTestimonialsProps> = ({
   testimonials,
   isIntersecting,
-  testimonialVariants
 }) => {
+  const renderIcon = (iconName: string, color: string) => {
+    return <Icon name={iconName} className="w-10 h-10" style={{ color: color }} />
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       {testimonials.map((testimonial, index) => (
@@ -45,7 +58,7 @@ export const SuccessStoriesTestimonials: FC<SuccessStoriesTestimonialsProps> = (
           </div>
           
           <blockquote className="text-gray-300 mb-4 italic leading-relaxed">
-            "{testimonial.quote}"
+            `&quot;`{testimonial.quote}`&quot;`
           </blockquote>
           
           <div className="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 rounded-lg p-3 border-l-4 border-yellow-400">

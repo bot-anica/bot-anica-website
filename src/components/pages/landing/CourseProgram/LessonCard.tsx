@@ -13,7 +13,7 @@ interface LessonCardProps {
 
 const LessonCard: FC<LessonCardProps> = ({ lesson, isEven, isIntersecting, index }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0 }}
     animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.6, delay: index * 0.1 }}
     className="relative bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-300 hover:border-primary-pink/30 h-full flex flex-col overflow-hidden"

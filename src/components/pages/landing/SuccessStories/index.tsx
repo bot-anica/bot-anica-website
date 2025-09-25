@@ -1,3 +1,5 @@
+"use client";
+
 import type { FC } from 'react';
 
 import { SuccessStoriesBackground } from './SuccessStoriesBackground';
@@ -7,7 +9,6 @@ import { SuccessStoriesCTA } from './SuccessStoriesCTA';
 
 import { SectionBackground, SectionHeader } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { useSuccessStoriesAnimations } from '@/hooks/useSuccessStoriesAnimations';
 import { SuccessStoriesData } from '@/types/sections';
 
 interface SuccessStoriesProps {
@@ -15,12 +16,7 @@ interface SuccessStoriesProps {
 }
 
 const SuccessStories: FC<SuccessStoriesProps> = ({data}) => {
-  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean];
-  const {
-    statVariants,
-    testimonialVariants,
-    ctaVariants
-  } = useSuccessStoriesAnimations();
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   const {header, stats, testimonials, ctaBlock, bgImages} = data
 
@@ -42,19 +38,16 @@ const SuccessStories: FC<SuccessStoriesProps> = ({data}) => {
         <SuccessStoriesStats
           stats={stats}
           isIntersecting={isIntersecting}
-          statVariants={statVariants}
         />
         
         <SuccessStoriesTestimonials
           testimonials={testimonials}
           isIntersecting={isIntersecting}
-          testimonialVariants={testimonialVariants}
         />
         
         <SuccessStoriesCTA
           ctaBlock={ctaBlock}
           isIntersecting={isIntersecting}
-          ctaVariants={ctaVariants}
         />
       </div>
     </section>

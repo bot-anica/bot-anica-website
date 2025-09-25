@@ -172,6 +172,19 @@ export interface SuccessStoriesData {
   bgImages: PartialSectionBGImagesProps;
 }
 
+export interface Review {
+  id: number;
+  createdAt: string;
+  text: string;
+}
+
+export interface ReviewsData {
+  header: SectionHeaderProps;
+  reviews: Review[];
+  breakpoints: SwiperOptions['breakpoints'];
+  bgImages: PartialSectionBGImagesProps;
+}
+
 export interface Lesson {
   id: number;
   title: string;
@@ -179,6 +192,8 @@ export interface Lesson {
   result: string;
   icon: any;
 }
+
+export type SwiperBreakpoints = Record<string, { slides: { perView: string | number; spacing: number } }>
 
 export interface CourseProgramData {
   header: SectionHeaderProps;
@@ -188,15 +203,15 @@ export interface CourseProgramData {
 }
 
 export interface NextStep {
-    title: string;
-    description: string;
-    icon: any;
+  title: string;
+  description: string;
+  icon: any;
 }
   
 export interface NextStepsData {
-    header: SectionHeaderProps;
-    nextSteps: NextStep[];
-    breakpoints: SwiperOptions['breakpoints'];
+  header: SectionHeaderProps;
+  nextSteps: NextStep[];
+  breakpoints: SwiperOptions['breakpoints'];
 }
 
 export interface FAQItem {

@@ -9,10 +9,12 @@ import { CourseProgramService } from '@/services/CourseProgramService';
 import { PricingService } from '@/services/PricingService';
 import { FaqService } from '@/services/FaqService';
 import { CourseService } from '@/services/CourseService';
+import { ReviewsService } from '@/services/ReviewsService';
 
 import CourseProgram from '@/components/pages/landing/CourseProgram';
 import FAQ from '@/components/pages/landing/FAQ';
 import Hero from '@/components/pages/landing/Hero';
+import Reviews from '@/components/pages/landing/Reviews';
 import PricingPlans from '@/components/pages/landing/PricingPlans';
 import ProblemSolution from '@/components/pages/landing/ProblemSolution';
 import WhySpecial from '@/components/pages/landing/WhySpecial';
@@ -60,6 +62,7 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     problemSolutionData,
     whySpecialData,
     courseProgramData,
+    reviewsData,
     pricingData,
     faqData,
   ] = await Promise.all([
@@ -67,6 +70,8 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     ProblemSolutionService.getData(courseUrlParam),
     WhySpecialService.getData(courseUrlParam),
     CourseProgramService.getData(courseUrlParam),
+    // SuccessStoriesService.getData(courseUrlParam),
+    ReviewsService.getData(courseUrlParam),
     PricingService.getData(courseUrlParam),
     FaqService.getData(courseUrlParam),
   ]);
@@ -77,6 +82,8 @@ export default async function LandingPage({ params }: { params: Promise<{ course
       <ProblemSolution data={problemSolutionData} />
       <WhySpecial data={whySpecialData} />
       <CourseProgram data={courseProgramData} />
+      {/* <SuccessStories data={successStoriesData} /> */}
+      <Reviews data={reviewsData} />
       <PricingPlans data={pricingData} course={course} />
       <FAQ data={faqData} course={course} />
     </Suspense>

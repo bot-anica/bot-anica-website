@@ -1,5 +1,7 @@
+"use client";
+
 import type { FC } from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 import { Statistic } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
@@ -7,18 +9,29 @@ import Icon from '@/components/ui/Icon';
 interface SuccessStoriesStatsProps {
   stats: Statistic[];
   isIntersecting: boolean;
-  statVariants: Variants;
 }
 
-const renderIcon = (iconName: string, color: string) => {
-  return <Icon name={iconName} className="w-10 h-10" style={{ color: color }} />
+const statVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: easeOut,
+    },
+  }),
 };
 
 export const SuccessStoriesStats: FC<SuccessStoriesStatsProps> = ({
   stats,
   isIntersecting,
-  statVariants
 }) => {
+  const renderIcon = (iconName: string, color: string) => {
+    return <Icon name={iconName} className="w-10 h-10" style={{ color: color }} />
+  };
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
       {stats.map((stat, index) => (

@@ -1,5 +1,7 @@
+"use client";
+
 import type { FC } from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 import { SuccessStoriesCTABlock } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
@@ -7,18 +9,28 @@ import Icon from '@/components/ui/Icon';
 interface SuccessStoriesCTAProps {
   ctaBlock: SuccessStoriesCTABlock;
   isIntersecting: boolean;
-  ctaVariants: Variants;
 }
 
-const renderIcon = (iconName: string, color: string) => {
-  return <Icon name={iconName} className="w-16 h-16" style={{ color: color }} />
+const ctaVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
+    },
+  },
 };
 
 export const SuccessStoriesCTA: FC<SuccessStoriesCTAProps> = ({
   ctaBlock,
   isIntersecting,
-  ctaVariants
 }) => {
+  const renderIcon = (iconName: string, color: string) => {
+    return <Icon name={iconName} className="w-16 h-16" style={{ color: color }} />
+  };
+
   return (
     <motion.div
       variants={ctaVariants}

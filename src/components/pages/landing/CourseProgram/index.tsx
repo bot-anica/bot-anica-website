@@ -1,12 +1,13 @@
 "use client";
 
 import type { FC } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { useSwiper } from '../../../../hooks/useSwiper';
-import { useIntersectionObserver } from '../../../../hooks/useIntersectionObserver';
-import { SectionBackground, SectionHeader, SectionSplitter } from '../../../common';
+
+import SwiperNavButtons from '@/components/common/SwiperNavButtons';
 import { CourseProgramData } from '@/types/sections';
 import CourseProgramSwiper from './CourseProgramSwiper';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { SectionBackground, SectionSplitter, SectionHeader } from '@/components/common';
+import { useSwiper } from '@/hooks/useSwiper';
 
 interface CourseProgramProps {
   data: CourseProgramData
@@ -23,7 +24,7 @@ const CourseProgram: FC<CourseProgramProps> = ({data}) => {
   }
 
   return (
-    <section ref={ref as any} id="course" className="bg-white py-24 lg:py-28 xl:py-32 relative w-full overflow-hidden">
+    <section ref={ref} id="course" className="bg-white py-24 lg:py-28 xl:py-32 relative w-full overflow-hidden">
       <SectionBackground bgImages={bgImages} lazy />
       <SectionSplitter bottom={false} />
 
@@ -44,20 +45,11 @@ const CourseProgram: FC<CourseProgramProps> = ({data}) => {
             </span>
           </div>
 
-          <div className="flex gap-3 md:gap-4">
-            <button 
-              onClick={handlePrevSlide}
-              className="cursor-pointer w-10 h-10 md:w-12 md:h-12 bg-white rounded-full border border-primary-blue/30 flex items-center justify-center text-gray-600 hover:text-primary-pink transition-all duration-300 group"
-            >
-              <ArrowLeft className="w-6 h-6 transition-transform group-hover:-translate-x-0.5" />
-            </button>
-            <button 
-              onClick={handleNextSlide}
-              className="cursor-pointer w-10 h-10 md:w-12 md:h-12 bg-white rounded-full border border-primary-blue/30 flex items-center justify-center text-gray-600 hover:text-primary-pink transition-all duration-300 group"
-            >
-              <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-0.5" />
-            </button>
-          </div>
+          <SwiperNavButtons 
+            onPrev={handlePrevSlide}
+            onNext={handleNextSlide}
+            theme="light"
+          />
         </div>
 
         {/* Swiper Container */}
