@@ -25,7 +25,7 @@ const PathToSuccess: FC<PathToSuccessProps> = ({data}) => {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-gray-50 relative overflow-hidden">
+    <section ref={ref} className="py-20 bg-bg-secondary relative overflow-hidden">
       <SectionBackground bgImages={bgImages} lazy />
       <PathToSuccessBackground />
       

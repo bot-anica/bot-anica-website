@@ -16,7 +16,7 @@ interface FAQProps {
 }
 
 const FAQ: FC<FAQProps> = ({data, course}) => {
-  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean];
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { openIndex, toggleFAQ } = useFAQ();
 
   const { header, faqs, bgImages } = data
@@ -38,7 +38,7 @@ const FAQ: FC<FAQProps> = ({data, course}) => {
   };
 
   return (
-    <section ref={ref as any} id="faq" className="py-24 lg:py-28 xl:py-32 bg-white relative">
+    <section ref={ref} id="faq" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative">
       <SectionBackground bgImages={bgImages} lazy />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

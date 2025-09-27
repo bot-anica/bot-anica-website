@@ -23,8 +23,8 @@ const PaymentMethods: FC<PaymentMethodsProps> = ({
           className={cn(
             "inline-flex items-center px-3 py-1 rounded-full text-xs md:text-sm font-medium transition-colors cursor-pointer",
             selectedCurrency?.code === currency.code
-              ? "bg-primary-pink/80 text-white"
-              : "bg-primary-pink/30 text-primary-dark hover:bg-primary-pink/50"
+              ? "bg-brand-pink/80 text-text-opposite"
+              : "bg-brand-pink/30 text-text-primary hover:bg-brand-pink/50"
           )}
         >
           <span className="mr-1.5">{currency.symbol}</span>

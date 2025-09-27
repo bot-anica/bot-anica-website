@@ -27,13 +27,13 @@ const SuccessStories: FC<SuccessStoriesProps> = ({data}) => {
   return (
     <section 
       ref={ref}
-      className="py-20 bg-gray-900 relative overflow-hidden"
+      className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative overflow-hidden"
     >
       <SectionBackground bgImages={bgImages} lazy />
       <SuccessStoriesBackground />
       
       <div className="container mx-auto px-4 relative z-10">
-        <SectionHeader variant="dark" title={header.title} subtitle={header.subtitle} isIntersecting={isIntersecting} />
+        <SectionHeader title={header.title} subtitle={header.subtitle} isIntersecting={isIntersecting} />
         
         <SuccessStoriesStats
           stats={stats}

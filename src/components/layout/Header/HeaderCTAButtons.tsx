@@ -8,7 +8,7 @@ interface HeaderCTAButtonsProps {
 
 const HeaderCTAButtons: FC<HeaderCTAButtonsProps> = ({ ctaButtons }) => {
   return (
-    <div className="hidden md:block flex items-center gap-4">
+    <div className="hidden md:flex items-center gap-4">
       {ctaButtons.map((ctaButton) => (
         <Button
           key={ctaButton.text}

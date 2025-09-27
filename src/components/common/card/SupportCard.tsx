@@ -25,13 +25,13 @@ const SupportCard: FC<SupportCardProps> = ({ icon, title, description, linkHref,
   );
 
   return (
-    <div className="bg-white rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-primary-blue/15">
+    <div className="bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue/15">
       <div className={iconWrapperClassName}>
         {icon}
       </div>
       <div>
-        <h4 className='text-sm md:text-base font-bold text-primary-dark mb-1'>{title}</h4>
-        <p className='text-gray-600 text-sm'>{description}</p>
+        <h4 className='text-sm md:text-base font-bold text-text-primary mb-1'>{title}</h4>
+        <p className='text-text-secondary text-sm'>{description}</p>
         <a 
           href={linkHref} 
           className='text-blue-500 hover:underline break-all text-sm'
@@ -39,7 +39,7 @@ const SupportCard: FC<SupportCardProps> = ({ icon, title, description, linkHref,
         >
           {linkText}
         </a>
-        <p className='mt-2 text-xs text-gray-500'>{footerText}</p>
+        <p className='mt-2 text-xs text-text-tertiary'>{footerText}</p>
       </div>
     </div>
   );

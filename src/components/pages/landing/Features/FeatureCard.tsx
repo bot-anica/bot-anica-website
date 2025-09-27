@@ -27,7 +27,7 @@ const FeatureCard: FC<FeatureCardProps> = ({
       whileHover={{y: -8, transition: { duration: 0.3 }}}
       className="group text-center"
     >
-      <div className="relative bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+      <div className="relative bg-bg-primary rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-border-primary">
         {/* Icon */}
         <div className="flex justify-center mb-6">
           <div className={`w-20 h-20 bg-gradient-to-br ${feature.iconColor}33 rounded-2xl flex items-center justify-center`}>
@@ -37,13 +37,13 @@ const FeatureCard: FC<FeatureCardProps> = ({
 
         {/* Content */}
         <div className="space-y-3">
-          <h3 className="text-xl font-bold text-gray-800">
+          <h3 className="text-xl font-bold text-text-primary">
             {feature.title}
           </h3>
-          <p className="text-sm text-gray-500 font-medium">
+          <p className="text-sm text-text-tertiary font-medium">
             {feature.subtitle}
           </p>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-text-secondary leading-relaxed">
             {feature.description}
           </p>
         </div>

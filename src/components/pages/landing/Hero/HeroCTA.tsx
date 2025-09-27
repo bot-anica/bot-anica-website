@@ -10,7 +10,7 @@ interface HeroCTAProps {
   itemVariants: any;
 }
 
-const renderButtonIcon = (iconName: string, color = 'primary-dark') => {
+const renderButtonIcon = (iconName: string, color = 'text-primary') => {
   return <Icon name={iconName} className={`w-6 h-6 text-${color}`} />
 };
 

@@ -26,13 +26,12 @@ const Reviews: FC<ReviewsProps> = ({ data }) => {
   }
 
   return (
-    <section ref={ref} id="reviews" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section ref={ref} id="reviews" className="py-20 bg-bg-primary relative overflow-hidden">
       <SectionBackground bgImages={bgImages} lazy />
       <ReviewsBackground />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          variant="dark"
           title={header.title}
           subtitle={header.subtitle}
           isIntersecting={isIntersecting}
@@ -42,7 +41,6 @@ const Reviews: FC<ReviewsProps> = ({ data }) => {
           <SwiperNavButtons 
             onPrev={handlePrevSlide}
             onNext={handleNextSlide}
-            theme="dark"
             className="justify-end mb-6"
           />
         </div>

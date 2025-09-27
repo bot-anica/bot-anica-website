@@ -17,22 +17,22 @@ const PathToSuccessStep: FC<PathToSuccessStepProps> = ({
 }) => {
   return (
     <motion.div
-      className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="relative bg-bg-primary rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
       initial={animation.initial}
       animate={isIntersecting ? animation.animate : animation.initial}
       transition={animation.transition}
     >
       {/* Step number */}
-      <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+      <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-text-opposite font-bold text-lg shadow-lg">
         {step.id}
       </div>
       
       {/* Step content */}
       <div className="pt-4">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">
+        <h3 className="text-xl font-semibold text-text-primary mb-4">
           {step.title}
         </h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-text-secondary leading-relaxed">
           {step.description}
         </p>
       </div>

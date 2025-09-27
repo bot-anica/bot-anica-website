@@ -46,10 +46,10 @@ export const SuccessStoriesStats: FC<SuccessStoriesStatsProps> = ({
           <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
             {renderIcon(stat.icon, stat.iconColor)}
           </div>
-          <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+          <div className="text-3xl md:text-4xl font-bold text-text-primary mb-2 group-hover:text-accent transition-colors duration-300">
             {stat.number}
           </div>
-          <div className="text-gray-300 text-sm md:text-base">
+          <div className="text-text-secondary text-sm md:text-base">
             {stat.label}
           </div>
         </motion.div>

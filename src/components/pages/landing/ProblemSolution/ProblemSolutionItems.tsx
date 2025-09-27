@@ -32,7 +32,7 @@ const ProblemSolutionItems: FC<ProblemSolutionItemsProps> = ({
       <div className="hidden sm:block">
         <div className="relative">
           {/* Background accent line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent transform -translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-text-opposite-light to-transparent transform -translate-x-1/2"></div>
           
           <div className="space-y-4 lg:space-y-6 xl:space-y-8">
             {items.map((item, index) => {
@@ -47,24 +47,24 @@ const ProblemSolutionItems: FC<ProblemSolutionItemsProps> = ({
                 >
                   {/* Problem side */}
                   <div className="flex-1 text-right">
-                    <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-xl bg-primary-blue/5 border border-primary-blue/30 justify-start">
-                      <span className="line-through text-primary-blue/70 font-medium text-xs md:text-sm lg:text-base xl:text-lg">{item.problem}</span>
-                      <Icon name={item.icon} className="w-5 h-5 text-gray-400" />
+                    <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-xl bg-brand-blue/5 border border-brand-blue/30 justify-start">
+                      <span className="line-through text-brand-blue/70 font-medium text-xs md:text-sm lg:text-base xl:text-lg">{item.problem}</span>
+                      <Icon name={item.icon} className="w-5 h-5 text-brand-blue/60" />
                     </div>
                   </div>
                   
                   {/* Center connector */}
                   <div className="flex-shrink-0 relative">
-                    <div className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 bg-white rounded-full border-2 border-gray-200 flex items-center justify-center">
-                      <div className="w-2 h-2 lg:w-3 lg:h-3 bg-primary-pink rounded-full"></div>
+                    <div className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 bg-bg-primary rounded-full border-2 border-border-primary flex items-center justify-center">
+                      <div className="w-2 h-2 lg:w-3 lg:h-3 bg-brand-pink rounded-full"></div>
                     </div>
                   </div>
 
                   {/* Solution side */}
                   <div className="flex-1 text-left">
-                    <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-xl bg-primary-pink/5 border border-primary-pink/20 justify-end">
-                      <Icon name={item.icon} className="w-5 h-5 text-primary-pink/60" />
-                      <span className="font-normal md:font-medium lg:font-medium text-primary-dark text-xs md:text-sm lg:text-base xl:text-lg">{item.solution}</span>
+                    <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-xl bg-brand-pink/5 border border-brand-pink/20 justify-end">
+                      <Icon name={item.icon} className="w-5 h-5 text-brand-pink/60" />
+                      <span className="font-normal md:font-medium lg:font-medium text-text-primary text-xs md:text-sm lg:text-base xl:text-lg">{item.solution}</span>
                     </div>
                   </div>
                 </motion.div>

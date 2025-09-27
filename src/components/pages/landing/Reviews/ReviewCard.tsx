@@ -32,16 +32,16 @@ const ReviewCard: FC<ReviewCardProps> = ({ review, isIntersecting, index }) => {
       initial="hidden"
       variants={cardVariants}
       animate={isIntersecting ? "visible" : "hidden"}
-      className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 h-full flex flex-col"
+      className="bg-bg-secondary backdrop-blur-sm rounded-2xl p-6 border border-border-primary hover:border-border-hover transition-all duration-300 h-full flex flex-col"
     >
-      <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
+      <div className="flex items-center justify-between mb-4 text-sm text-text-tertiary">
         <div className="flex items-center gap-2">
-          <Youtube className="w-5 h-5 text-red-500" />
-          <span className="font-medium text-gray-300">YouTube</span>
+          <Youtube className="w-5 h-5 text-accent-special" />
+          <span className="font-medium text-text-secondary">YouTube</span>
         </div>
         <span>{formatRelativeTime(review.createdAt)}</span>
       </div>
-      <p className="text-gray-300 text-sm leading-relaxed flex-grow">
+      <p className="text-text-secondary text-sm leading-relaxed flex-grow">
         {review.text}
       </p>
     </motion.div>

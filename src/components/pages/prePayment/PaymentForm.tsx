@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import { Loader2, X } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -60,7 +60,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
 
   return (
     <form onSubmit={formik.handleSubmit} className="flex-1">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-primary-dark mb-4 md:mb-5 lg:mb-6">Данные для оплаты</h2>
+      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-text-primary mb-4 md:mb-5 lg:mb-6">Данные для оплаты</h2>
       <CustomSelect
         id="selectedCurrencyCode"
         label="Валюта оплаты"
@@ -97,7 +97,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
         error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
       />
       {apiError && (
-        <div className="bg-red-100 border border-red-400 test-sm md:text-base text-red-700 px-1.5 py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 rounded relative mb-4" role="alert">
+        <div className="bg-accent-special/25 border border-red-400accent-special test-sm md:text-base text-accent-special-dark px-1.5 py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 rounded relative mb-4" role="alert">
           <strong className="font-medium md:font-semibold lg:font-bold">Ошибка!</strong>
           <span className="inline ml-2">{apiError}</span>
         </div>
@@ -116,7 +116,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
           "Перейти к оплате"
         )}
       </Button>
-      <p className="max-w-sm text-xs text-gray-500 text-center mb-4 md:mb-6 lg:mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
+      <p className="max-w-sm text-xs text-text-tertiary text-center mb-4 md:mb-6 lg:mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
     </form>
   );
 };

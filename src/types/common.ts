@@ -8,6 +8,7 @@ export enum ButtonSize {
     SM = 'sm',
     MD = 'md',
     LG = 'lg',
+    ICON = 'icon',
 }
 export enum ButtonIconPosition {
     LEFT = 'left',

@@ -28,7 +28,7 @@ export const SuccessStoriesCTA: FC<SuccessStoriesCTAProps> = ({
   isIntersecting,
 }) => {
   const renderIcon = (iconName: string, color: string) => {
-    return <Icon name={iconName} className="w-16 h-16" style={{ color: color }} />
+    return <Icon name={iconName} className={`w-16 h-16 text-${color}`} />
   };
 
   return (
@@ -36,7 +36,7 @@ export const SuccessStoriesCTA: FC<SuccessStoriesCTAProps> = ({
       variants={ctaVariants}
       initial="hidden"
       animate={isIntersecting ? "visible" : "hidden"}
-      className="text-center bg-gradient-to-r from-yellow-400/10 to-orange-400/10 rounded-2xl p-8 border border-yellow-400/20"
+      className="text-center bg-gradient-to-r from-brand-pink to-brand-blue rounded-2xl p-8"
     >
       <div className="text-4xl mb-4 flex justify-center">
         {renderIcon(ctaBlock.icon, ctaBlock.iconColor)}
@@ -44,7 +44,7 @@ export const SuccessStoriesCTA: FC<SuccessStoriesCTAProps> = ({
       <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
         {ctaBlock.text}
       </h3>
-      <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
+      <p className="text-white text-lg leading-relaxed max-w-2xl mx-auto">
         {ctaBlock.description}
       </p>
     </motion.div>

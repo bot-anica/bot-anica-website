@@ -41,30 +41,32 @@ export const SuccessStoriesTestimonials: FC<SuccessStoriesTestimonialsProps> = (
           variants={testimonialVariants}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 group"
+          className="flex flex-col bg-bg-hover/50 backdrop-blur-sm rounded-2xl p-6 border border-border-primary hover:border-accent/30 transition-all duration-300 group"
         >
           <div className="flex items-center mb-4">
             <div className="flex-shrink-0 mr-4 group-hover:scale-110 transition-transform duration-300">
               {renderIcon(testimonial.icon, testimonial.iconColor)}
             </div>
             <div>
-              <h4 className="text-white font-semibold text-lg group-hover:text-yellow-400 transition-colors duration-300">
+              <h4 className="text-text-primary font-semibold text-lg group-hover:text-accent transition-colors duration-300">
                 {testimonial.name}
               </h4>
-              <p className="text-gray-400 text-sm">
+              <p className="text-text-secondary text-sm">
                 {testimonial.role}
               </p>
             </div>
           </div>
           
-          <blockquote className="text-gray-300 mb-4 italic leading-relaxed">
-            `&quot;`{testimonial.quote}`&quot;`
-          </blockquote>
-          
-          <div className="bg-gradient-to-r from-yellow-400/10 to-orange-400/10 rounded-lg p-3 border-l-4 border-yellow-400">
-            <p className="text-yellow-400 font-medium text-sm">
-              ✨ {testimonial.achievement}
-            </p>
+          <div className='flex-grow flex flex-col justify-between'>
+            <blockquote className="text-text-secondary mb-4 italic leading-relaxed">
+              `&quot;`{testimonial.quote}`&quot;`
+            </blockquote>
+            
+            <div className="bg-gradient-to-r from-accent/10 to-accent-secondary/10 rounded-lg p-3 border-l-4 border-accent">
+              <p className="text-accent font-medium text-sm">
+                ✨ {testimonial.achievement}
+              </p>
+            </div>
           </div>
         </motion.div>
       ))}

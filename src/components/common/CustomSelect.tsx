@@ -99,13 +99,13 @@ const CustomSelect: FC<CustomSelectProps> = ({
   return (
     <div className="relative mb-4 md:mb-5 lg:mb-6" ref={selectRef}> {/* Added mb-6 for spacing */}
       {label && (
-        <label id={id ? `${id}-label` : undefined} htmlFor={id} className="block text-gray-700 text-xs md:text-sm font-medium mb:font-semibold lg:font-bold md:mb-1 lg:mb-2">
+        <label id={id ? `${id}-label` : undefined} htmlFor={id} className="block text-text-secondary text-xs md:text-sm font-medium mb:font-semibold lg:font-bold md:mb-1 lg:mb-2">
           {label}
         </label>
       )}
       <div
         id={id}
-        className={`appearance-none border ${error ? 'border-red-500' : 'border-primary-blue/15'} rounded w-full py-1.5 px-2 md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
+        className={`appearance-none border ${error ? 'border-accent-special' : 'border-brand-blue/15'} rounded w-full py-1.5 px-2 md:py-2 md:px-3 text-text-secondary leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
         onClick={handleToggle}
         onKeyDown={handleKeyDown as any} // Cast to any to satisfy TS, as KeyboardEvent is not directly assignable
         tabIndex={0} // Make div focusable
@@ -122,7 +122,7 @@ const CustomSelect: FC<CustomSelectProps> = ({
       {isOpen && (
         <div
           role="listbox"
-          className="absolute z-10 mt-1 w-full bg-white border border-primary-blue/15 rounded shadow-lg max-h-60 overflow-y-auto" // Added max-h and overflow
+          className="absolute z-10 mt-1 w-full bg-bg-primary border border-brand-blue/15 rounded shadow-lg max-h-60 overflow-y-auto" // Added max-h and overflow
         >
           {options.map((option, index) => (
             <div
@@ -130,7 +130,7 @@ const CustomSelect: FC<CustomSelectProps> = ({
               id={`${id}-option-${index}`}
               role="option"
               aria-selected={option.value === selectedValue}
-              className={`py-1.5 px-2 md:py-2 md:px-3 cursor-pointer hover:bg-gray-100 ${focusedIndex === index ? 'bg-gray-100' : ''}`}
+              className={`py-1.5 px-2 md:py-2 md:px-3 cursor-pointer hover:bg-bg-secondary ${focusedIndex === index ? 'bg-bg-secondary' : ''}`}
               onClick={() => handleOptionClick(option.value)}
               onMouseDown={(e) => e.preventDefault()} // Prevent blur on click
               tabIndex={-1} // Make options focusable programmatically

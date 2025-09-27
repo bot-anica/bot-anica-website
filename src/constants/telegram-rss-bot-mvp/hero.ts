@@ -22,7 +22,7 @@ export const HERO_CTA: Record<"primary" | "secondary", CTAItem> = {
     buttonVariant: ButtonVariant.PRIMARY,
     buttonSize: ButtonSize.LG,
     buttonIcon: 'ArrowRight',
-    buttonIconColor: 'white',
+    buttonIconColor: 'text-white',
     buttonIconPosition: ButtonIconPosition.RIGHT,
   },
   secondary: {
@@ -31,7 +31,7 @@ export const HERO_CTA: Record<"primary" | "secondary", CTAItem> = {
     buttonVariant: ButtonVariant.SECONDARY,
     buttonSize: ButtonSize.LG,
     buttonIcon: 'Play',
-    buttonIconColor: 'primary-blue/30',
+    buttonIconColor: 'brand-blue/30',
     buttonIconPosition: ButtonIconPosition.LEFT,
   }
 }

@@ -82,5 +82,5 @@ export const SUCCESS_STORIES_CTA_BLOCK: SuccessStoriesCTABlock = {
   text: "Проверено практикой",
   description: "Более 500 студентов уже создали своих ботов и применяют навыки в работе. Присоединяйтесь к сообществу успешных разработчиков!",
   icon: 'Trophy',
-  iconColor: '#EAB308',
+  iconColor: 'text-primary',
 }

@@ -13,7 +13,7 @@ const HeaderNavigation: FC<HeaderNavigationProps> = ({ links }) => {
         <Link
           key={linkItem.link}
           href={linkItem.link}
-          className="text-sm lg:text-base text-gray-700 hover:text-primary-pink transition-colors font-medium flex items-center h-full py-2"
+          className="text-sm lg:text-base text-text-primary hover:text-brand-pink transition-colors font-medium flex items-center h-full py-2"
         >
           {linkItem.text}
         </Link>

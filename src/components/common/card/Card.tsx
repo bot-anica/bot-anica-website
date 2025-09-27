@@ -29,12 +29,12 @@ const Card: React.FC<CardProps> = ({
     "relative overflow-hidden rounded-2xl transition-all duration-300 border-box";
 
   const variantClasses = {
-    default: "bg-white border border-primary-blue/15",
-    elevated: "bg-white border-2 border-primary-pink/80",
-    outlined: "bg-transparent border-2 border-primary-pink/20",
+    default: "bg-bg-primary border border-brand-blue/15",
+    elevated: "bg-bg-primary border-2 border-brand-pink/80",
+    outlined: "bg-transparent border-2 border-brand-pink/20",
     gradient:
-      "bg-gradient-to-br from-primary-pink/5 via-white to-primary-pink/5 border border-primary-pink/15",
-    popular: "bg-white border-2 border-primary-pink/80",
+      "bg-gradient-to-br from-brand-pink/5 via-bg-primary to-brand-pink/5 border border-brand-pink/15",
+    popular: "bg-bg-primary border-2 border-brand-pink/80",
   };
 
   const paddingClasses = {
@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({
   };
 
   const interactiveClasses = interactive
-    ? "hover:shadow-md hover:border-primary-pink/30 cursor-pointer"
+    ? "hover:shadow-md hover:border-brand-pink/30 cursor-pointer"
     : "";
 
   const classes = cn(

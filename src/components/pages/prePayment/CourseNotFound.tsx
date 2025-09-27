@@ -6,7 +6,7 @@ interface CourseNotFoundProps {
 
 const CourseNotFound: FC<CourseNotFoundProps> = ({ message }) => (
   <section className="py-24 lg:py-28 xl:py-32 relative overflow-hidden flex justify-center items-center min-h-screen">
-    <p className="text-red-500 text-lg">{message || 'Course not found.'}</p>
+    <p className="text-accent-special text-lg">{message || 'Course not found.'}</p>
   </section>
 );
 

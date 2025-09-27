@@ -36,9 +36,9 @@ const ProblemSolutionVertical: FC<ProblemSolutionVerticalProps> = ({
             >
               {/* Problem block */}
               <div className="w-full max-w-xs">
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-blue/5 border border-primary-blue/30">
-                  <Icon name={item.icon} className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                  <span className="line-through text-primary-blue/70 font-medium text-sm flex-1">
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-blue/5 border border-brand-blue/30">
+                  <Icon name={item.icon} className="w-4 h-4 text-text-tertiary flex-shrink-0" />
+                  <span className="line-through text-brand-blue/70 font-medium text-sm flex-1">
                     {item.problem}
                   </span>
                 </div>
@@ -46,9 +46,9 @@ const ProblemSolutionVertical: FC<ProblemSolutionVerticalProps> = ({
 
               {/* Solution block */}
               <div className="w-full max-w-xs">
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-pink/5 border border-primary-pink/20">
-                  <Icon name={item.icon} className="w-4 h-4 text-primary-pink/60 flex-shrink-0" />
-                  <span className="font-medium text-primary-dark text-sm flex-1">
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-pink/5 border border-brand-pink/20">
+                  <Icon name={item.icon} className="w-4 h-4 text-brand-pink/60 flex-shrink-0" />
+                  <span className="font-medium text-text-primary text-sm flex-1">
                     {item.solution}
                   </span>
                 </div>

@@ -15,7 +15,7 @@ interface ProblemSolutionProps {
 }
 
 const ProblemSolution: FC<ProblemSolutionProps> = ({data}) => {
-  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean];
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { itemVariants, ctaVariants } = useProblemSolutionAnimations();
 
   const {header, items, ctaBlock, bgImages} = data
@@ -25,7 +25,7 @@ const ProblemSolution: FC<ProblemSolutionProps> = ({data}) => {
   }
 
   return (
-    <section ref={ref as any} className="py-24 lg:py-28 xl:py-32 bg-white relative overflow-hidden">
+    <section ref={ref} className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative overflow-hidden">
       <SectionBackground bgImages={bgImages} lazy />
       
       <SectionSplitter />

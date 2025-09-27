@@ -4,30 +4,133 @@
 @import "tailwindcss";
 
 /* CSS-first конфигурация с @theme */
-@theme {
-  /* Цвета */
-  --color-primary-white: #ffffff;
-  --color-primary-pink: #DF5FFF;
-  --color-primary-blue: #00517C;
-  --color-primary-border: #638EF0;
-  --color-primary-dark: #151C31;
-  --color-primary-purple: #5D52A0;
-  --color-primary-purple-dark: #4A4280;
-  
-  /* Темная тема */
-  --color-dark-bg: #282A36;
-  --color-dark-code: #1E1E1E;
-  --color-dark-accent: #8BE9FD;
-  --color-dark-green: #50FA7B;
-  --color-dark-orange: #FF9900;
-  
+@theme inline {
+  /* General-purpose Theme Colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-opposite: var(--bg-opposite);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-opposite: var(--text-opposite);
+  --color-text-opposite-light: var(--text-opposite-light);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-special: var(--accent-special);
+  --color-accent-special-dark: var(--accent-special-dark);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-hover: var(--border-hover);
+  --color-skeleton-bg: var(--skeleton-bg);
+
+  /* Brand Colors (can be used in gradients) */
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-purple: var(--brand-purple);
+
+  /* Success Colors */
+  --color-bg-result-badge: var(--bg-result-badge);
+  --color-border-result-badge: var(--border-result-badge);
+  --color-icon-result-badge: var(--icon-result-badge);
+  --color-text-result-badge: var(--text-result-badge);
+
+  /* FAQ Section Colors */
+  --color-faq-question-text: var(--faq-question-text);
+  --color-faq-arrow-icon: var(--faq-arrow-icon);
+  --color-faq-answer-text: var(--faq-answer-text);
+
   /* Шрифты */
   --font-family-sans: "Inter", system-ui, sans-serif;
   --font-family-mono: "JetBrains Mono", monospace;
-  
+
   /* Анимации */
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+:root {
+  /* Raw Values: Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-hover: #f3f4f6;
+  --bg-opposite: #151C31;
+
+  --text-primary: #151C31;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --text-opposite: #ffffff;
+  --text-opposite-light: #d1d5dc;
+  
+  --accent: #5D52A0;
+  --accent-secondary: oklch(75% 0.183 55.934);
+  --accent-special: #ef4444;
+  --accent-special-dark: rgb(105, 10, 10);
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --border-hover: #9ca3af;
+  --skeleton-bg: #e5e7eb;
+
+  /* Brand */
+  --brand-pink: #DF5FFF;
+  --brand-blue: #00517C;
+  --brand-purple: #5D52A0;
+
+  /* Success Colors */
+  --bg-result-badge: #f0fdf4;
+  --border-result-badge: #a1f8bf;
+  --icon-result-badge: #16a34a;
+  --text-result-badge: #15803d;
+
+  /* FAQ Section Colors */
+  --faq-question-text: #1d293d;
+  --faq-arrow-icon: #6a7282;
+  --faq-answer-text: #45556c;
+}
+
+.dark {
+  /* Raw Values: Dark Theme */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-hover: #374151;
+  --bg-opposite: #ffffff;
+
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: rgb(125, 125, 125);
+  --text-opposite: #111827;
+  --text-opposite-light: #1f2937;
+
+  --accent: #facc15;
+  --accent-secondary: oklch(75% 0.183 55.934);
+  --accent-special: #ef4444;
+  --accent-special-dark: rgb(105, 10, 10);
+  --border-primary: #374151;
+  --border-secondary: #4b5563;
+  --border-hover: rgba(250, 204, 21, 0.3);
+  --skeleton-bg: #374151;
+
+  /* Brand */
+  --brand-pink: #DF5FFF;
+  --brand-blue: #00517C;
+  --brand-purple: #5D52A0;
+
+  /* Success Colors */
+  --bg-result-badge: #052e16;
+  --border-result-badge: #064e3b;
+  --icon-result-badge: #4ade80;
+  --text-result-badge: #86efac;
+
+  /* FAQ Section Colors */
+  --faq-question-text: #ffffff;
+  --faq-arrow-icon: #d1d5db;
+  --faq-answer-text: #d1d5db;
+}
+
+.red {
+  /* This theme is not fully implemented with the new system yet */
+  --brand-pink: #e41a1a;
+  --brand-blue: #efe523;
 }
 
 /* Базовые стили */
@@ -40,6 +143,8 @@
     font-family: var(--font-family-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
   }
 
   * {
@@ -116,11 +221,18 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-pink to-primary-blue text-white hover:shadow-lg transform hover:scale-105;
+    @apply text-white hover:shadow-lg transform hover:scale-105;
+    background-image: linear-gradient(to right, var(--brand-pink), var(--brand-blue));
   }
   
   .btn-secondary {
-    @apply bg-white text-primary-dark border border-gray-300 hover:bg-gray-50 hover:border-gray-400;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-secondary);
+  }
+  .btn-secondary:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--border-hover);
   }
 
   /* Button sizes */
@@ -166,23 +278,30 @@
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300;
+    @apply rounded-xl shadow-lg p-6 border hover:shadow-xl transition-all duration-300;
+    background-color: var(--bg-secondary);
+    border-color: var(--border-primary);
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-r from-primary-pink to-primary-blue;
+    background-image: linear-gradient(to right, var(--brand-pink), var(--brand-blue));
   }
   
   .code-block {
-    @apply bg-primary-dark text-white p-4 rounded-lg font-mono text-sm overflow-x-auto;
+    @apply p-4 rounded-lg font-mono text-sm overflow-x-auto;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
   }
 
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply backdrop-blur-md border;
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-primary);
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-pink to-primary-blue bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--brand-pink), var(--brand-blue));
+    @apply bg-clip-text text-transparent;
   }
 
   /* Responsive container classes */

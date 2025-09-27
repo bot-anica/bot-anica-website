@@ -19,6 +19,8 @@ import PricingPlans from '@/components/pages/landing/PricingPlans';
 import ProblemSolution from '@/components/pages/landing/ProblemSolution';
 import WhySpecial from '@/components/pages/landing/WhySpecial';
 import CourseNotFound from '@/components/pages/course/CourseNotFound';
+import { SuccessStoriesService } from '@/services/SuccessStoriesService';
+import SuccessStories from '@/components/pages/landing/SuccessStories';
 
 export async function generateMetadata({ params }: { params: Promise<{ courseUrlParam: string }> }): Promise<Metadata> {
   try {
@@ -63,6 +65,7 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     whySpecialData,
     courseProgramData,
     reviewsData,
+    successStoriesData,
     pricingData,
     faqData,
   ] = await Promise.all([
@@ -70,8 +73,8 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     ProblemSolutionService.getData(courseUrlParam),
     WhySpecialService.getData(courseUrlParam),
     CourseProgramService.getData(courseUrlParam),
-    // SuccessStoriesService.getData(courseUrlParam),
     ReviewsService.getData(courseUrlParam),
+    SuccessStoriesService.getData(courseUrlParam),
     PricingService.getData(courseUrlParam),
     FaqService.getData(courseUrlParam),
   ]);
@@ -82,8 +85,8 @@ export default async function LandingPage({ params }: { params: Promise<{ course
       <ProblemSolution data={problemSolutionData} />
       <WhySpecial data={whySpecialData} />
       <CourseProgram data={courseProgramData} />
-      {/* <SuccessStories data={successStoriesData} /> */}
       <Reviews data={reviewsData} />
+      <SuccessStories data={successStoriesData} />
       <PricingPlans data={pricingData} course={course} />
       <FAQ data={faqData} course={course} />
     </Suspense>

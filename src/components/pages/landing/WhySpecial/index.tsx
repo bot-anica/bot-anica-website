@@ -32,7 +32,7 @@ const WhySpecial: FC<WhySpecialProps> = ({data}) => {
   const currentPoint = whySpecialPoints[activePoint];
 
   return (
-    <section ref={ref as any} className="py-24 lg:py-28 xl:py-32 bg-white relative overflow-hidden">
+    <section ref={ref} className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative overflow-hidden">
       <SectionBackground bgImages={bgImages} lazy />
       <SectionSplitter />
 

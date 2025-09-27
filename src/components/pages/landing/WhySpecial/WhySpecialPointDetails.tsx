@@ -29,7 +29,7 @@ const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirs
       initial={{ opacity: 0, x: 20 }}
       animate={isIntersecting ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className={`bg-white rounded-2xl ${getBorerRadiusDependOnSelectedPoint()} lg:rounded-2xl p-8 transition-all duration-300 border border-gray-300 hover:border-pink-300 h-full flex flex-col`}
+      className={`bg-bg-primary rounded-2xl ${getBorerRadiusDependOnSelectedPoint()} lg:rounded-2xl p-8 transition-all duration-300 border border-border-primary hover:border-brand-pink/30 h-full flex flex-col`}
     >
       <WhySpecialPointContent point={point} />
     </motion.div>

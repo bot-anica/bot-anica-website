@@ -29,7 +29,7 @@ const ProblemSolutionCTA: FC<ProblemSolutionCTAProps> = ({
       variants={ctaVariants}
       className="text-center"
     >
-      <div className="bg-gradient-to-r from-primary-pink to-primary-blue rounded-xl p-3 pb-4 md:p-4 lg:p-5 xl:p-6 text-white">
+      <div className="bg-gradient-to-r from-brand-pink to-brand-blue rounded-xl p-3 pb-4 md:p-4 lg:p-5 xl:p-6 text-white">
         <div className="flex items-center justify-center gap-3 mb-3">
           <Lightbulb className="w-6 h-6" />
           <h3 className="text-lg font-bold">{data.title}</h3>

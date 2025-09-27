@@ -10,6 +10,7 @@ import HeaderCTAButtons from './HeaderCTAButtons';
 import { useHeader } from '../../../hooks/useHeader';
 import HeaderNavigation from './HeaderNavigation';
 import HeaderMobileMenuButton from './HeaderMobileMenuButton';
+import { ModeToggle } from '../../ui/mode-toggle';
 import { usePathname } from 'next/navigation';
 
 const Header: FC = () => {
@@ -55,8 +56,8 @@ const Header: FC = () => {
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
         isScrolled || isOpen
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : `${isPrepaymentPage ? 'bg-white/95' : 'bg-white/0'} backdrop-blur-none`
+          ? 'bg-bg-primary/95 backdrop-blur-md shadow-lg' 
+          : `${isPrepaymentPage ? 'bg-bg-primary/95' : 'bg-bg-primary/0'} backdrop-blur-none`
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -68,12 +69,16 @@ const Header: FC = () => {
           
           {/* Desktop Navigation */}
           {ctaButtons && <HeaderNavigation links={navigationLinks} />}
+
+          <div className="flex items-center gap-4">
+            <ModeToggle />
           
-          {/* CTA Button */}
-          {navigationLinks && <HeaderCTAButtons ctaButtons={ctaButtons} />}
-          
-          {/* Mobile menu button */}
-          <HeaderMobileMenuButton isOpen={isOpen} onClick={handleClick} />
+            {/* CTA Button */}
+            {navigationLinks && <HeaderCTAButtons ctaButtons={ctaButtons} />}
+            
+            {/* Mobile menu button */}
+            <HeaderMobileMenuButton isOpen={isOpen} onClick={handleClick} />
+          </div>
         </div>
         
         {/* Mobile Navigation */}

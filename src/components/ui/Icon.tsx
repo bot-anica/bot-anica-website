@@ -35,7 +35,9 @@ import {
   MailCheck,
   FileDown,
   Users,
-  Code
+  Code,
+  Sun,
+  Moon
 } from "lucide-react";
 
 const iconMap: Record<string, ComponentType < any >> = {
@@ -69,7 +71,9 @@ const iconMap: Record<string, ComponentType < any >> = {
   MailCheck,
   FileDown,
   Users,
-  Code
+  Code,
+  Sun,
+  Moon
 };
 
 interface IconProps {

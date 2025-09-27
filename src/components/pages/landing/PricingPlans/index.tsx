@@ -54,7 +54,7 @@ const PricingPlans: FC<CourseProgramProps> = ({data, course}) => {
   }
 
   return (
-    <section ref={ref as any} id="pricing" className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-gradient-to-br from-primary-pink/15 to-primary-blue/5">
+    <section ref={ref} id="pricing" className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-gradient-to-br from-brand-pink/15 to-brand-blue/5">
       <SectionBackground bgImages={bgImages} lazy />
       <BackgroundElements />
 

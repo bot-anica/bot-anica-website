@@ -24,7 +24,7 @@ const CourseProgram: FC<CourseProgramProps> = ({data}) => {
   }
 
   return (
-    <section ref={ref} id="course" className="bg-white py-24 lg:py-28 xl:py-32 relative w-full overflow-hidden">
+    <section ref={ref} id="course" className="bg-bg-primary py-24 lg:py-28 xl:py-32 relative w-full overflow-hidden">
       <SectionBackground bgImages={bgImages} lazy />
       <SectionSplitter bottom={false} />
 
@@ -39,8 +39,8 @@ const CourseProgram: FC<CourseProgramProps> = ({data}) => {
         />
 
         <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 md:gap-4 mb-4 md:mb-6">
-          <div className="inline-flex items-center px-3 py-1 bg-primary-blue/5 rounded-full border border-primary-blue/20">
-            <span className="text-xs md:text-sm md:font-medium text-primary-blue">
+          <div className="inline-flex items-center px-3 py-1 bg-brand-blue/5 rounded-full border border-brand-blue/20">
+            <span className="text-xs md:text-sm md:font-medium text-brand-blue">
               Каждый урок заканчивается практическим результатом
             </span>
           </div>
@@ -48,7 +48,6 @@ const CourseProgram: FC<CourseProgramProps> = ({data}) => {
           <SwiperNavButtons 
             onPrev={handlePrevSlide}
             onNext={handleNextSlide}
-            theme="light"
           />
         </div>
 
