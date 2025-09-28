@@ -1,5 +1,15 @@
 import { motion } from 'framer-motion';
 
+interface BackgroundCircleProps {
+  position?: 'top-left' | 'top-right' | 'top-center' | 'bottom-left' | 'bottom-right' | 'bottom-center' | 'center-left' | 'center-right' | 'center';
+  size?: 'small' | 'medium' | 'large' | 'xl';
+  color?: 'pink' | 'purple' | 'blue' | 'pinkPurple' | 'purplePink' | 'white' | 'gray';
+  opacity?: number; // 0 to 1
+  animation?: 'float' | 'pulse' | 'bounce' | 'rotate' | 'fade';
+  delay?: number; // in seconds
+  className?: string;
+}
+
 const BackgroundCircle = ({
   position = 'top-left',
   size = 'medium',
@@ -8,7 +18,7 @@ const BackgroundCircle = ({
   animation = 'float',
   delay = 0,
   className = ''
-}) => {
+}: BackgroundCircleProps) => {
   const getPositionClasses = () => {
     switch (position) {
       case 'top-left': return 'top-4 left-4 sm:top-10 sm:left-10';

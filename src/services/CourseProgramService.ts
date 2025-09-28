@@ -1,4 +1,5 @@
-import { CourseProgramData, Lesson } from '../types/sections';
+import { SlidesPerView } from '@/types/common';
+import { Lesson, CourseProgramData } from '@/types/sections';
 import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
 
@@ -10,23 +11,17 @@ export class CourseProgramService {
 
   static getSwiperBreakpoints() {
     return {
-      '(min-width: 320px)': {
-        slides: {
-          perView: 'auto',
-          spacing: 16,
-        },
+      320: {
+        slidesPerView: "auto" as SlidesPerView,
+        spaceBetween: 16,
       },
-      '(min-width: 640px)': {
-        slides: {
-          perView: 'auto',
-          spacing: 20,
-        },
+      640: {
+        slidesPerView: "auto" as SlidesPerView,
+        spaceBetween: 20,
       },
-      '(min-width: 1024px)': {
-        slides: {
-          perView: 'auto',
-          spacing: 24,
-        },
+      1024: {
+        slidesPerView: "auto" as SlidesPerView,
+        spaceBetween: 24,
       },
     };
   }

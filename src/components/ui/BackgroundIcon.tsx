@@ -1,6 +1,17 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Star, Zap, Heart, Circle, Cloud, Moon, Sun, Rocket } from 'lucide-react';
 
+interface BackgroundIconProps {
+  icon?: 'sparkles' | 'star' | 'zap' | 'heart' | 'rocket' | 'circle' | 'cloud' | 'moon' | 'sun';
+  position?: 'top-left' | 'top-right' | 'top-center' | 'bottom-left' | 'bottom-right' | 'bottom-center' | 'center-left' | 'center-right' | 'center';
+  size?: number; // in pixels
+  color?: 'primary-pink' | 'primary-blue' | 'gray' | 'white' | 'purple' | 'blue';
+  opacity?: number; // 0 to 1
+  animation?: 'float' | 'spin' | 'bounce' | 'wave' | 'pulse';
+  delay?: number; // in seconds
+  className?: string;
+}
+
 const BackgroundIcon = ({
   icon = 'sparkles',
   position = 'top-left',
@@ -10,7 +21,7 @@ const BackgroundIcon = ({
   animation = 'float',
   delay = 0,
   className = ''
-}) => {
+}: BackgroundIconProps) => {
   const getIconComponent = () => {
     const icons = {
       sparkles: Sparkles,

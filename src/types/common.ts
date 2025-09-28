@@ -14,3 +14,5 @@ export enum ButtonIconPosition {
     LEFT = 'left',
     RIGHT = 'right',
 }
+
+export type SlidesPerView = number | "auto" | undefined;

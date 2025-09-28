@@ -1,4 +1,4 @@
-import { Feature, FeaturesSectionData } from '../types/sections';
+import { Feature, FeaturesData } from '../types/sections';
 import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
 
@@ -8,7 +8,7 @@ export class FeaturesService {
     return FEATURES;
   }
 
-  static async getData(courseUrlParam: string): Promise<FeaturesSectionData> {
+  static async getData(courseUrlParam: string): Promise<FeaturesData> {
     const header = await SectionHeadersService.getHeader(courseUrlParam, 'features');
     const features = await FeaturesService.getAllFeatures(courseUrlParam);
     const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'features');

@@ -10,7 +10,7 @@ const FeaturesBackground: FC = () => {
         size="medium" 
         color="white" 
         opacity={0.75} 
-        animation="breathe" 
+        animation="float" 
         delay={0} 
       />
       <BackgroundCircle 
