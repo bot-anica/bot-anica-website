@@ -14,7 +14,7 @@ const FooterNavigation: FC<FooterNavigationProps> = ({ links }) => {
         <Link
           key={linkItem.link}
           href={linkItem.link}
-          className="text-text-opposite-light hover:text-text-opposite transition-colors duration-200"
+          className="text-text-secondary hover:text-text-primary transition-colors duration-200"
         >
           {linkItem.text}
         </Link>

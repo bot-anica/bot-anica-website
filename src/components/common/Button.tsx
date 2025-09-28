@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   
   const variantClasses = {
     primary: 'bg-gradient-to-r from-brand-pink to-brand-blue text-white hover:scale-105 focus:ring-brand-pink',
-    secondary: `bg-bg-primary text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-blue/30'} hover:bg-brand-blue/5 focus:ring-brand-blue box-border`,
+    secondary: `bg-bg-primary text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-blue-light/30'} hover:bg-brand-blue-light/5 focus:ring-brand-blue-light box-border`,
     outline: `bg-transparent text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-pink'} hover:bg-brand-pink hover:text-text-opposite focus:ring-brand-pink`,
     ghost: 'bg-transparent text-foreground hover:bg-brand-pink/10 focus:ring-accent'
   };

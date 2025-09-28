@@ -15,7 +15,7 @@ const StatsSection: FC<StatsSectionProps> = ({ stats, isIntersecting }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: 0.8 }}
-      className="bg-gradient-to-br from-brand-pink/5 via-brand-blue/5 to-brand-pink/5 rounded-2xl lg:rounded-3xl p-6 md:p-8 lg:p-10 border border-brand-pink/20"
+      className="bg-gradient-to-br from-brand-pink/5 via-brand-blue-light/5 to-brand-pink/5 rounded-2xl lg:rounded-3xl p-6 md:p-8 lg:p-10 border border-brand-pink/20"
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map((stat, index) => (
@@ -23,7 +23,7 @@ const StatsSection: FC<StatsSectionProps> = ({ stats, isIntersecting }) => {
             key={index} 
             className="text-center group"
           >
-            <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-brand-pink to-brand-blue bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-brand-pink to-brand-blue-light bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">
               {stat.number}
             </div>
             <div className="text-text-secondary font-semibold text-sm lg:text-base leading-tight">

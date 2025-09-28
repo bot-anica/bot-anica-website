@@ -47,8 +47,8 @@ const CourseProgram: FC<CourseProgramProps> = ({data, showSectionSplitter}) => {
         />
 
         <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 md:gap-4 mb-4 md:mb-6">
-          <div className="inline-flex items-center px-3 py-1 bg-brand-blue/5 rounded-full border border-brand-blue/20">
-            <span className="text-xs md:text-sm md:font-medium text-brand-blue">
+          <div className="inline-flex items-center px-3 py-1 bg-brand-blue-light/5 rounded-full border border-brand-blue-light/20">
+            <span className="text-xs md:text-sm md:font-medium text-brand-blue-light">
               Каждый урок заканчивается практическим результатом
             </span>
           </div>

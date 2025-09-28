@@ -1,4 +1,4 @@
-import { Statistic, SuccessStoriesCTABlock, SuccessStoriesData, Testimonial } from '../types/sections';
+import { SectionBottomCTA, Statistic, SuccessStoriesData, Testimonial } from '../types/sections';
 import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
 
@@ -30,7 +30,7 @@ export class SuccessStoriesService {
     return mod ? mod.TESTIMONIALS : null;
   }
 
-  static async getCTABlock(courseUrlParam: string): Promise<SuccessStoriesCTABlock | null> {
+  static async getCTABlock(courseUrlParam: string): Promise<SectionBottomCTA | null> {
     const mod = await this.loadModule(courseUrlParam);
     return mod ? mod.SUCCESS_STORIES_CTA_BLOCK : null;
   }

@@ -1,4 +1,4 @@
-import { ProblemSolutionCTABlock, ProblemSolutionData, ProblemSolutionItem } from '../types/sections';
+import { ProblemSolutionData, ProblemSolutionItem, SectionBottomCTA } from '../types/sections';
 import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
 
@@ -8,7 +8,7 @@ export class ProblemSolutionService {
     return PROBLEM_SOLUTION_ITEMS;
   }
 
-  static async getProblemSolutionCTABlock(courseUrlParam: string): Promise<ProblemSolutionCTABlock> {
+  static async getProblemSolutionCTABlock(courseUrlParam: string): Promise<SectionBottomCTA> {
     const { PROBLEM_SOLUTION_CTA_BLOCK } = await import(`@/constants/${courseUrlParam}/problemSolution`);
     return PROBLEM_SOLUTION_CTA_BLOCK;
   }

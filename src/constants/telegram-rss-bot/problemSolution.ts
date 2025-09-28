@@ -1,5 +1,4 @@
-import { ProblemSolutionItem, ProblemSolutionCTABlock } from '@/types/sections';
-import { ButtonVariant, ButtonSize, ButtonIconPosition } from "@/types/common"
+import { ProblemSolutionItem, SectionBottomCTA } from '@/types/sections';
 
 export const PROBLEM_SOLUTION_ITEMS: ProblemSolutionItem[] = [
   {
@@ -24,15 +23,9 @@ export const PROBLEM_SOLUTION_ITEMS: ProblemSolutionItem[] = [
   }
 ]
 
-export const PROBLEM_SOLUTION_CTA_BLOCK: ProblemSolutionCTABlock = {
-  title: "Готовы решить эти проблемы?",
-  subtitle: "Присоединяйтесь к курсу и создайте профессионального Telegram-бота",
-  cta: {
-    text: "Начать обучение",
-    link: "#pricing",
-    buttonVariant: ButtonVariant.SECONDARY,
-    buttonSize: ButtonSize.SM,
-    buttonIcon: 'ArrowRight',
-    buttonIconPosition: ButtonIconPosition.RIGHT,
-  }
+export const PROBLEM_SOLUTION_CTA_BLOCK: SectionBottomCTA = {
+  text: "Готовы исправить это?",
+  description: "Присоединяйтесь к курсу и создайте профессионального Telegram-бота",
+  icon: 'Lightbulb',
+  iconColor: 'white',
 }

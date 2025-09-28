@@ -37,7 +37,8 @@ import {
   Users,
   Code,
   Sun,
-  Moon
+  Moon,
+  Lightbulb
 } from "lucide-react";
 
 const iconMap: Record<string, ComponentType < any >> = {
@@ -73,7 +74,8 @@ const iconMap: Record<string, ComponentType < any >> = {
   Users,
   Code,
   Sun,
-  Moon
+  Moon,
+  Lightbulb
 };
 
 interface IconProps {
@@ -88,8 +90,7 @@ const Icon: FC<IconProps> = ({ name, ...props }) => {
     return null; // Or return a default icon
   }
 
-  return <IconComponent { ...props
-  } />;
+  return <IconComponent { ...props } />;
 };
 
 export default Icon;

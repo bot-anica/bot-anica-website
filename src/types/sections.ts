@@ -128,16 +128,10 @@ export interface ProblemSolutionItem {
   icon: any;
 }
 
-export interface ProblemSolutionCTABlock {
-  title: string;
-  subtitle: string;
-  cta: CTAItem;
-}
-
 export interface ProblemSolutionData {
   header: SectionHeaderProps;
   items: ProblemSolutionItem[];
-  ctaBlock: ProblemSolutionCTABlock;
+  ctaBlock: SectionBottomCTA;
   bgImages: PartialSectionBGImagesProps;
 }
 
@@ -157,7 +151,7 @@ export interface Testimonial {
   achievement: string;
 }
 
-export interface SuccessStoriesCTABlock {
+export interface SectionBottomCTA {
   text: string;
   description: string;
   icon: any;
@@ -168,7 +162,7 @@ export interface SuccessStoriesData {
   header: SectionHeaderProps;
   stats: Statistic[];
   testimonials: Testimonial[];
-  ctaBlock: SuccessStoriesCTABlock;
+  ctaBlock: SectionBottomCTA;
   bgImages: PartialSectionBGImagesProps;
 }
 

@@ -1,4 +1,4 @@
-import { Statistic, Testimonial, SuccessStoriesCTABlock } from '@/types/sections';
+import { Statistic, Testimonial, SectionBottomCTA } from '@/types/sections';
 
 export const STATISTIC: Statistic[] = [
   {
@@ -78,9 +78,9 @@ export const TESTIMONIALS: Testimonial[] = [
   }
 ]
 
-export const SUCCESS_STORIES_CTA_BLOCK: SuccessStoriesCTABlock = {
+export const SUCCESS_STORIES_CTA_BLOCK: SectionBottomCTA = {
   text: "Доступно для начинающих",
   description: "Более 120 студентов уже создали своих первых ботов и сделали шаг в программирование. Присоединяйтесь к сообществу начинающих разработчиков!",
   icon: 'Trophy',
-  iconColor: 'text-primary',
+  iconColor: 'white',
 }

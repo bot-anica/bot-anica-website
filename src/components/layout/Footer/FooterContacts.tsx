@@ -25,7 +25,7 @@ const FooterContacts: FC = () => {
         href="https://github.com/bot-anica"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-text-opposite-light hover:text-text-opposite transition-colors duration-200"
+        className="text-text-secondary hover:text-text-primary transition-colors duration-200"
         aria-label="GitHub"
       >
         <Github size={26} />
@@ -34,7 +34,7 @@ const FooterContacts: FC = () => {
         href="https://t.me/callback_messanger_bot"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-text-opposite-light hover:text-text-opposite transition-colors duration-200"
+        className="text-text-secondary hover:text-text-primary transition-colors duration-200"
         aria-label="Telegram"
       >
         <Send size={26} />
@@ -43,7 +43,7 @@ const FooterContacts: FC = () => {
         href="mailto:bot.anica.course@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-text-opposite-light hover:text-text-opposite transition-colors duration-200"
+        className="text-text-secondary hover:text-text-primary transition-colors duration-200"
         aria-label="Email"
         onClick={handleMailClick}
       >

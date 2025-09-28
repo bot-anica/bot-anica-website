@@ -4,9 +4,8 @@ import type { FC } from 'react';
 
 import { SuccessStoriesStats } from './SuccessStoriesStats';
 import { SuccessStoriesTestimonials } from './SuccessStoriesTestimonials';
-import { SuccessStoriesCTA } from './SuccessStoriesCTA';
 
-import { SectionBackground, SectionHeader, SectionSplitter } from '@/components/common';
+import { SectionBackground, SectionBottomCTA, SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { SuccessStoriesData } from '@/types/sections';
 
@@ -44,8 +43,8 @@ const SuccessStories: FC<SuccessStoriesProps> = ({data}) => {
           isIntersecting={isIntersecting}
         />
         
-        <SuccessStoriesCTA
-          ctaBlock={ctaBlock}
+        <SectionBottomCTA
+          data={ctaBlock}
           isIntersecting={isIntersecting}
         />
       </div>

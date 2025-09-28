@@ -47,9 +47,9 @@ const ProblemSolutionItems: FC<ProblemSolutionItemsProps> = ({
                 >
                   {/* Problem side */}
                   <div className="flex-1 text-right">
-                    <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-xl bg-brand-blue/5 border border-brand-blue/30 justify-start">
-                      <span className="line-through text-brand-blue/70 font-medium text-xs md:text-sm lg:text-base xl:text-lg">{item.problem}</span>
-                      <Icon name={item.icon} className="w-5 h-5 text-brand-blue/60" />
+                    <div className="inline-flex items-center gap-3 px-4 py-2 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-xl bg-brand-blue-light/5 border border-brand-blue-light/30 justify-start">
+                      <span className="line-through text-brand-blue-light/70 font-medium text-xs md:text-sm lg:text-base xl:text-lg">{item.problem}</span>
+                      <Icon name={item.icon} className="w-5 h-5 text-brand-blue-light/60" />
                     </div>
                   </div>
                   

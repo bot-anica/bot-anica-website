@@ -3,9 +3,8 @@
 import type { FC } from 'react';
 
 import ProblemSolutionItems from './ProblemSolutionItems';
-import ProblemSolutionCTA from './ProblemSolutionCTA';
 
-import { SectionBackground, SectionSplitter, SectionHeader } from '@/components/common';
+import { SectionBackground, SectionSplitter, SectionHeader, SectionBottomCTA } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useProblemSolutionAnimations } from '@/hooks/useProblemSolutionAnimations';
 import { ProblemSolutionData } from '@/types/sections';
@@ -16,7 +15,7 @@ interface ProblemSolutionProps {
 
 const ProblemSolution: FC<ProblemSolutionProps> = ({data}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
-  const { itemVariants, ctaVariants } = useProblemSolutionAnimations();
+  const { itemVariants } = useProblemSolutionAnimations();
 
   const {header, items, ctaBlock, bgImages} = data
 
@@ -39,11 +38,7 @@ const ProblemSolution: FC<ProblemSolutionProps> = ({data}) => {
           itemVariants={itemVariants}
         />
         
-        <ProblemSolutionCTA 
-          data={ctaBlock}
-          isIntersecting={isIntersecting}
-          ctaVariants={ctaVariants}
-        />
+        <SectionBottomCTA data={ctaBlock} isIntersecting={isIntersecting} />
       </div>
     </section>
   );

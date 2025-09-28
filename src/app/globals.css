@@ -27,6 +27,7 @@
   /* Brand Colors (can be used in gradients) */
   --color-brand-pink: var(--brand-pink);
   --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-light: var(--brand-blue-light);
   --color-brand-purple: var(--brand-purple);
 
   /* Success Colors */
@@ -39,6 +40,13 @@
   --color-faq-question-text: var(--faq-question-text);
   --color-faq-arrow-icon: var(--faq-arrow-icon);
   --color-faq-answer-text: var(--faq-answer-text);
+
+  /* Success Stories Section Colors */
+  --color-testimonial-bg: var(--testimonial-bg);
+  --color-achievement-border-color: var(--achievement-border-color);
+  --color-achievement-bg-color: var(--achievement-bg-color);
+  --color-achievement-bg-color-secondary: var(--achievement-bg-color-secondary);
+  --color-achievement-text-color: var(--achievement-text-color);
 
   /* Шрифты */
   --font-family-sans: "Inter", system-ui, sans-serif;
@@ -62,7 +70,7 @@
   --text-opposite: #ffffff;
   --text-opposite-light: #d1d5dc;
   
-  --accent: #5D52A0;
+  --accent: #facc15;
   --accent-secondary: oklch(75% 0.183 55.934);
   --accent-special: #ef4444;
   --accent-special-dark: rgb(105, 10, 10);
@@ -74,6 +82,7 @@
   /* Brand */
   --brand-pink: #DF5FFF;
   --brand-blue: #00517C;
+  --brand-blue-light: #00517C;
   --brand-purple: #5D52A0;
 
   /* Success Colors */
@@ -86,6 +95,13 @@
   --faq-question-text: #1d293d;
   --faq-arrow-icon: #6a7282;
   --faq-answer-text: #45556c;
+
+  /* Success Stories Section Colors */
+  --testimonial-bg: #f3f4f6;
+  --achievement-border-color: #00517C;
+  --achievement-bg-color: #00517C;
+  --achievement-bg-color-secondary: #5D52A0;
+  --achievement-text-color: #00517C;
 }
 
 .dark {
@@ -113,6 +129,7 @@
   /* Brand */
   --brand-pink: #DF5FFF;
   --brand-blue: #00517C;
+  --brand-blue-light: #44beff;
   --brand-purple: #5D52A0;
 
   /* Success Colors */
@@ -125,6 +142,13 @@
   --faq-question-text: #ffffff;
   --faq-arrow-icon: #d1d5db;
   --faq-answer-text: #d1d5db;
+
+  /* Success Stories Section Colors */
+  --testimonial-bg: #374151;
+  --achievement-border-color: #facc15;
+  --achievement-bg-color: #facc15;
+  --achievement-bg-color-secondary: oklch(75% 0.183 55.934);
+  --achievement-text-color: #facc15;
 }
 
 .red {

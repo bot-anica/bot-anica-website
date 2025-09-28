@@ -17,7 +17,7 @@ const Footer: FC = () => {
   const navigationLinks = footerData?.navigationLinks || [];
 
   return (
-    <footer className="bg-bg-opposite text-text-opposite pt-8 pb-4 md:pt-10 md:pb-6 lg:pt-14 lg:pb-8">
+    <footer className="bg-brand-pink/15 text-text-secondary pt-8 pb-4 md:pt-10 md:pb-6 lg:pt-14 lg:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 md:gap-0 mb-4">
           <div className="md:w-auto flex flex-col items-center md:items-start text-center md:text-left">
