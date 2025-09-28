@@ -25,7 +25,7 @@ const SupportCard: FC<SupportCardProps> = ({ icon, title, description, linkHref,
   );
 
   return (
-    <div className="bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue/15">
+    <div className="bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue-light/15">
       <div className={iconWrapperClassName}>
         {icon}
       </div>

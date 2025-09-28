@@ -18,7 +18,7 @@ const OrderDetails: FC<OrderDetailsProps> = ({ paymentLog }) => {
   const currencySymbol = priceInfo?.currency.symbol || '$';
 
   return (
-    <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 sm:py-8 relative z-10 bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue/15">
+    <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 sm:py-8 relative z-10 bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue-light/15">
       <div className='flex gap-4 items-center mb-4 md:mb-6'>
         <h3 className='text-lg md:text-xl lg:text-2xl font-bold text-text-primary'>Детали заказа</h3>
         <p className='text-base md:text-lg lg:text-xl font-medium text-text-tertiary'>#{orderId}</p>

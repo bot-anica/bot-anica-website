@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 const PaymentResultDetailsSkeleton: FC = () => {
   return (
-    <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 pt-10 sm:pt-8 sm:py-8 relative z-10 bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue/15 animate-pulse">
+    <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 pt-10 sm:pt-8 sm:py-8 relative z-10 bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue-light/15 animate-pulse">
       <div className='h-5 sm:h-6 md:h-7 w-full sm:w-2/3 md:w-1/2 lg:w-2/5 bg-bg-hover rounded mb-6 sm:mb-7'></div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8 items-start'>
         <div>

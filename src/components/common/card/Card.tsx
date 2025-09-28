@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({
     "relative overflow-hidden rounded-2xl transition-all duration-300 border-box";
 
   const variantClasses = {
-    default: "bg-bg-primary border border-brand-blue/15",
+    default: "bg-bg-primary border border-brand-blue-light/15",
     elevated: "bg-bg-primary border-2 border-brand-pink/80",
     outlined: "bg-transparent border-2 border-brand-pink/20",
     gradient:

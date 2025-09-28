@@ -105,7 +105,7 @@ const CustomSelect: FC<CustomSelectProps> = ({
       )}
       <div
         id={id}
-        className={`appearance-none border ${error ? 'border-accent-special' : 'border-brand-blue/15'} rounded w-full py-1.5 px-2 md:py-2 md:px-3 text-text-secondary leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
+        className={`appearance-none border ${error ? 'border-accent-special' : 'border-brand-blue-light/30'} rounded w-full py-1.5 px-2 md:py-2 md:px-3 text-text-secondary leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
         onClick={handleToggle}
         onKeyDown={handleKeyDown as any} // Cast to any to satisfy TS, as KeyboardEvent is not directly assignable
         tabIndex={0} // Make div focusable
@@ -122,7 +122,7 @@ const CustomSelect: FC<CustomSelectProps> = ({
       {isOpen && (
         <div
           role="listbox"
-          className="absolute z-10 mt-1 w-full bg-bg-primary border border-brand-blue/15 rounded shadow-lg max-h-60 overflow-y-auto" // Added max-h and overflow
+          className="absolute z-10 mt-1 w-full bg-bg-primary border border-brand-blue-light/30 rounded shadow-lg max-h-60 overflow-y-auto" // Added max-h and overflow
         >
           {options.map((option, index) => (
             <div

@@ -20,15 +20,15 @@ const SuccessPayment: FC<SuccessPaymentProps> = ({ paymentLog }) => {
 
   return (
     <PaymentLayout header={<SuccessHeader />}>
-      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue/15'></div>
+      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15'></div>
 
       <OrderDetails paymentLog={paymentLog} />
 
-      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue/15'></div>
+      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15'></div>
       
       <NextSteps data={nextStepsData} />
 
-      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue/15'></div>
+      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15'></div>
     
       <div className='mt-8 sm:mt-0 grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3 px-8 sm:px-0'>
         <InfoCard 

@@ -15,7 +15,7 @@ const SwiperNavButtons: FC<SwiperNavButtonsProps> = ({
   onNext, 
   className 
 }) => {
-  const buttonClasses = 'cursor-pointer w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 group bg-bg-primary border border-brand-blue/30 text-text-secondary hover:text-brand-pink';
+  const buttonClasses = 'cursor-pointer w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 group bg-bg-primary border border-brand-blue-light/30 text-text-secondary hover:text-brand-pink';
 
   return (
     <div className={cn('flex gap-3 md:gap-4', className)}>

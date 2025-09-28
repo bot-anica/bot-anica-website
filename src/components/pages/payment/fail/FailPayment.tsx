@@ -11,9 +11,9 @@ import FailHeader from './FailHeader';
 const FailPayment: FC = () => {
   return (
     <PaymentLayout header={<FailHeader />}>
-      <div className="block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue/15"></div>
+      <div className="block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15"></div>
 
-      <div className="bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue/15 p-8">
+      <div className="bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue-light/15 p-8">
         <h3 className="text-xl font-bold text-text-primary">Анализ проблемы</h3>
         <p className="text-sm text-text-tertiary">
           Возможные причины неудачной оплаты
@@ -40,7 +40,7 @@ const FailPayment: FC = () => {
               </li>
             </ul>
           </div>
-          <div className="rounded-lg bg-brand-blue/5 p-4">
+          <div className="rounded-lg bg-brand-blue-light/5 p-4">
             <h4 className="font-semibold text-text-primary">Что можно сделать:</h4>
             <ul className="mt-2 space-y-2 xl:space-y-3 text-gray-700">
               <li className="flex items-center gap-2 sm:gap-3">

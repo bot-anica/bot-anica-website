@@ -14,7 +14,7 @@ interface InfoCardProps {
 
 const InfoCard: FC<InfoCardProps> = ({ icon, title, description, color }) => {
   return (
-    <div className="bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue/15">
+    <div className="bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue-light/15">
       <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-${color}-100 rounded-full flex items-center justify-center`}>
         {icon}
       </div>

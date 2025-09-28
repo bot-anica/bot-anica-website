@@ -8,7 +8,7 @@ import PaymentResultDetailsSkeleton from './PaymentResultDetailsSkeleton';
 const PaymentResultSkeleton: FC = () => {
   return (
     <PaymentLayout header={<PaymentResultHeaderSkeleton />}>
-      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue/15'></div>
+      <div className='block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15'></div>
         
       <PaymentResultDetailsSkeleton />
     </PaymentLayout>
