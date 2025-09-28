@@ -41,7 +41,7 @@ const FAQ: FC<FAQProps> = ({data, course}) => {
     <section ref={ref} id="faq" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative">
       <SectionBackground bgImages={bgImages} lazy />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <SectionHeader title={header.title} subtitle={header.subtitle} isIntersecting={isIntersecting} />
 

@@ -84,9 +84,9 @@ export default async function LandingPage({ params }: { params: Promise<{ course
       <Hero data={heroData} />
       <ProblemSolution data={problemSolutionData} />
       <WhySpecial data={whySpecialData} />
-      <CourseProgram data={courseProgramData} />
-      <Reviews data={reviewsData} />
-      <SuccessStories data={successStoriesData} />
+      <CourseProgram data={courseProgramData} showSectionSplitter={reviewsData != undefined} />
+      {reviewsData && <Reviews data={reviewsData} showSectionSplitter={successStoriesData != undefined} />}
+      {successStoriesData && <SuccessStories data={successStoriesData} />}
       <PricingPlans data={pricingData} course={course} />
       <FAQ data={faqData} course={course} />
     </Suspense>

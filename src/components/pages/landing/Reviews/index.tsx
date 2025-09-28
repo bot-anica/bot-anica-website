@@ -4,18 +4,18 @@ import type { FC } from 'react';
 
 import { useSwiper } from '@/hooks/useSwiper';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { SectionBackground, SectionHeader } from '@/components/common';
+import { SectionBackground, SectionHeader, SectionSplitter } from '@/components/common';
 import { ReviewsData } from '@/types/sections';
-import { ReviewsBackground } from './ReviewsBackground';
 import ReviewsSwiper from './ReviewsSwiper';
 import ReviewCard from './ReviewCard';
 import SwiperNavButtons from '@/components/common/SwiperNavButtons';
 
 interface ReviewsProps {
   data: ReviewsData;
+  showSectionSplitter?: boolean;
 }
 
-const Reviews: FC<ReviewsProps> = ({ data }) => {
+const Reviews: FC<ReviewsProps> = ({ data, showSectionSplitter }) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { handlePrevSlide, handleNextSlide, setSwiperRef } = useSwiper();
 
@@ -26,9 +26,16 @@ const Reviews: FC<ReviewsProps> = ({ data }) => {
   }
 
   return (
-    <section ref={ref} id="reviews" className="py-20 bg-bg-primary relative overflow-hidden">
-      <SectionBackground bgImages={bgImages} lazy />
-      <ReviewsBackground />
+    <section ref={ref} id="reviews" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative overflow-hidden">
+      {showSectionSplitter
+        ? <SectionSplitter />
+        : (
+          <>
+            <SectionBackground bgImages={bgImages} lazy />
+            <SectionSplitter bottom={false} />
+          </>
+        )
+      }
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader

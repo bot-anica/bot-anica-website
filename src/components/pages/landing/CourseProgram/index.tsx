@@ -11,9 +11,10 @@ import { useSwiper } from '@/hooks/useSwiper';
 
 interface CourseProgramProps {
   data: CourseProgramData
+  showSectionSplitter?: boolean
 }
 
-const CourseProgram: FC<CourseProgramProps> = ({data}) => {
+const CourseProgram: FC<CourseProgramProps> = ({data, showSectionSplitter}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { handlePrevSlide, handleNextSlide, setSwiperRef } = useSwiper();
 
@@ -25,8 +26,15 @@ const CourseProgram: FC<CourseProgramProps> = ({data}) => {
 
   return (
     <section ref={ref} id="course" className="bg-bg-primary py-24 lg:py-28 xl:py-32 relative w-full overflow-hidden">
-      <SectionBackground bgImages={bgImages} lazy />
-      <SectionSplitter bottom={false} />
+      {showSectionSplitter
+        ? <SectionSplitter />
+        : (
+          <>
+            <SectionBackground bgImages={bgImages} lazy />
+            <SectionSplitter bottom={false} />
+          </>
+        )
+      }
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header with Navigation */}

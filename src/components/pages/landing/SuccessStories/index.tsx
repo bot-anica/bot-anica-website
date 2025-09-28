@@ -2,12 +2,11 @@
 
 import type { FC } from 'react';
 
-import { SuccessStoriesBackground } from './SuccessStoriesBackground';
 import { SuccessStoriesStats } from './SuccessStoriesStats';
 import { SuccessStoriesTestimonials } from './SuccessStoriesTestimonials';
 import { SuccessStoriesCTA } from './SuccessStoriesCTA';
 
-import { SectionBackground, SectionHeader } from '@/components/common';
+import { SectionBackground, SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { SuccessStoriesData } from '@/types/sections';
 
@@ -18,7 +17,7 @@ interface SuccessStoriesProps {
 const SuccessStories: FC<SuccessStoriesProps> = ({data}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
-  const {header, stats, testimonials, ctaBlock, bgImages} = data
+  const {header, stats, testimonials, ctaBlock, bgImages} = data;
 
   if (!header || !stats || !testimonials || !ctaBlock || !bgImages) {
     return null; // Or a loading spinner
@@ -30,7 +29,7 @@ const SuccessStories: FC<SuccessStoriesProps> = ({data}) => {
       className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative overflow-hidden"
     >
       <SectionBackground bgImages={bgImages} lazy />
-      <SuccessStoriesBackground />
+      <SectionSplitter bottom={false} />
       
       <div className="container mx-auto px-4 relative z-10">
         <SectionHeader title={header.title} subtitle={header.subtitle} isIntersecting={isIntersecting} />

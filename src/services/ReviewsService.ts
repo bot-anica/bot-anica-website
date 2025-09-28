@@ -4,9 +4,26 @@ import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
 
 export class ReviewsService {
-  static async getReviews(courseUrlParam: string): Promise<Review[]> {
-    const { REVIEWS } = await import(`@/constants/${courseUrlParam}/reviews`);
-    return REVIEWS;
+  private static modules: Map<string, any> = new Map();
+
+  private static async loadModule(courseUrlParam: string) {
+    if (this.modules.has(courseUrlParam)) {
+      return this.modules.get(courseUrlParam);
+    }
+
+    try {
+      const mod = await import(`@/constants/${courseUrlParam}/reviews`);
+      this.modules.set(courseUrlParam, mod);
+      return mod;
+    } catch (error) {
+      this.modules.set(courseUrlParam, null);
+      return null;
+    }
+  }
+
+  static async getReviews(courseUrlParam: string): Promise<Review[] | null> {
+    const mod = await this.loadModule(courseUrlParam);
+    return mod ? mod.REVIEWS : null;
   }
 
   static getSwiperBreakpoints() {
@@ -26,11 +43,16 @@ export class ReviewsService {
     };
   }
 
-  static async getData(courseUrlParam: string): Promise<ReviewsData> {
+  static async getData(courseUrlParam: string): Promise<ReviewsData | null> {
+    const mod = await this.loadModule(courseUrlParam);
+    if (!mod) {
+      return null;
+    }
+
     const header = await SectionHeadersService.getHeader(courseUrlParam, 'reviews');
-    const reviews = await ReviewsService.getReviews(courseUrlParam);
+    const { REVIEWS: reviews } = mod;
     const breakpoints = ReviewsService.getSwiperBreakpoints();
-    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'reviews');
+    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'bottom');
     
     return {
       header,

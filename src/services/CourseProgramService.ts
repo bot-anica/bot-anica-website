@@ -30,7 +30,7 @@ export class CourseProgramService {
     const header = await SectionHeadersService.getHeader(courseUrlParam, 'courseProgram');
     const lessons = await CourseProgramService.getLessons(courseUrlParam);
     const breakpoints = CourseProgramService.getSwiperBreakpoints();
-    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'courseProgram');
+    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'bottom');
     
     return {
       header,

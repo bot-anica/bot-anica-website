@@ -78,7 +78,7 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
       extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
-  courseProgram: {
+  bottom: {
     bottom: {
       small: "/images/courseProgramBG/CourseProgramBG-Small.png",
       medium: "/images/courseProgramBG/CourseProgramBG-Medium.png",

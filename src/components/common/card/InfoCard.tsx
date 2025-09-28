@@ -22,7 +22,7 @@ const InfoCard: FC<InfoCardProps> = ({ icon, title, description, color }) => {
         <h4 className="text-sm md:text-base font-bold text-text-primary mb-1">
           {title}
         </h4>
-        <p className="text-text-tertiary text-sm">
+        <p className="text-text-secondary text-sm">
           {description}
         </p>
       </div>
