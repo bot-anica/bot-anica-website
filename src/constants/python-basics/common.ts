@@ -52,42 +52,42 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
   },
   problemSolution: {
     left: {
-      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
-      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
-      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
-      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+      small: "/images/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/rightSideBG/RightSideBG-Small.jpg",
-      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
-      large: "/images/rightSideBG/RightSideBG-Large.jpg",
-      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+      small: "/images/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   whySpecial: {
     left: {
-      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
-      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
-      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
-      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+      small: "/images/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/rightSideBG/RightSideBG-Small.jpg",
-      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
-      large: "/images/rightSideBG/RightSideBG-Large.jpg",
-      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+      small: "/images/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   courseProgram: {
     bottom: {
-      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
-      medium: "/images/courseProgramBG/CourseProgramBG-Medium.jpg",
-      large: "/images/courseProgramBG/CourseProgramBG-Large.jpg",
+      small: "/images/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/courseProgramBG/CourseProgramBG-Large.png",
     } 
   },
   popularCard: {
     bottom: {
-      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
+      small: "/images/courseProgramBG/CourseProgramBG-Small.png",
     },
     topRight: {
       smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
@@ -95,16 +95,16 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
   },
   successPayment: {
     left: {
-      small: "/images/leftSideBG/LeftSideBG-Small.jpg",
-      medium: "/images/leftSideBG/LeftSideBG-Medium.jpg",
-      large: "/images/leftSideBG/LeftSideBG-Large.jpg",
-      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.jpg",
+      small: "/images/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/rightSideBG/RightSideBG-Small.jpg",
-      medium: "/images/rightSideBG/RightSideBG-Medium.jpg",
-      large: "/images/rightSideBG/RightSideBG-Large.jpg",
-      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.jpg",
+      small: "/images/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/rightSideBG/RightSideBG-ExtraLarge.png",
     },
     topRight: {
       extraLarge: '/images/heroBG/HeroBG-ExtraLarge.png',
@@ -115,9 +115,9 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
       smallVertical: '/images/heroBG/HeroBG-SmallVertical.png',
     },
     bottom: {
-      small: "/images/courseProgramBG/CourseProgramBG-Small.jpg",
-      medium: "/images/courseProgramBG/CourseProgramBG-Medium.jpg",
-      large: "/images/courseProgramBG/CourseProgramBG-Large.jpg",
+      small: "/images/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/courseProgramBG/CourseProgramBG-Large.png",
     } 
   }
 };
