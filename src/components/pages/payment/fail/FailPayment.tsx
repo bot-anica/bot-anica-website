@@ -40,9 +40,9 @@ const FailPayment: FC = () => {
               </li>
             </ul>
           </div>
-          <div className="rounded-lg bg-brand-blue-light/5 p-4">
+          <div>
             <h4 className="font-semibold text-text-primary">Что можно сделать:</h4>
-            <ul className="mt-2 space-y-2 xl:space-y-3 text-gray-700">
+            <ul className="mt-2 space-y-2 xl:space-y-3 text-text-secondary">
               <li className="flex items-center gap-2 sm:gap-3">
                 <CheckCircle2 className="w-5 h-5 text-text-result-badge flex-shrink-0" />
                 <span className="text-sm">Проверьте баланс карты</span>
