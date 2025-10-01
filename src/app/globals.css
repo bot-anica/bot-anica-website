@@ -151,12 +151,6 @@
   --achievement-text-color: #facc15;
 }
 
-.red {
-  /* This theme is not fully implemented with the new system yet */
-  --brand-pink: #e41a1a;
-  --brand-blue: #efe523;
-}
-
 /* Базовые стили */
 @layer base {
   html {

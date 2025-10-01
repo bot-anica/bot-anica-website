@@ -26,6 +26,6 @@ export const STEPS_TO_SUCCESS = [
 ];
 
 export const PATH_TO_SUCCESS_IMAGES = {
-  telegramBot: "/images/telegram-bot.webp",
-  pythonCode: "/images/python-code.webp",
+  telegramBot: "/images/telegram-rss-bot/telegram-bot.webp",
+  pythonCode: "/images/telegram-rss-bot/python-code.webp",
 }
