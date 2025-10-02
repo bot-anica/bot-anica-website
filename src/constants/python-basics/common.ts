@@ -52,72 +52,72 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
   },
   problemSolution: {
     left: {
-      small: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/python-basics/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/python-basics/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/python-basics/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/python-basics/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/python-basics/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/python-basics/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   whySpecial: {
     left: {
-      small: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/python-basics/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/python-basics/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/python-basics/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/python-basics/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/python-basics/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/python-basics/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   bottom: {
     bottom: {
-      small: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Small.png",
-      medium: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Medium.png",
-      large: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Large.png",
+      small: "/images/python-basics/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/python-basics/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/python-basics/courseProgramBG/CourseProgramBG-Large.png",
     } 
   },
   popularCard: {
     bottom: {
-      small: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Small.png",
+      small: "/images/python-basics/courseProgramBG/CourseProgramBG-Small.png",
     },
     topRight: {
-      smallVertical: '/images/telegram-rss-bot/heroBG/HeroBG-SmallVertical.png',
+      smallVertical: '/images/python-basics/heroBG/HeroBG-SmallVertical.png',
     },
   },
   successPayment: {
     left: {
-      small: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/python-basics/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/python-basics/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/python-basics/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/telegram-rss-bot/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/python-basics/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/python-basics/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/python-basics/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
     },
     topRight: {
-      extraLarge: '/images/telegram-rss-bot/heroBG/HeroBG-ExtraLarge.png',
-      large: '/images/telegram-rss-bot/heroBG/HeroBG-Large.png',
-      medium: '/images/telegram-rss-bot/heroBG/HeroBG-MediumHorizontal.png',
-      mediumVertical: '/images/telegram-rss-bot/heroBG/HeroBG-MediumVertical.png',
-      small: '/images/telegram-rss-bot/heroBG/HeroBG-SmallHorizontal.png',
-      smallVertical: '/images/telegram-rss-bot/heroBG/HeroBG-SmallVertical.png',
+      extraLarge: '/images/python-basics/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/python-basics/heroBG/HeroBG-Large.png',
+      medium: '/images/python-basics/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/python-basics/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/python-basics/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/python-basics/heroBG/HeroBG-SmallVertical.png',
     },
     bottom: {
-      small: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Small.png",
-      medium: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Medium.png",
-      large: "/images/telegram-rss-bot/courseProgramBG/CourseProgramBG-Large.png",
+      small: "/images/python-basics/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/python-basics/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/python-basics/courseProgramBG/CourseProgramBG-Large.png",
     } 
   }
 };
