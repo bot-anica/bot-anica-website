@@ -32,7 +32,7 @@ const Hero: FC<HeroProps> = ({data}) => {
       <SectionBackground bgImages={bgImages} />
       <SectionSplitter top={false} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1fr_auto] gap-8 xl:gap-16 items-center">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}

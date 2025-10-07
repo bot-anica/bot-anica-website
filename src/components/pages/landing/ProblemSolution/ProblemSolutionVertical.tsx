@@ -36,9 +36,9 @@ const ProblemSolutionVertical: FC<ProblemSolutionVerticalProps> = ({
             >
               {/* Problem block */}
               <div className="w-full max-w-xs">
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-blue/5 border border-brand-blue/30">
-                  <Icon name={item.icon} className="w-4 h-4 text-text-tertiary flex-shrink-0" />
-                  <span className="line-through text-brand-blue/70 font-medium text-sm flex-1">
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-blue-light/5 border border-brand-blue-light/30">
+                  <Icon name={item.icon} className="w-4 h-4 text-brand-blue-light flex-shrink-0" />
+                  <span className="line-through text-brand-blue-light/70 font-medium text-sm flex-1">
                     {item.problem}
                   </span>
                 </div>

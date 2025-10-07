@@ -56,6 +56,7 @@ const CourseProgram: FC<CourseProgramProps> = ({data, showSectionSplitter}) => {
           <SwiperNavButtons 
             onPrev={handlePrevSlide}
             onNext={handleNextSlide}
+            className="ml-auto"
           />
         </div>
 

@@ -38,11 +38,11 @@ export const HERO_CTA: Record<"primary" | "secondary", CTAItem> = {
 
 export const HERO_IMAGES: Record<'rightImages' | 'imagesInText', HeroImages> = {
   rightImages: {
-    extraLarge: '/images/telegram-rss-bot/heroImage/HeroImageVerticalExtraLarge.png',
-    large: '/images/telegram-rss-bot/heroImage/HeroImageVerticalLarge.png',
+    extraLarge: '/images/telegram-rss-bot-mvp/heroImage/HeroImageVerticalExtraLarge.png',
+    large: '/images/telegram-rss-bot-mvp/heroImage/HeroImageVerticalExtraLarge.png',
   },
   imagesInText: {
-    medium: '/images/telegram-rss-bot/heroImage/HeroImageHorizontalMiddle.png',
-    small: '/images/telegram-rss-bot/heroImage/HeroImageHorizontalSmall.png',
+    medium: '/images/telegram-rss-bot-mvp/heroImage/HeroImageHorizontalMiddle.png',
+    small: '/images/telegram-rss-bot-mvp/heroImage/HeroImageHorizontalSmall.png',
   }
 }
