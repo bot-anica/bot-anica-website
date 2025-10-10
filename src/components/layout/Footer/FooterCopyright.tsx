@@ -3,7 +3,7 @@ import { FC } from "react";
 
 const FooterCopyright: FC = () => {
   return (
-    <div className="border-t border-brand-pink/30 pt-4 md:pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-center md:text-left gap-2">
+    <div className="border-t border-brand-pink/30 pt-4 md:pt-6 flex flex-col-reverse items-center md:flex-row md:justify-between text-center md:text-left gap-2">
       <p className="text-text-secondary text-xs md:text-sm">
         © 2025 Bot Anica. Все права защищены.
       </p>

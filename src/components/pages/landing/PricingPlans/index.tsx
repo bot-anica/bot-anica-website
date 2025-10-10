@@ -11,10 +11,11 @@ import PricingPlansPayment from './PricingPlansPayment';
 
 interface CourseProgramProps {
   data: PricingPlansData,
-  course: Course
+  course: Course;
+  courseIsFree?: boolean;
 }
 
-const PricingPlans: FC<CourseProgramProps> = ({data, course}) => {
+const PricingPlans: FC<CourseProgramProps> = ({data, course, courseIsFree}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const [selectedCurrency, setSelectedCurrency] = useState<Currency | null>(null);
 
@@ -73,6 +74,7 @@ const PricingPlans: FC<CourseProgramProps> = ({data, course}) => {
 
         {/* Payment Options */}
         <PricingPlansPayment 
+          courseIsFree={courseIsFree}
           availableCurrencies={availableCurrencies}
           isIntersecting={isIntersecting as boolean}
           selectedCurrency={selectedCurrency}

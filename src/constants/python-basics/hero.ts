@@ -7,7 +7,7 @@ export const HERO_TITLE: HeroTitle = {
   additional: 'с нуля до уверенного программиста',
 }
 
-export const HERO_SUBTITLE = 'Полный курс по основам Python для начинающих. 50+ уроков с практическими заданиями, от переменных до работы с файлами и JSON'
+export const HERO_SUBTITLE = 'Полный курс по основам Python для начинающих (50+ уроков) с практическими заданиями'
 
 export const HERO_BENEFITS = [
   '50+ практических уроков',

@@ -13,12 +13,14 @@ import HeroRightImage from './HeroRightImage';
 import { HeroData } from '@/types/sections';
 import { SectionBackground, SectionSplitter } from '@/components/common';
 import { useHeroAnimations } from '@/hooks/useHeroAnimations';
+import HeroFreeCourseLabel from './HeroFreeCourseLabel';
 
 interface HeroProps {
-  data: HeroData
+  data: HeroData;
+  courseIsFree?: boolean;
 }
 
-const Hero: FC<HeroProps> = ({data}) => {
+const Hero: FC<HeroProps> = ({data, courseIsFree}) => {
   const { containerVariants, itemVariants } = useHeroAnimations();
 
   const {title, subtitle, benefits, cta, images, bgImages} = data
@@ -40,9 +42,10 @@ const Hero: FC<HeroProps> = ({data}) => {
             animate="visible"
           >
             <HeroBenefits benefits={benefits} itemVariants={itemVariants} />
+            {courseIsFree && <HeroFreeCourseLabel itemVariants={itemVariants} />}
             <div className="grid gap-12 mb-12 lg:mt-4 lg:mb-4">
               <HeroTitle title={title} itemVariants={itemVariants} />
-              <HeroImageInText images={images.imagesInText} />
+              <HeroImageInText images={images.imagesInText} itemVariants={itemVariants} />
             </div>
 
             <div>
@@ -51,7 +54,7 @@ const Hero: FC<HeroProps> = ({data}) => {
             </div>
           </motion.div>
         </div>
-        <HeroRightImage images={images.rightImages} />
+        <HeroRightImage images={images.rightImages} itemVariants={itemVariants} />
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { motion } from 'framer-motion';
 
 import RightImageDefault from "./rightImage/RightImageDefault";
 import RightImageSources from "./rightImage/RightImageSources";
@@ -6,17 +7,18 @@ import { HeroImages } from "@/types/sections";
 
 interface HeroRightImageProps {
   images: HeroImages;
+  itemVariants?: any;
 }
 
-const HeroRightImage: FC<HeroRightImageProps> = ({ images }) => {
+const HeroRightImage: FC<HeroRightImageProps> = ({ images, itemVariants }) => {
   const availableSizes = Object.keys(images).filter((key) => images[key as keyof HeroImages])
   const minSize = availableSizes[availableSizes.length - 1]
 
   return (
-    <picture>
+    <motion.picture variants={itemVariants}>
       <RightImageSources images={images}/>
       <RightImageDefault images={images} minSize={minSize as keyof HeroImages}/>
-    </picture>
+    </motion.picture>
   );
 };
 

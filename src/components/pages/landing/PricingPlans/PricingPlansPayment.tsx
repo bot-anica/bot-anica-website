@@ -13,6 +13,7 @@ interface PricingPlansPaymentProps {
   selectedCurrency: Currency | null;
   onCurrencyChange: (currency: Currency) => void;
   loading: boolean;
+  courseIsFree?: boolean;
 }
 
 const PricingPlansPayment: React.FC<PricingPlansPaymentProps> = ({ 
@@ -20,7 +21,8 @@ const PricingPlansPayment: React.FC<PricingPlansPaymentProps> = ({
   isIntersecting,
   selectedCurrency,
   onCurrencyChange,
-  loading
+  loading,
+  courseIsFree
 }) => {
   return (
     <>
@@ -31,12 +33,15 @@ const PricingPlansPayment: React.FC<PricingPlansPaymentProps> = ({
         transition={{ duration: 0.6, delay: 0.8 }}
         className="text-sm md:text-base text-center mb-8 lg:mb-12 flex flex-col items-center gap-3 md:gap-4"
       >
-        <p className="text-text-secondary">
-          Цены указаны в долларах США. Для оплаты можете использовать
-        </p>
+        {!courseIsFree && (
+          <p className="text-text-secondary">
+            Цены указаны в долларах США. Для оплаты можете использовать
+          </p>
+        )}
+        
         {loading ? (
           <PaymentMethodsSkeleton />
-        ) : (
+        ) : !courseIsFree && (
           <PaymentMethods 
             currencies={availableCurrencies} 
             selectedCurrency={selectedCurrency}

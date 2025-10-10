@@ -12,27 +12,34 @@ interface PricingPlansGridProps {
 }
 
 const PricingPlansGrid: React.FC<PricingPlansGridProps> = ({ plans, popularPlanImages, isIntersecting, selectedCurrency, loading }) => {
+  const containerClasses = "flex flex-wrap justify-center gap-4 xl:gap-8 mb-8 lg:mb-12 sm:mb-16";
+
+  const cardClasses = "w-full lg:flex-1 max-w-[420px]"; 
+
   if (loading) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8 mb-8 lg:mb-12 sm:mb-16">
+      <div className={containerClasses}>
         {[...Array(3)].map((_, index) => (
-          <PricingPlanCardSkeleton key={index} is_popular={index === 0} />
+          <div key={index} className={cardClasses}>
+            <PricingPlanCardSkeleton is_popular={index === 0} />
+          </div>
         ))}
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-8 mb-8 lg:mb-12 sm:mb-16">
+    <div className={containerClasses}>
       {plans.map((plan, index) => (
-        <PricingPlanCard 
-          key={plan.id} 
-          plan={plan}
-          bgImages={plan.is_popular ? popularPlanImages : null}
-          isIntersecting={isIntersecting} 
-          index={index} 
-          selectedCurrency={selectedCurrency}
-        />
+        <div key={plan.id} className={cardClasses}>
+          <PricingPlanCard
+            plan={plan}
+            bgImages={plan.is_popular ? popularPlanImages : null}
+            isIntersecting={isIntersecting}
+            index={index}
+            selectedCurrency={selectedCurrency}
+          />
+        </div>
       ))}
     </div>
   );
