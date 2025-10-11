@@ -9,21 +9,29 @@ import OrderDetails from './OrderDetails';
 import PaymentForm from './PaymentForm';
 import VerticalSplitter from './VerticalSplitter';
 import SecurityMessage from './SecurityMessage';
+import GetFreeTariffForm from './GetFreeTariffForm';
+import { useGetFreeTariff } from '@/hooks/useGetFreeTariff';
 
 interface PrePaymentClientPageProps {
   course: Course;
   tariff: Tariff;
+  isTariffFree?: boolean;
 }
 
-const PrePaymentClientPage: FC<PrePaymentClientPageProps> = ({ course, tariff }) => {
+const PrePaymentClientPage: FC<PrePaymentClientPageProps> = ({ course, tariff, isTariffFree }) => {
   const {
-    isLoading,
-    apiError,
+    isLoading: isPrePaymentLoading,
+    apiError: prePaymentApiError,
     availableCurrencies,
     selectedCurrencyForOrderDetails,
     handleCurrencyCodeChange,
-    handleSubmit,
+    handleSubmit: handlePrePaymentSubmit,
   } = usePrePayment(course, tariff);
+  const {
+    isLoading,
+    apiError,
+    handleSubmit,
+  } = useGetFreeTariff(course, tariff);
 
   return (
     <section className="pt-14 sm:pb-6 sm:pt-20 md:pb-14 md:pt-28 lg:pt-42 xl:pt-50 lg:pb-28 xl:pb-32 relative overflow-hidden bg-brand-pink/15">
@@ -31,13 +39,21 @@ const PrePaymentClientPage: FC<PrePaymentClientPageProps> = ({ course, tariff })
         <OrderDetails course={course} tariff={tariff} selectedCurrency={selectedCurrencyForOrderDetails} />
         <VerticalSplitter />
         <div>
-          <PaymentForm
-            availableCurrencies={availableCurrencies}
-            onSubmit={handleSubmit}
-            isLoading={isLoading}
-            apiError={apiError}
-            onCurrencyCodeChange={handleCurrencyCodeChange}
-          />
+          {isTariffFree ? (
+            <GetFreeTariffForm
+              onSubmit={handleSubmit}
+              isLoading={isLoading}
+              apiError={apiError}
+            />
+          ) : (
+            <PaymentForm
+              availableCurrencies={availableCurrencies}
+              onSubmit={handlePrePaymentSubmit}
+              isLoading={isPrePaymentLoading}
+              apiError={prePaymentApiError}
+              onCurrencyCodeChange={handleCurrencyCodeChange}
+            />
+          )}
           <SecurityMessage />
         </div>
       </div>

@@ -36,7 +36,6 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
         courseUrlParam: course.urlParam,
         tariffId: tariff.id,
         currencyCode: values.selectedCurrencyCode,
-        amount: +(priceInfo.discount_price || priceInfo.price),
         email: values.email,
         name: values.name || undefined,
       });

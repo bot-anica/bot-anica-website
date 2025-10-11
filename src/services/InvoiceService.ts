@@ -1,5 +1,4 @@
 interface CreatePaymentDto {
-  amount: number;
   currency: string;
   paymentSystem: string;
   urlSuccess: string;
@@ -14,7 +13,6 @@ interface CreatePaymentResponse {
   paymentId: string;
   paymentUrl: string;
   status: string;
-  amount: number;
   currency: string;
   orderId: string;
   redirectRequired: boolean;
@@ -26,7 +24,6 @@ export class InvoiceService {
     courseId: number;
     courseUrlParam: string;
     tariffId: number;
-    amount: number;
     currencyCode: string;
     email: string;
     name?: string;
@@ -36,7 +33,6 @@ export class InvoiceService {
     const createPaymentDto: CreatePaymentDto = {
       // TODO: change back to dynamic amount and currency
       // amount: data.amount,
-      amount: 1000,
       // currency: data.currencyCode,
       currency: "RUB",
       

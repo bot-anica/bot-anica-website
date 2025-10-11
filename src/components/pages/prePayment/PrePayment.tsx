@@ -1,6 +1,7 @@
 import { CourseService } from '@/services/CourseService';
 import PrePaymentClientPage from '@/components/pages/prePayment/PrePaymentClientPage';
 import CourseNotFound from './CourseNotFound';
+import { checkIsTariffFree } from '@/utils/course';
 
 interface PrePaymentProps {
   courseUrlParam: string;
@@ -13,12 +14,13 @@ export default async function PrePayment({ courseUrlParam, tariffId }: PrePaymen
   if (!course) {
     return <CourseNotFound message="Курс не найден." />;
   }
-
   const selectedTariff = course.tariffs.find(t => t.id.toString() === tariffId);
 
   if (!selectedTariff) {
     return <CourseNotFound message="Выбранный тариф не найден." />;
   }
 
-  return <PrePaymentClientPage course={course} tariff={selectedTariff} />;
+  const isTariffFree = checkIsTariffFree(selectedTariff);
+
+  return <PrePaymentClientPage course={course} tariff={selectedTariff} isTariffFree={isTariffFree} />;
 }

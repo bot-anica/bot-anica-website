@@ -1,41 +1,33 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { Loader2 } from 'lucide-react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { CustomSelect, CustomInput, Button } from '@/components/common';
-import { Currency } from '@/types/sections';
+import { CustomInput, Button } from '@/components/common';
 
-interface PaymentFormProps {
-  availableCurrencies: Currency[];
-  onSubmit: (values: PaymentFormValues) => void;
+interface GetFreeTariffFormProps {
+  onSubmit: (values: GetFreeTariffFormValues) => void;
   isLoading: boolean;
   apiError: string | null;
-  onCurrencyCodeChange: (currencyCode: string) => void;
 }
 
-export interface PaymentFormValues {
-  selectedCurrencyCode: string;
+export interface GetFreeTariffFormValues {
   name: string;
   email: string;
 }
 
-const PaymentForm: FC<PaymentFormProps> = ({
-  availableCurrencies,
+const GetFreeTariffForm: FC<GetFreeTariffFormProps> = ({
   onSubmit,
   isLoading,
   apiError,
-  onCurrencyCodeChange,
 }) => {
   const validationSchema = Yup.object({
-    selectedCurrencyCode: Yup.string().required('Пожалуйста, выберите валюту'),
     name: Yup.string().optional(),
     email: Yup.string().email('Некорректный формат email').required('Пожалуйста, введите ваш email'),
   });
 
-  const formik = useFormik<PaymentFormValues>({
+  const formik = useFormik<GetFreeTariffFormValues>({
     initialValues: {
-      selectedCurrencyCode: availableCurrencies[0]?.code || '',
       name: '',
       email: '',
     },
@@ -46,32 +38,9 @@ const PaymentForm: FC<PaymentFormProps> = ({
     enableReinitialize: true, // Reinitialize form when availableCurrencies changes
   });
 
-  // Update selectedCurrencyCode if availableCurrencies changes and current code is not valid
-  // This handles the case where initialValues might not have the correct default if availableCurrencies loads later
-  // or if the first currency changes.
-  if (formik.values.selectedCurrencyCode === '' && availableCurrencies.length > 0) {
-    formik.setFieldValue('selectedCurrencyCode', availableCurrencies[0].code);
-  }
-
-  // Call onCurrencyCodeChange when selectedCurrencyCode changes in Formik
-  useEffect(() => {
-    onCurrencyCodeChange(formik.values.selectedCurrencyCode);
-  }, [formik.values.selectedCurrencyCode, onCurrencyCodeChange]);
-
   return (
     <form onSubmit={formik.handleSubmit} className="flex-1">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-text-primary mb-4 md:mb-5 lg:mb-6">Данные для оплаты</h2>
-      <CustomSelect
-        id="selectedCurrencyCode"
-        label="Валюта оплаты"
-        options={availableCurrencies.map(currency => ({ value: currency.code, label: `${currency.name} (${currency.code})` }))}
-        selectedValue={formik.values.selectedCurrencyCode}
-        onValueChange={(value: string) => {
-          formik.setFieldValue('selectedCurrencyCode', value);
-          // No need to call onCurrencyCodeChange here directly, as useEffect will handle it
-        }}
-        error={formik.touched.selectedCurrencyCode && formik.errors.selectedCurrencyCode ? formik.errors.selectedCurrencyCode : null}
-      />
+      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-text-primary mb-4 md:mb-5 lg:mb-6">Данные для получения материалов тарифа</h2>
       <CustomInput
         id="name"
         name="name"
@@ -110,10 +79,10 @@ const PaymentForm: FC<PaymentFormProps> = ({
         {isLoading ? (
           <>
             <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-            Создание инвойса...
+            Подготовка материалов
           </>
         ) : (
-          "Перейти к оплате"
+          "Получить материалы"
         )}
       </Button>
       <p className="max-w-sm text-xs text-text-tertiary text-center mb-4 md:mb-6 lg:mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
@@ -121,4 +90,4 @@ const PaymentForm: FC<PaymentFormProps> = ({
   );
 };
 
-export default PaymentForm;
+export default GetFreeTariffForm;

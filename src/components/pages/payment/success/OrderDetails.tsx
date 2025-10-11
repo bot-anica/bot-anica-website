@@ -32,7 +32,8 @@ const OrderDetails: FC<OrderDetailsProps> = ({ paymentLog }) => {
             </span>
             <div className="my-2">
               <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-pink">
-                <span className="text-brand-pink/50">{currencySymbol}</span>{price}
+                {+price ? <span className="text-brand-pink/50">{currencySymbol}</span> : null}
+                {+price ? price : 'FREE'}
               </span>
             </div>
           </div>

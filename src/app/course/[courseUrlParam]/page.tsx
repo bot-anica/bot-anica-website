@@ -21,7 +21,7 @@ import WhySpecial from '@/components/pages/landing/WhySpecial';
 import CourseNotFound from '@/components/pages/course/CourseNotFound';
 import { SuccessStoriesService } from '@/services/SuccessStoriesService';
 import SuccessStories from '@/components/pages/landing/SuccessStories';
-import { Course, Tariff, TariffPrice } from '@/types/sections';
+import { checkIsCourseFree } from '@/utils/course';
 
 export async function generateMetadata({ params }: { params: Promise<{ courseUrlParam: string }> }): Promise<Metadata> {
   try {
@@ -48,15 +48,6 @@ export async function generateMetadata({ params }: { params: Promise<{ courseUrl
       description: "Запрашиваемый курс не найден.",
     };
   }
-}
-
-function checkIsCourseFree(course: Course): boolean {
-  if (!course || !course.tariffs || course.tariffs.length === 0) {
-    return false;
-  }
-  return course.tariffs.every((tariff: Tariff) =>
-    tariff.prices.every((price: TariffPrice) => +price.price === 0)
-  );
 }
 
 export default async function LandingPage({ params }: { params: Promise<{ courseUrlParam: string }> }) {
