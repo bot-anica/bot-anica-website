@@ -91,7 +91,7 @@ export default async function LandingPage({ params }: { params: Promise<{ course
       {reviewsData && <Reviews data={reviewsData} showSectionSplitter={successStoriesData != undefined} />}
       {successStoriesData && <SuccessStories data={successStoriesData} />}
       <PricingPlans data={pricingData} course={course} courseIsFree={isCourseFree} />
-      <FAQ data={faqData} course={course} />
+      <FAQ data={faqData} course={course} courseIsFree={isCourseFree} />
     </Suspense>
   );
 }

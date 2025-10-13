@@ -12,10 +12,11 @@ import { SectionBackground, SectionHeader } from '@/components/common';
 
 interface FAQProps {
   data: FAQData,
-  course: Course
+  course: Course,
+  courseIsFree?: boolean,
 }
 
-const FAQ: FC<FAQProps> = ({data, course}) => {
+const FAQ: FC<FAQProps> = ({data, course, courseIsFree}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { openIndex, toggleFAQ } = useFAQ();
 
@@ -47,7 +48,7 @@ const FAQ: FC<FAQProps> = ({data, course}) => {
 
         {/* FAQ Items */}
         <FAQList 
-          faqs={[...faqs, currencyFAQ]} 
+          faqs={courseIsFree ? faqs : [...faqs, currencyFAQ]} 
           openIndex={openIndex} 
           onToggle={toggleFAQ} 
           isIntersecting={isIntersecting as boolean} 
