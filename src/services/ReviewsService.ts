@@ -1,3 +1,4 @@
+import { courseRegistry } from '@/constants/courseRegistry';
 import { SlidesPerView } from '@/types/common';
 import { Review, ReviewsData } from '@/types/sections';
 import { SectionBGImagesService } from './SectionBGImagesService';
@@ -11,8 +12,15 @@ export class ReviewsService {
       return this.modules.get(courseUrlParam);
     }
 
+    const course = courseRegistry.getCourseByUrlParam(courseUrlParam);
+
+    if (!course || !course.sections.includes('reviews')) {
+      this.modules.set(courseUrlParam, null);
+      return null;
+    }
+
     try {
-      const mod = await import(`@/constants/${courseUrlParam}/reviews`);
+      const mod = await import(`@/constants/${course.urlParam}/reviews`);
       this.modules.set(courseUrlParam, mod);
       return mod;
     } catch (error) {

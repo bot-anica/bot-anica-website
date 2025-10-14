@@ -1,3 +1,4 @@
+import { courseRegistry } from '@/constants/courseRegistry';
 import { SectionBottomCTA, Statistic, SuccessStoriesData, Testimonial } from '../types/sections';
 import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
@@ -10,8 +11,15 @@ export class SuccessStoriesService {
       return this.modules.get(courseUrlParam);
     }
 
+    const course = courseRegistry.getCourseByUrlParam(courseUrlParam);
+
+    if (!course || !course.sections.includes('successStories')) {
+      this.modules.set(courseUrlParam, null);
+      return null;
+    }
+
     try {
-      const mod = await import(`@/constants/${courseUrlParam}/successStories`);
+      const mod = await import(`@/constants/${course.urlParam}/successStories`);
       this.modules.set(courseUrlParam, mod);
       return mod;
     } catch (error) {
