@@ -33,10 +33,10 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 rounded-lg focus:outline-none box-border';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-brand-pink to-brand-blue text-white hover:scale-105 focus:ring-brand-pink',
-    secondary: `bg-bg-primary text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-blue-light/30'} hover:bg-brand-blue-light/5 focus:ring-brand-blue-light box-border`,
-    outline: `bg-transparent text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-pink'} hover:bg-brand-pink hover:text-text-opposite focus:ring-brand-pink`,
-    ghost: 'bg-transparent text-foreground hover:bg-brand-pink/10 focus:ring-accent'
+    primary: `bg-gradient-to-r from-brand-pink to-brand-blue text-white ${disabled ? '' : 'hover:scale-105 focus:ring-brand-pink'}`,
+    secondary: `bg-bg-primary text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-blue-light/30'} ${disabled ? '' : 'hover:bg-brand-blue-light/5 focus:ring-brand-blue-light'} box-border`,
+    outline: `bg-transparent text-text-primary ${withoutBorder ? '' : 'border-2 border-brand-pink'} ${disabled ? '' : 'hover:bg-brand-pink hover:text-text-opposite focus:ring-brand-pink'}`,
+    ghost: `bg-transparent text-foreground ${disabled ? '' : 'hover:bg-brand-pink/10 focus:ring-accent'}`
   };
   
   const sizeClasses = {
@@ -50,7 +50,7 @@ const Button: React.FC<ButtonProps> = ({
     baseClasses,
     variantClasses[variant as ButtonVariant],
     sizeClasses[size as ButtonSize],
-    disabled && 'opacity-50 cursor-not-allowed',
+    disabled && 'blur-xs cursor-not-allowed',
     className
   );
 

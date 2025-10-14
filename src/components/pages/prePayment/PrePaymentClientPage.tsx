@@ -52,6 +52,7 @@ const PrePaymentClientPage: FC<PrePaymentClientPageProps> = ({ course, tariff, i
               isLoading={isPrePaymentLoading}
               apiError={prePaymentApiError}
               onCurrencyCodeChange={handleCurrencyCodeChange}
+              disabled={tariff.disabled}
             />
           )}
           <SecurityMessage />

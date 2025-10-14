@@ -26,6 +26,7 @@ const CardButton: FC<CardButtonProps> = ({ isPopular, plan }) => {
       size={ButtonSize.LG}
       className="w-full touch-spacing"
       onClick={handleBuyButton}
+      disabled={plan.disabled}
     >
       Начать обучение
     </Button>

@@ -12,6 +12,7 @@ interface PaymentFormProps {
   isLoading: boolean;
   apiError: string | null;
   onCurrencyCodeChange: (currencyCode: string) => void;
+  disabled?: boolean;
 }
 
 export interface PaymentFormValues {
@@ -26,6 +27,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
   isLoading,
   apiError,
   onCurrencyCodeChange,
+  disabled,
 }) => {
   const validationSchema = Yup.object({
     selectedCurrencyCode: Yup.string().required('Пожалуйста, выберите валюту'),
@@ -104,7 +106,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
       )}
       <Button
         type="submit"
-        disabled={isLoading || (!formik.isValid && formik.submitCount > 0)} // Disable only if loading or form is invalid after first submission attempt
+        disabled={disabled || isLoading || (!formik.isValid && formik.submitCount > 0)} // Disable only if loading or form is invalid after first submission attempt
         className="w-full mb-2 md:mb-3 lg:mb-4"
       >
         {isLoading ? (

@@ -301,6 +301,7 @@ export interface Tariff {
   is_popular: boolean;
   prices: TariffPrice[];
   features: string;
+  disabled: boolean;
 }
 
 export interface Course {

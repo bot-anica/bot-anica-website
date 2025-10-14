@@ -4,7 +4,7 @@ import { FC, useMemo, useState, useEffect } from 'react';
 
 import { SectionBackground, BackgroundElements, SectionHeader } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { Course, Currency, PricingPlansData } from '@/types/sections';
+import { Course, Currency, PricingPlansData, Tariff } from '@/types/sections';
 
 import PricingPlansGrid from './PricingPlansGrid';
 import PricingPlansPayment from './PricingPlansPayment';
@@ -41,11 +41,20 @@ const PricingPlans: FC<CourseProgramProps> = ({data, course, courseIsFree}) => {
 
   const sortedPlans = useMemo(() => {
     if (!tariffs) return [];
-    return [...tariffs].sort((a, b) => {
-      if (a.is_popular) return -1;
-      if (b.is_popular) return 1;
+
+    const activePlans = tariffs.filter(plan => !plan.disabled);
+    const disabledPlans = tariffs.filter(plan => plan.disabled);
+
+    const sortFn = (a: Tariff, b: Tariff) => {
+      if (a.is_popular && !b.is_popular) return -1;
+      if (!a.is_popular && b.is_popular) return 1;
       return 0;
-    });
+    };
+
+    activePlans.sort(sortFn);
+    disabledPlans.sort(sortFn);
+
+    return [...activePlans, ...disabledPlans];
   }, [tariffs]);
 
   const isLoading = !selectedCurrency;

@@ -35,7 +35,7 @@ const PricingPlansPayment: React.FC<PricingPlansPaymentProps> = ({
       >
         {!courseIsFree && (
           <p className="text-text-secondary">
-            Цены указаны в долларах США. Для оплаты можете использовать
+            Для оплаты можете использовать
           </p>
         )}
         

@@ -9,6 +9,7 @@ import CardDescription from './PricingPlanCard/CardDescription';
 import { Card } from '@/components/common';
 import { Tariff, PartialSectionBGImagesProps, Currency } from '@/types/sections';
 import FeatureList from '@/components/common/FeatureList';
+import Ribbon from '@/components/common/Ribbon';
 
 interface PricingPlanCardProps {
   plan: Tariff;
@@ -37,10 +38,11 @@ const PricingPlanCard: FC<PricingPlanCardProps> = ({ plan, bgImages, isIntersect
       <Card
         variant={plan.is_popular ? "popular" : "default"}
         padding="lg"
-        className="h-full flex flex-col"
+        className="h-full flex flex-col relative overflow-hidden"
         childrenWrapperClassName="h-full flex flex-col"
         bgImages={bgImages || undefined}
       >
+        {plan.disabled && <Ribbon text="Совсем скоро!" />}
         <div className="flex-1">
           <CardHeader name={plan.name} />
           <CardPrice price={price} />

@@ -24,6 +24,12 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
   const handleSubmit = async (values: PaymentFormValues) => {
     setIsLoading(true);
     setApiError(null);
+
+    if (tariff.disabled) {
+      setApiError('Этот тариф недоступен для покупки.');
+      setIsLoading(false);
+      return;
+    }
     
     try {
       const priceInfo = tariff.prices.find(p => p.currency.code === values.selectedCurrencyCode);
