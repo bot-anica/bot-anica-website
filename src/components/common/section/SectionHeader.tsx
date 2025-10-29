@@ -8,6 +8,7 @@ export interface SectionHeaderProps {
   isIntersecting: boolean;
   children?: ReactNode;
   className?: string;
+  titleClassName?: string;
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({
@@ -15,7 +16,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   position = 'center',
   subtitle,
   isIntersecting,
-  className = ""
+  className = "",
+  titleClassName = ""
 }) => {
   const alignClasses = {
     left: 'items-start',
@@ -30,7 +32,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       transition={{ duration: 0.6 }}
       className={`flex flex-col ${alignClasses[position]} mb-8 lg:mb-12 xl:mb-16 text-${position} ${className}`}
     >
-      <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-text-primary mb-2 md:mb-3 lg:mb-4 xl:mb-6`}>
+      <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-text-primary mb-2 md:mb-3 lg:mb-4 xl:mb-6 ${titleClassName}`}>
         {title}
       </h2>
       {subtitle && (

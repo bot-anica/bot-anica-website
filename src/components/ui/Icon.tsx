@@ -86,7 +86,18 @@ import {
   Braces,
   FileJson,
   Library,
-  Table
+  Table,
+  XCircle,
+  Clock,
+  ZapOff,
+  TrendingDown,
+  Bot,
+  DatabaseZap,
+  BarChart,
+  Infinity,
+  FolderKanban,
+  Video,
+  Gem
 } from "lucide-react";
 
 const iconMap: Record<string, ComponentType < any >> = {
@@ -171,7 +182,18 @@ const iconMap: Record<string, ComponentType < any >> = {
   Braces,
   FileJson,
   Library,
-  Table
+  Table,
+  XCircle,
+  Clock,
+  ZapOff,
+  TrendingDown,
+  Bot,
+  DatabaseZap,
+  BarChart,
+  Infinity,
+  FolderKanban,
+  Video,
+  Gem
 };
 
 interface IconProps {

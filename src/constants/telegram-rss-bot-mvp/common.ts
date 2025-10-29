@@ -42,82 +42,82 @@ export const SECTION_HEADERS = {
 export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
   hero: {
     topRight: {
-      extraLarge: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-ExtraLarge.png',
-      large: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-Large.png',
-      medium: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-MediumHorizontal.png',
-      mediumVertical: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-MediumVertical.png',
-      small: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-SmallHorizontal.png',
-      smallVertical: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-SmallVertical.png',
+      extraLarge: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-Large.png',
+      medium: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-SmallVertical.png',
     },
   },
   problemSolution: {
     left: {
-      small: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   whySpecial: {
     left: {
-      small: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   bottom: {
     bottom: {
-      small: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Large.png",
+      small: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Large.png",
     } 
   },
   popularCard: {
     bottom: {
-      small: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Small.png",
+      small: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Small.png",
     },
     topRight: {
-      smallVertical: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-SmallVertical.png',
+      smallVertical: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-SmallVertical.png',
     },
   },
   successPayment: {
     left: {
-      small: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/courses/telegram-rss-bot-mvp/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/telegram-rss-bot-mvp/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/courses/telegram-rss-bot-mvp/rightSideBG/RightSideBG-ExtraLarge.png",
     },
     topRight: {
-      extraLarge: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-ExtraLarge.png',
-      large: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-Large.png',
-      medium: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-MediumHorizontal.png',
-      mediumVertical: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-MediumVertical.png',
-      small: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-SmallHorizontal.png',
-      smallVertical: '/images/telegram-rss-bot-mvp/heroBG/HeroBG-SmallVertical.png',
+      extraLarge: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-Large.png',
+      medium: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/courses/telegram-rss-bot-mvp/heroBG/HeroBG-SmallVertical.png',
     },
     bottom: {
-      small: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Small.png",
-      medium: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Medium.png",
-      large: "/images/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Large.png",
+      small: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/courses/telegram-rss-bot-mvp/courseProgramBG/CourseProgramBG-Large.png",
     } 
   }
 };

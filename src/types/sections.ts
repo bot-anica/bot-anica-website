@@ -26,6 +26,13 @@ export interface SectionHeaderProps {
   subtitle: string;
 }
 
+export interface ProblemSolutionSectionHeaderProps {
+  badge: string;
+  mainTitle: string;
+  highlightTitle: string;
+  subtitle: string;
+}
+
 export interface BGImages {
   small?: string;
   smallVertical?: string;
@@ -126,6 +133,13 @@ export interface ProblemSolutionItem {
   problem: string;
   solution: string;
   icon: any;
+}
+
+export interface HomeProblemSolutionData {
+  header: ProblemSolutionSectionHeaderProps;
+  items: ProblemSolutionItem[];
+  ctaBlock: SectionBottomCTA;
+  bgImages: PartialSectionBGImagesProps;
 }
 
 export interface ProblemSolutionData {

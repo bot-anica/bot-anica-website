@@ -42,82 +42,82 @@ export const SECTION_HEADERS = {
 export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
   hero: {
     topRight: {
-      extraLarge: '/images/python-basics/heroBG/HeroBG-ExtraLarge.png',
-      large: '/images/python-basics/heroBG/HeroBG-Large.png',
-      medium: '/images/python-basics/heroBG/HeroBG-MediumHorizontal.png',
-      mediumVertical: '/images/python-basics/heroBG/HeroBG-MediumVertical.png',
-      small: '/images/python-basics/heroBG/HeroBG-SmallHorizontal.png',
-      smallVertical: '/images/python-basics/heroBG/HeroBG-SmallVertical.png',
+      extraLarge: '/images/courses/python-basics/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/courses/python-basics/heroBG/HeroBG-Large.png',
+      medium: '/images/courses/python-basics/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/courses/python-basics/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/courses/python-basics/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/courses/python-basics/heroBG/HeroBG-SmallVertical.png',
     },
   },
   problemSolution: {
     left: {
-      small: "/images/python-basics/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/python-basics/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/python-basics/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/courses/python-basics/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/courses/python-basics/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/courses/python-basics/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/courses/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/python-basics/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/python-basics/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/python-basics/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/courses/python-basics/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/courses/python-basics/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/courses/python-basics/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/courses/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   whySpecial: {
     left: {
-      small: "/images/python-basics/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/python-basics/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/python-basics/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/courses/python-basics/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/courses/python-basics/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/courses/python-basics/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/courses/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/python-basics/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/python-basics/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/python-basics/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/courses/python-basics/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/courses/python-basics/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/courses/python-basics/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/courses/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
     }
   },
   bottom: {
     bottom: {
-      small: "/images/python-basics/courseProgramBG/CourseProgramBG-Small.png",
-      medium: "/images/python-basics/courseProgramBG/CourseProgramBG-Medium.png",
-      large: "/images/python-basics/courseProgramBG/CourseProgramBG-Large.png",
+      small: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Large.png",
     } 
   },
   popularCard: {
     bottom: {
-      small: "/images/python-basics/courseProgramBG/CourseProgramBG-Small.png",
+      small: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Small.png",
     },
     topRight: {
-      smallVertical: '/images/python-basics/heroBG/HeroBG-SmallVertical.png',
+      smallVertical: '/images/courses/python-basics/heroBG/HeroBG-SmallVertical.png',
     },
   },
   successPayment: {
     left: {
-      small: "/images/python-basics/leftSideBG/LeftSideBG-Small.png",
-      medium: "/images/python-basics/leftSideBG/LeftSideBG-Medium.png",
-      large: "/images/python-basics/leftSideBG/LeftSideBG-Large.png",
-      extraLarge: "/images/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
+      small: "/images/courses/python-basics/leftSideBG/LeftSideBG-Small.png",
+      medium: "/images/courses/python-basics/leftSideBG/LeftSideBG-Medium.png",
+      large: "/images/courses/python-basics/leftSideBG/LeftSideBG-Large.png",
+      extraLarge: "/images/courses/python-basics/leftSideBG/LeftSideBG-ExtraLarge.png",
     },
     right: {
-      small: "/images/python-basics/rightSideBG/RightSideBG-Small.png",
-      medium: "/images/python-basics/rightSideBG/RightSideBG-Medium.png",
-      large: "/images/python-basics/rightSideBG/RightSideBG-Large.png",
-      extraLarge: "/images/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
+      small: "/images/courses/python-basics/rightSideBG/RightSideBG-Small.png",
+      medium: "/images/courses/python-basics/rightSideBG/RightSideBG-Medium.png",
+      large: "/images/courses/python-basics/rightSideBG/RightSideBG-Large.png",
+      extraLarge: "/images/courses/python-basics/rightSideBG/RightSideBG-ExtraLarge.png",
     },
     topRight: {
-      extraLarge: '/images/python-basics/heroBG/HeroBG-ExtraLarge.png',
-      large: '/images/python-basics/heroBG/HeroBG-Large.png',
-      medium: '/images/python-basics/heroBG/HeroBG-MediumHorizontal.png',
-      mediumVertical: '/images/python-basics/heroBG/HeroBG-MediumVertical.png',
-      small: '/images/python-basics/heroBG/HeroBG-SmallHorizontal.png',
-      smallVertical: '/images/python-basics/heroBG/HeroBG-SmallVertical.png',
+      extraLarge: '/images/courses/python-basics/heroBG/HeroBG-ExtraLarge.png',
+      large: '/images/courses/python-basics/heroBG/HeroBG-Large.png',
+      medium: '/images/courses/python-basics/heroBG/HeroBG-MediumHorizontal.png',
+      mediumVertical: '/images/courses/python-basics/heroBG/HeroBG-MediumVertical.png',
+      small: '/images/courses/python-basics/heroBG/HeroBG-SmallHorizontal.png',
+      smallVertical: '/images/courses/python-basics/heroBG/HeroBG-SmallVertical.png',
     },
     bottom: {
-      small: "/images/python-basics/courseProgramBG/CourseProgramBG-Small.png",
-      medium: "/images/python-basics/courseProgramBG/CourseProgramBG-Medium.png",
-      large: "/images/python-basics/courseProgramBG/CourseProgramBG-Large.png",
+      small: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Small.png",
+      medium: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Medium.png",
+      large: "/images/courses/python-basics/courseProgramBG/CourseProgramBG-Large.png",
     } 
   }
 };

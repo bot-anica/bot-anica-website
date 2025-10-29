@@ -61,7 +61,7 @@
   /* Raw Values: Light Theme */
   --bg-primary: #ffffff;
   --bg-secondary: #f9fafb;
-  --bg-hover: #f3f4f6;
+  --bg-hover: rgb(207, 213, 222);
   --bg-opposite: #151C31;
 
   --text-primary: #151C31;
@@ -468,5 +468,14 @@
   100% { 
     transform: scale(1); 
     opacity: 1; 
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
