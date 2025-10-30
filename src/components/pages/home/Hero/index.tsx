@@ -6,7 +6,8 @@ import { FC } from 'react';
 const Hero: FC = () => {
   return (
     <section className="relative bg-background py-20 md:py-32 lg:py-40 max-h-screen">
-      <div className="absolute right-0 bottom-0 left-0 h-50 bg-gradient-to-t from-bg-primary to-bg-primary/0" />
+      <div className="absolute right-0 bottom-0 left-0 h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
+      <div className="absolute right-0 bottom-0 left-0 h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
 
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:gap-16 items-center">
