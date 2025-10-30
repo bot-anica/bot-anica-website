@@ -11,7 +11,7 @@ const Hero: FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-12 lg:gap-16 items-center">
           {/* Left Side: Text Content */}
-          <div className="flex flex-col items-center text-center md:text-left">
+          <div className="flex flex-col items-center text-center">
             <h1 className="text-4xl lg:text-5xl font-extrabold text-text-primary leading-tight">
               От идеи до проекта в{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-blue">
