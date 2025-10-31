@@ -68,13 +68,13 @@ const Header: FC = () => {
           <HeaderLogoLink />
           
           {/* Desktop Navigation */}
-          {ctaButtons && <HeaderNavigation links={navigationLinks} />}
+          {navigationLinks && <HeaderNavigation links={navigationLinks} />}
 
           <div className="flex items-center gap-4">
             <ModeToggle />
           
             {/* CTA Button */}
-            {navigationLinks && <HeaderCTAButtons ctaButtons={ctaButtons} />}
+            {ctaButtons && <HeaderCTAButtons ctaButtons={ctaButtons} />}
             
             {/* Mobile menu button */}
             <HeaderMobileMenuButton isOpen={isOpen} onClick={handleClick} />

@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import { FC, useEffect, useState } from 'react';
 import StackIcon from 'tech-stack-icons';
 import { NeonTechIcon, PostgreSqlIcon, PyCharmIcon, TelegramIcon } from './icons';
+import { SectionSplitter } from '@/components/common';
 
 const technologies = [
   'python',
@@ -67,7 +68,9 @@ const TechStack: FC = () => {
   }, []);
 
   return (
-    <section id="techStack" className="py-24 lg:py-28 xl:py-32 relative bg-bg-primary">
+    <section id="techStack" className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-bg-primary">
+      <SectionSplitter />
+
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-text-primary mb-12">
           Освойте инструменты и технологии:

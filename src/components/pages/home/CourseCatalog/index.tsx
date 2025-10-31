@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-import { Button, Card, SectionHeader } from "@/components/common";
+import { Button, Card, SectionHeader, SectionSplitter } from "@/components/common";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Icon from "@/components/ui/Icon";
 import { cn } from "@/utils/cn";
@@ -57,12 +57,13 @@ const CourseCatalog: FC = () => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   return (
-    <section ref={ref} id="courses" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative">
+    <section ref={ref} id="courses" className="py-24 lg:py-28 xl:py-32 bg-bg-primary overflow-hidden relative">
       <SectionHeader
         title="Наши курсы"
         subtitle="Выберите курс, который подходит именно вам, и начните свой путь в IT."
         isIntersecting={isIntersecting}
       />
+      <SectionSplitter />
 
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">  
         {/* --- Card Variant 1: Screenshot Style --- */}

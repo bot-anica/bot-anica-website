@@ -1,46 +1,36 @@
-'use client';
+"use client";
 
-import { FC, useState } from 'react';
-import { motion } from 'framer-motion';
+import type { FC } from 'react';
 
-import { faqData } from '@/constants/home/faq';
-import { SectionHeader } from '@/components/common';
-import Accordion from '@/components/common/Accordion';
+import FAQList from './FAQList';
+
+import { useFAQ } from '@/hooks/useFAQ';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { animationVariants } from '@/utils/animations';
+import { SectionBottomCTA, SectionHeader } from '@/components/common';
+import { faqData } from '@/constants/home/faq';
+import { finalCtaData } from '@/constants/home/finalCta';
 
 const FAQ: FC = () => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const { openIndex, toggleFAQ } = useFAQ();
 
   return (
     <section ref={ref} id="faq" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative">
-      <SectionHeader
-        title={faqData.title}
-        isIntersecting={isIntersecting}
-      />
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <SectionHeader title={faqData.title} isIntersecting={isIntersecting} />
 
-      <motion.div 
-        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
-        initial="hidden"
-        animate={isIntersecting ? 'visible' : 'hidden'}
-        variants={animationVariants.staggerContainer}
-      >
-        {faqData.items.map((item, index) => (
-          <motion.div key={index} variants={animationVariants.fadeInUp}>
-            <Accordion
-              question={item.question}
-              answer={item.answer}
-              isOpen={openIndex === index}
-              onToggle={() => handleToggle(index)}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+        {/* FAQ Items */}
+        <FAQList 
+          faqs={faqData.items} 
+          openIndex={openIndex} 
+          onToggle={toggleFAQ} 
+          isIntersecting={isIntersecting as boolean}
+        />
+
+        {/* Bottom Section */}
+        <SectionBottomCTA data={finalCtaData} isIntersecting={isIntersecting as boolean} />
+      </div>
     </section>
   );
 };

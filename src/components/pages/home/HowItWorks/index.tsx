@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { howItWorksData } from '@/constants/home/howItWorks';
 import StepCard from './StepCard';
-import { SectionHeader } from '@/components/common';
+import { SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { animationVariants } from '@/utils/animations';
 
@@ -13,12 +13,13 @@ const HowItWorks: FC = () => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   return (
-    <section ref={ref} id="howItWorks" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative">
+    <section ref={ref} id="howItWorks" className="py-24 lg:py-28 xl:py-32 bg-bg-primary overflow-hidden relative">
       <SectionHeader
         title={howItWorksData.title}
         isIntersecting={isIntersecting}
         titleClassName="max-w-3xl"
       />
+      <SectionSplitter />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { whyUsData } from '@/constants/home/whyUs';
 import FeatureCard from './FeatureCard';
-import { SectionHeader } from '@/components/common';
+import { SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import Stats from './Stats';
 import { animationVariants } from '@/utils/animations';
@@ -14,12 +14,13 @@ const WhyUs: FC = () => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   return (
-    <section ref={ref} id="whyUs" className="py-24 lg:py-28 xl:py-32 bg-bg-primary relative">
+    <section ref={ref} id="whyUs" className="py-24 lg:py-28 xl:py-32 bg-bg-primary overflow-hidden relative">
       <SectionHeader
         title={whyUsData.title}
         subtitle={whyUsData.subtitle}
         isIntersecting={isIntersecting}
       />
+      <SectionSplitter bottom={false} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
