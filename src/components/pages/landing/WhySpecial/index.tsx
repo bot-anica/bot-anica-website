@@ -16,7 +16,7 @@ interface WhySpecialProps {
 }
 
 const WhySpecial: FC<WhySpecialProps> = ({data}) => {
-  const { ref, isIntersecting } = useAnimatedSection();
+  const { ref, isIntersecting, hasIntersected } = useAnimatedSection();
   const { activePoint, setActivePointIndex } = useWhySpecial();
 
   const handlePointClick = useCallback((index: number) => {
@@ -51,14 +51,13 @@ const WhySpecial: FC<WhySpecialProps> = ({data}) => {
           />
 
           {/* Right Content */}
-          {currentPoint && (
-            <WhySpecialPointDetails 
-              point={currentPoint}
-              isFirstPoint={activePoint === 0}
-              isLastPoint={activePoint === whySpecialPoints.length - 1}
-              isIntersecting={isIntersecting} 
-            />
-          )}
+          <WhySpecialPointDetails 
+            key={activePoint}
+            point={currentPoint}
+            isFirstPoint={activePoint === 0}
+            isLastPoint={activePoint === whySpecialPoints.length - 1}
+            hasIntersected={hasIntersected} 
+          />
         </div>
 
         {/* Statistics */}

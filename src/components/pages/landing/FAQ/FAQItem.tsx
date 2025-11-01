@@ -16,11 +16,11 @@ const FAQItem: FC<FAQItemProps> = ({ question, answer, open, onClick, isIntersec
     initial={{ opacity: 0, y: 20 }}
     animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.6, delay: index * 0.1 }}
-    className="bg-brand-blue-light/5 rounded-lg border border-brand-blue-light/20 overflow-hidden"
+    className="bg-bg-secondary rounded-lg border border-brand-blue-light/15 overflow-hidden"
   >
     <button
       onClick={onClick}
-      className={`grid grid-cols-[1fr_auto] items-center cursor-pointer w-full px-4 py-3 md:px-6 md:py-3 text-left ${open ? 'bg-brand-blue-light/5' : ''} hover:bg-brand-blue-light/5 transition-colors`}
+      className={`grid grid-cols-[1fr_auto] items-center cursor-pointer w-full px-4 py-3 md:px-6 md:py-3 text-left ${open ? 'bg-bg-secondary' : ''} hover:bg-bg-secondary transition-colors`}
     >
       <span className="font-medium text-faq-question-text text-sm md:text-base">
         {question}

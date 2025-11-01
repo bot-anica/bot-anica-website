@@ -1,5 +1,6 @@
 export const howItWorksData = {
-  title: 'От идеи до готового проекта за 3 шага',
+  title: 'Шаги к успеху',
+  subtitle: 'Как работает обучение на нашик курсах',
   steps: [
     {
       step: 1,

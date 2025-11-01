@@ -50,7 +50,7 @@ const SectionBottomCTA: FC<SuccessStoriesCTAProps> = ({
         {data.description}
       </p>
       <Button 
-        variant={ButtonVariant.SECONDARY}
+        variant={ButtonVariant.OPPOSITE}
         to="#pricing"
         size={ButtonSize.MD}
         withoutBorder

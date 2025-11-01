@@ -36,7 +36,7 @@ const courseData = {
     titleHighlight: TELEGRAM_BOT_HERO_TITLE.highlight,
     titleAdditional: TELEGRAM_BOT_HERO_TITLE.additional,
     description: TELEGRAM_BOT_HERO_SUBTITLE,
-    tags: ['Python', 'Telegram API', 'Docker', 'PostgreSQL', 'Flask', 'Neon.com', 'GitHub Actions'],
+    tags: ['Python', 'Telegram API', 'PostgreSQL', 'GitHub Actions'],
     icon: 'Bot',
   },
 };

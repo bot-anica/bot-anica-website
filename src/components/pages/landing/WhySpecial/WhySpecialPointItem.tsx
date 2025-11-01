@@ -19,7 +19,7 @@ const WhySpecialPointItem: FC<WhySpecialPointItemProps> = ({ point, isActive, on
       variant={ButtonVariant.GHOST}
       className={`w-full lg:justify-start cursor-pointer bg-bg-primary !px-0 lg:!px-6 py-2 lg:p-4 rounded-tl-xl rounded-tr-xl rounded-bl-none rounded-br-none lg:rounded-xl border border-b-bg-primary lg:border-l-4 transition-all duration-300 ${
         isActive
-          ? 'border-border-primary hover:border-brand-pink/30 lg:border-border-primary lg:hover:border-brand-pink/30'
+          ? 'border-border-primary lg:border-border-primary'
           : 'border-bg-primary hover:border-border-primary lg:border-bg-primary lg:hover:border-border-primary'
       }`}
     >

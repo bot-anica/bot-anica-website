@@ -4,7 +4,8 @@ import { useTheme } from 'next-themes';
 import { FC, useEffect, useState } from 'react';
 import StackIcon from 'tech-stack-icons';
 import { NeonTechIcon, PostgreSqlIcon, PyCharmIcon, TelegramIcon } from './icons';
-import { SectionSplitter } from '@/components/common';
+import { SectionHeader, SectionSplitter } from '@/components/common';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const technologies = [
   'python',
@@ -61,6 +62,7 @@ const MarqueeSkeleton: FC = () => (
 )
 
 const TechStack: FC = () => {
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -68,14 +70,14 @@ const TechStack: FC = () => {
   }, []);
 
   return (
-    <section id="techStack" className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-bg-primary">
+    <section ref={ref} id="techStack" className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-bg-primary">
       <SectionSplitter />
 
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-text-primary mb-12">
-          Освойте инструменты и технологии:
-        </h2>
-      </div>
+      <SectionHeader
+        title="Технологический стек"
+        subtitle="Инструменты и технологии, которые вы будете использовать в процессе обучения."
+        isIntersecting={isIntersecting}
+      />
       <div className="relative flex overflow-hidden before:bg-gradient-to-r before:from-bg-primary before:to-bg-primary/0 before:absolute before:top-0 before:left-0 before:right-0 before:w-32 before:h-full before:z-10 after:bg-gradient-to-l after:from-bg-primary after:to-bg-primary/0 after:absolute after:top-0 after:right-0 after:bottom-0 after:w-32 after:h-full after:z-10">
         {mounted ? (
           <>

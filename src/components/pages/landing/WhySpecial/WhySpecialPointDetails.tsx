@@ -5,15 +5,16 @@ import { motion } from 'framer-motion';
 import WhySpecialPointContent from './WhySpecialPointContent';
 
 import { WhySpecialPoint } from '@/types/sections';
+import { animationVariants } from '@/utils/animations';
 
 interface WhySpecialPointDetailsProps {
   point: WhySpecialPoint;
   isFirstPoint: boolean;
   isLastPoint: boolean;
-  isIntersecting: boolean;
+  hasIntersected: boolean;
 }
 
-const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirstPoint, isLastPoint, isIntersecting }) => {
+const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirstPoint, isLastPoint, hasIntersected }) => {
   const getBorerRadiusDependOnSelectedPoint = () => {
     if (isFirstPoint) {
       return 'rounded-tl-none lg:rounded-tl-2xl';
@@ -26,10 +27,11 @@ const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirs
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={isIntersecting ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: 0.4 }}
-      className={`bg-bg-primary rounded-2xl ${getBorerRadiusDependOnSelectedPoint()} lg:rounded-2xl p-8 transition-all duration-300 border border-border-primary hover:border-brand-pink/30 h-full flex flex-col`}
+      initial="hidden"
+      animate={hasIntersected ? 'visible' : 'hidden'}
+      variants={animationVariants.fadeInRight}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      className={`bg-bg-primary rounded-2xl ${getBorerRadiusDependOnSelectedPoint()} lg:rounded-2xl p-8 transition-colors duration-300 border border-border-primary hover:border-brand-pink/30 h-full flex flex-col`}
     >
       <WhySpecialPointContent point={point} />
     </motion.div>

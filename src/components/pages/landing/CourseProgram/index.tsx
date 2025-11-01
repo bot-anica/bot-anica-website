@@ -64,7 +64,6 @@ const CourseProgram: FC<CourseProgramProps> = ({data, showSectionSplitter}) => {
         <CourseProgramSwiper
           lessons={lessons}
           breakpoints={breakpoints}
-          isIntersecting={isIntersecting as boolean}
           setSwiperRef={setSwiperRef}
         />
       </div>

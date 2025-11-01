@@ -13,14 +13,12 @@ import 'swiper/css/pagination';
 interface CourseProgramSwiperProps {
   lessons: Lesson[];
   breakpoints: SwiperOptions['breakpoints'];
-  isIntersecting: boolean;
   setSwiperRef: (swiper: SwiperType) => void;
 }
 
 const CourseProgramSwiper: React.FC<CourseProgramSwiperProps> = ({
   lessons,
   breakpoints,
-  isIntersecting,
   setSwiperRef,
 }) => {
   return (
@@ -42,7 +40,6 @@ const CourseProgramSwiper: React.FC<CourseProgramSwiperProps> = ({
               <LessonCard
                 lesson={lesson}
                 isEven={isEven}
-                isIntersecting={isIntersecting}
                 index={index}
               />
             </SwiperSlide>

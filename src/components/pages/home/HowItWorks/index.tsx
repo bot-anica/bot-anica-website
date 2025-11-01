@@ -16,8 +16,9 @@ const HowItWorks: FC = () => {
     <section ref={ref} id="howItWorks" className="py-24 lg:py-28 xl:py-32 bg-bg-primary overflow-hidden relative">
       <SectionHeader
         title={howItWorksData.title}
+        subtitle={howItWorksData.subtitle}
         isIntersecting={isIntersecting}
-        titleClassName="max-w-3xl"
+        titleClassName="max-w-2xl"
       />
       <SectionSplitter />
 

@@ -5,10 +5,10 @@ import { motion, easeOut } from 'framer-motion';
 import { Youtube } from 'lucide-react';
 import { Review } from '@/types/sections';
 import { formatRelativeTime } from '@/utils/time';
+import { useAnimatedSection } from '@/hooks/useAnimatedSection';
 
 interface ReviewCardProps {
   review: Review;
-  isIntersecting: boolean;
   index: number;
 }
 
@@ -25,14 +25,17 @@ const cardVariants = {
   }),
 };
 
-const ReviewCard: FC<ReviewCardProps> = ({ review, isIntersecting, index }) => {
+const ReviewCard: FC<ReviewCardProps> = ({ review, index }) => {
+  const { ref, hasIntersected } = useAnimatedSection();
+
   return (
     <motion.div
+      ref={ref}
       custom={index}
       initial="hidden"
       variants={cardVariants}
-      animate={isIntersecting ? "visible" : "hidden"}
-      className="bg-bg-secondary backdrop-blur-sm rounded-2xl p-6 border border-border-primary hover:border-border-hover transition-all duration-300 h-full flex flex-col"
+      animate={hasIntersected ? "visible" : "hidden"}
+      className="bg-bg-secondary backdrop-blur-sm rounded-2xl p-6 border border-border-primary hover:border-border-hover transition-colors duration-300 h-full flex flex-col"
     >
       <div className="flex items-center justify-between mb-4 text-sm text-text-tertiary">
         <div className="flex items-center gap-2">

@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { memo } from 'react';
-import { motion } from 'framer-motion';
 
 import { WhySpecialPoint } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
@@ -11,12 +10,7 @@ interface WhySpecialPointContentProps {
 
 const WhySpecialPointContent: FC<WhySpecialPointContentProps> = ({ point }) => {
   return (
-    <motion.div
-      key={point.title}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-    >
+    <div>
       <div className="flex items-center gap-4 mb-4 lg:mb-6">
         <div className="p-2 md:p-3 rounded-lg md:rounded-xl" style={{ background: `${point.color}33` }}>
           <Icon name={point.icon} className="w-6 h-6 md:w-8 md:h-8" style={{ color: point.color }} />
@@ -48,7 +42,7 @@ const WhySpecialPointContent: FC<WhySpecialPointContentProps> = ({ point }) => {
           ))}
         </ul>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
