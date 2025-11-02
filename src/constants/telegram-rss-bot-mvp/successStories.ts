@@ -83,4 +83,6 @@ export const SUCCESS_STORIES_CTA_BLOCK: SectionBottomCTA = {
   description: "Более 120 студентов уже создали своих первых ботов и сделали шаг в программирование. Присоединяйтесь к сообществу начинающих разработчиков!",
   icon: 'Trophy',
   iconColor: 'white',
+  buttonText: 'Начать обучение',
+  buttonLink: '#pricing',
 }

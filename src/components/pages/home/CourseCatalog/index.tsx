@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-import { Button, Card, SectionHeader, SectionSplitter } from "@/components/common";
+import { Button, SectionHeader, SectionSplitter } from "@/components/common";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Icon from "@/components/ui/Icon";
 import { cn } from "@/utils/cn";
@@ -13,6 +13,7 @@ import { COURSES } from "@/constants/courseRegistry";
 import { HERO_TITLE as PYTHON_BASICS_HERO_TITLE, HERO_SUBTITLE as PYTHON_BASICS_HERO_SUBTITLE } from "@/constants/python-basics/hero";
 import { HERO_TITLE as TELEGRAM_MVP_HERO_TITLE, HERO_SUBTITLE as TELEGRAM_MVP_HERO_SUBTITLE } from "@/constants/telegram-rss-bot-mvp/hero";
 import { HERO_TITLE as TELEGRAM_BOT_HERO_TITLE, HERO_SUBTITLE as TELEGRAM_BOT_HERO_SUBTITLE } from "@/constants/telegram-rss-bot/hero";
+import AnimatedCourseCard from "./AnimatedCourseCard";
 
 const courseData = {
   "python-basics": {
@@ -68,11 +69,13 @@ const CourseCatalog: FC = () => {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">  
         {/* --- Card Variant 1: Screenshot Style --- */}
         {courses.map((course, index) => (
-          <Card
+          <AnimatedCourseCard
             key={course.urlParam}
             className="relative p-6 rounded-xl overflow-hidden bg-bg-secondary"
             childrenWrapperClassName="flex flex-col h-full"
             bgImages={course.bgImages || undefined}
+            isIntersecting={isIntersecting}
+            index={index}
           >
             {/* Top Gradient Border */}
             <div className={cn(
@@ -123,11 +126,11 @@ const CourseCatalog: FC = () => {
             </div>
 
             {/* Button */}
-            <Button to={`/course/${course.urlParam}`} className="w-full bg-bg-opposite text-text-opposite hover:bg-bg-hover transition-colors duration-200 mt-auto">
+            <Button to={`/courses/${course.urlParam}`} className="w-full bg-bg-opposite text-text-opposite hover:bg-bg-hover transition-colors duration-200 mt-auto">
               <span>Подробнее</span>
               <Icon name="ArrowRight" className="ml-2 w-4 h-4" />
             </Button>
-          </Card>
+          </AnimatedCourseCard>
         ))}
 
       </div>

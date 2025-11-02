@@ -9,17 +9,15 @@ import ResultBadge from '@/components/common/ResultBadge';
 interface LessonCardProps {
   lesson: Lesson;
   isEven: boolean;
+  isIntersecting: boolean;
   index: number;
 }
 
-const LessonCard: FC<LessonCardProps> = ({ lesson, isEven, index }) => {
-  const { ref, hasIntersected } = useAnimatedSection();
-
+const LessonCard: FC<LessonCardProps> = ({ lesson, isEven, isIntersecting, index }) => {
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={hasIntersected ? { opacity: 1, y: 0 } : {}}
+      initial={{ opacity: 0 }}
+      animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative bg-bg-primary rounded-2xl p-6 transition-colors duration-300 border border-border-secondary hover:border-brand-pink/30 h-full flex flex-col overflow-hidden"
     >

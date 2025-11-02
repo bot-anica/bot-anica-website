@@ -5,5 +5,6 @@ export const finalCtaData: SectionBottomCTA = {
   description: 'Получите полный доступ к нашему курсу по основам Python и сделайте первый шаг к новой карьере.',
   icon: 'Rocket',
   iconColor: 'white',
-  // buttonText: 'Получить бесплатный курс',
+  buttonText: 'Получить курс',
+  buttonLink: '/courses/python-basics',
 };

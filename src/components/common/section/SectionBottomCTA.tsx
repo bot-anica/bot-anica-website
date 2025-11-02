@@ -51,11 +51,13 @@ const SectionBottomCTA: FC<SuccessStoriesCTAProps> = ({
       </p>
       <Button 
         variant={ButtonVariant.OPPOSITE}
-        to="#pricing"
+        // to="#pricing"
+        to={data.buttonLink}
         size={ButtonSize.MD}
         withoutBorder
       >
-        <span>Начать обучение</span>
+        {/* <span>Начать обучение</span> */}
+        <span>{data.buttonText}</span>
       </Button>
     </motion.div>
   );

@@ -13,7 +13,6 @@ interface ISolution {
 }
 
 export const problemSolutionHeader = {
-  badge: "",
   mainTitle: "От Хаоса к",
   highlightTitle: "Ясности",
   subtitle: "Преодолейте сложности в обучении и разработке. Наши курсы помогут вам превратить проблемы в реальные навыки и проекты.",

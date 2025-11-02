@@ -1,35 +1,21 @@
-import React from 'react';
+'use client';
 
+import React from 'react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { problemSolutionHeader, problems, solutions } from '@/constants/home/problemSolution';
-import SectionHeader from './SectionHeader';
 import ColumnHeader from './ColumnHeader';
 import ColumnItem from './ColumnItem';
-import { SectionSplitter } from '@/components/common';
-
-const problemColorConfig = {
-  bg: 'bg-brand-blue/5',
-  border: 'border-brand-blue-light/30',
-  iconBg: 'bg-brand-blue-light/25',
-  iconText: 'text-brand-blue-light',
-  titleText: 'text-brand-blue-light',
-};
-
-const solutionColorConfig = {
-  bg: 'bg-brand-pink/5',
-  border: 'border-brand-pink/30',
-  iconBg: 'bg-brand-pink/25',
-  iconText: 'text-brand-pink',
-  titleText: 'text-brand-pink',
-};
+import { SectionHeader, SectionSplitter } from '@/components/common';
 
 const ProblemSolutionSection = () => {
+  const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
+
   return (
-    <section className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-bg-primary">
+    <section ref={ref} className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-bg-primary">
       <SectionSplitter top={false} />
 
       <div className="container mx-auto px-4">
         <SectionHeader
-          badge={problemSolutionHeader.badge}
           title={(
             <>
               <span>От </span>
@@ -39,6 +25,7 @@ const ProblemSolutionSection = () => {
             </>
           )}
           subtitle={problemSolutionHeader.subtitle}
+          isIntersecting={isIntersecting}
         />
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
@@ -47,7 +34,9 @@ const ProblemSolutionSection = () => {
             <ColumnHeader
               title="Проблема"
               subtitle="Что вас сдерживает"
-              className={`text-center lg:text-right ${problemColorConfig.titleText}`}
+              isIntersecting={isIntersecting}
+              className="text-center lg:text-right"
+              type="problem"
             />
           </div>
 
@@ -56,7 +45,9 @@ const ProblemSolutionSection = () => {
             <ColumnHeader
               title="Решение"
               subtitle="Как мы вам поможем"
-              className={`text-center lg:text-left ${solutionColorConfig.titleText}`}
+              isIntersecting={isIntersecting}
+              className="text-center lg:text-left"
+              type="solution"
             />
           </div>
 
@@ -66,13 +57,23 @@ const ProblemSolutionSection = () => {
               {/* Problem Item */}
               <div className="w-full max-w-md ml-auto flex items-stretch">
                 {problems[index] && (
-                  <ColumnItem item={problems[index]} colorConfig={problemColorConfig} />
+                  <ColumnItem
+                    index={index}
+                    item={problems[index]}
+                    isIntersecting={isIntersecting}
+                    type="problem"
+                  />
                 )}
               </div>
               {/* Solution Item */}
               <div className="w-full max-w-md mr-auto flex items-stretch">
                 {solutions[index] && (
-                  <ColumnItem item={solutions[index]} colorConfig={solutionColorConfig} />
+                  <ColumnItem
+                    index={index}
+                    item={solutions[index]}
+                    isIntersecting={isIntersecting}
+                    type="solution"
+                  />
                 )}
               </div>
             </React.Fragment>

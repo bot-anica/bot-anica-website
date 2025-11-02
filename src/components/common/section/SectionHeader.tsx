@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 export interface SectionHeaderProps {
-  title: string;
+  title: string | ReactNode;
   position?: 'left' | 'center' | 'right';
   subtitle?: string;
   isIntersecting: boolean;

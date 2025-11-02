@@ -26,7 +26,7 @@ const cardVariants = {
 };
 
 const ReviewCard: FC<ReviewCardProps> = ({ review, index }) => {
-  const { ref, hasIntersected } = useAnimatedSection();
+  const { ref, isIntersecting } = useAnimatedSection();
 
   return (
     <motion.div
@@ -34,7 +34,7 @@ const ReviewCard: FC<ReviewCardProps> = ({ review, index }) => {
       custom={index}
       initial="hidden"
       variants={cardVariants}
-      animate={hasIntersected ? "visible" : "hidden"}
+      animate={isIntersecting ? "visible" : "hidden"}
       className="bg-bg-secondary backdrop-blur-sm rounded-2xl p-6 border border-border-primary hover:border-border-hover transition-colors duration-300 h-full flex flex-col"
     >
       <div className="flex items-center justify-between mb-4 text-sm text-text-tertiary">

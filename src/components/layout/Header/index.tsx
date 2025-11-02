@@ -16,7 +16,7 @@ import { usePathname } from 'next/navigation';
 const Header: FC = () => {
   const headerData = useHeader();
   const pathname = usePathname();
-  const isPrepaymentPage = /^\/course\/[^/]+\/prepayment$/.test(pathname);
+  const isPrepaymentPage = /^\/courses\/[^/]+\/prepayment$/.test(pathname);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

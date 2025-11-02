@@ -170,6 +170,8 @@ export interface SectionBottomCTA {
   description: string;
   icon: any;
   iconColor: string;
+  buttonText: string;
+  buttonLink: string;
 }
 
 export interface SuccessStoriesData {

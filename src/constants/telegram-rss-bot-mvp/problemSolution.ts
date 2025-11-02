@@ -28,4 +28,6 @@ export const PROBLEM_SOLUTION_CTA_BLOCK: SectionBottomCTA = {
   description: "Присоединяйтесь к курсу и создайте своего первого Telegram-бота",
   icon: 'Lightbulb',
   iconColor: 'white',
+  buttonText: 'Начать обучение',
+  buttonLink: '#pricing',
 }

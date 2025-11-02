@@ -11,10 +11,10 @@ interface WhySpecialPointDetailsProps {
   point: WhySpecialPoint;
   isFirstPoint: boolean;
   isLastPoint: boolean;
-  hasIntersected: boolean;
+  isIntersecting: boolean;
 }
 
-const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirstPoint, isLastPoint, hasIntersected }) => {
+const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirstPoint, isLastPoint, isIntersecting }) => {
   const getBorerRadiusDependOnSelectedPoint = () => {
     if (isFirstPoint) {
       return 'rounded-tl-none lg:rounded-tl-2xl';
@@ -28,7 +28,7 @@ const WhySpecialPointDetails: FC<WhySpecialPointDetailsProps> = ({ point, isFirs
   return (
     <motion.div
       initial="hidden"
-      animate={hasIntersected ? 'visible' : 'hidden'}
+      animate={isIntersecting ? 'visible' : 'hidden'}
       variants={animationVariants.fadeInRight}
       transition={{ delay: 0.5, duration: 0.5 }}
       className={`bg-bg-primary rounded-2xl ${getBorerRadiusDependOnSelectedPoint()} lg:rounded-2xl p-8 transition-colors duration-300 border border-border-primary hover:border-brand-pink/30 h-full flex flex-col`}
