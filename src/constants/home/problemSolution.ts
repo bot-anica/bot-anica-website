@@ -1,5 +1,3 @@
-import { LucideIcon } from "lucide-react";
-
 interface IProblem {
     icon: string;
     title: string;

@@ -289,11 +289,11 @@ export interface PageSEOConfig {
   noIndex?: boolean
 }
 
-export type AVAILABLE_PAGES = 'home' | 'payment'
+export type AVAILABLE_PAGES = 'home' | 'course' | 'payment'
 
 export interface SEOData {
   defaultSEOConfig: SEOConfig;
-  pageSEOConfigs: Record<AVAILABLE_PAGES, PageSEOConfig>;
+  pageSEOConfigs?: Record<AVAILABLE_PAGES, PageSEOConfig>;
 }
 
 export interface Currency {

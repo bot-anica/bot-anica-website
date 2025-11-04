@@ -26,10 +26,10 @@ import { checkIsCourseFree } from '@/utils/course';
 export async function generateMetadata({ params }: { params: Promise<{ courseUrlParam: string }> }): Promise<Metadata> {
   try {
     const { courseUrlParam } = await params
-    const seoData = await SEOService.getData(courseUrlParam);
-    const pageConfig = seoData.pageSEOConfigs.home;
+    const {pageSEOConfigs, defaultSEOConfig} = await SEOService.getCourseMetadata(courseUrlParam);
+    const pageConfig = pageSEOConfigs!.course;
     return {
-      title: `${pageConfig.title} | ${seoData.defaultSEOConfig.siteName}`,
+      title: `${pageConfig.title} | ${defaultSEOConfig.siteName}`,
       description: pageConfig.description,
       keywords: pageConfig.keywords,
       openGraph: {
