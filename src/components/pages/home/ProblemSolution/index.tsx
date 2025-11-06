@@ -14,8 +14,6 @@ interface ProblemSolutionSectionProps {
 const ProblemSolutionSection: FC<ProblemSolutionSectionProps> = ({ data }) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
-  console.log(data)
-
   return (
     <section ref={ref} className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-bg-primary">
       <SectionSplitter top={false} />
