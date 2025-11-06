@@ -8,7 +8,7 @@ export const HERO_TITLE: HeroTitle = {
 
 export const HERO_SUBTITLE = 'Практические курсы для создания IT-портфолио. Учитесь в своем темпе с пожизненным доступом.'
 
-export const HERO_TEXT = ''
+export const HERO_TEXT = 'Более 450 участников в нашем сообществе'
 
 export const HERO_CTA: Record<"primary" | "secondary", CTAItem> = {
   primary: {
