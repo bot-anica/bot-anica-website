@@ -4,7 +4,7 @@ import { SectionBGImagesService } from './SectionBGImagesService';
 import { SectionHeadersService } from './SectionHeadersService';
 
 export class CourseProgramService {
-  static async getLessons(courseUrlParam: string): Promise<Lesson[]> {
+  static async getCourseLessons(courseUrlParam: string): Promise<Lesson[]> {
     const { LESSONS } = await import(`@/constants/${courseUrlParam}/courseProgram`);
     return LESSONS as Lesson[];
   }
@@ -26,11 +26,11 @@ export class CourseProgramService {
     };
   }
 
-  static async getData(courseUrlParam: string): Promise<CourseProgramData> {
-    const header = await SectionHeadersService.getHeader(courseUrlParam, 'courseProgram');
-    const lessons = await CourseProgramService.getLessons(courseUrlParam);
+  static async getCourseData(courseUrlParam: string): Promise<CourseProgramData> {
+    const header = await SectionHeadersService.getCourseHeader(courseUrlParam, 'courseProgram');
+    const lessons = await CourseProgramService.getCourseLessons(courseUrlParam);
     const breakpoints = CourseProgramService.getSwiperBreakpoints();
-    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'bottom');
+    const bgImages = await SectionBGImagesService.getCourseBGImages(courseUrlParam, 'bottom');
     
     return {
       header,

@@ -2,16 +2,17 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 
 interface HeroSubtitleProps {
+  subtitle: string;
   variants: any;
 }
 
-const HeroSubtitle: FC<HeroSubtitleProps> = ({ variants }) => {
+const HeroSubtitle: FC<HeroSubtitleProps> = ({ subtitle, variants }) => {
   return (
     <motion.p 
       variants={variants}
       className="mt-6 text-lg lg:text-xl text-text-secondary max-w-xl mx-auto md:mx-0"
     >
-      Практические курсы для создания IT-портфолио. Учитесь в своем темпе с пожизненным доступом.
+      {subtitle}
     </motion.p>
   );
 };

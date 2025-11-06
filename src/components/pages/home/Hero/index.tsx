@@ -8,8 +8,13 @@ import HeroSubtitle from './HeroSubtitle';
 import HeroCTA from './HeroCTA';
 import HeroCommunity from './HeroCommunity';
 import HeroImage from './HeroImage';
+import { HomeHeroData } from '@/types/sections';
 
-const Hero: FC = () => {
+interface HeroProps {
+  data: HomeHeroData;
+}
+
+const Hero: FC<HeroProps> = ({ data }) => {
   const { containerVariants, itemVariants } = useHeroAnimations();
 
   return (
@@ -24,16 +29,14 @@ const Hero: FC = () => {
           animate="visible"
           className="grid gap-12 lg:gap-16 items-center"
         >
-          {/* Left Side: Text Content */}
           <div className="flex flex-col items-center text-center">
-            <HeroTitle variants={itemVariants} />
-            <HeroSubtitle variants={itemVariants} />
-            <HeroCTA variants={itemVariants} />
-            <HeroCommunity variants={itemVariants} />
+            <HeroTitle title={data.title} variants={itemVariants} />
+            <HeroSubtitle subtitle={data.subtitle} variants={itemVariants} />
+            <HeroCTA cta={data.cta} variants={itemVariants} />
+            <HeroCommunity text={data.text} variants={itemVariants} />
           </div>
 
-          {/* Right Side: Visual Element */}
-          <HeroImage variants={itemVariants} />
+          <HeroImage image={data.image} variants={itemVariants} />
         </motion.div>
       </div>
     </section>

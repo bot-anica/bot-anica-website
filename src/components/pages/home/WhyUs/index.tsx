@@ -3,21 +3,25 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 
-import { whyUsData } from '@/constants/home/whyUs';
 import FeatureCard from './FeatureCard';
 import { SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import Stats from './Stats';
 import { animationVariants } from '@/utils/animations';
+import { WhyUsData } from '@/types/sections';
 
-const WhyUs: FC = () => {
+interface WhyUsProps {
+  data: WhyUsData
+}
+
+const WhyUs: FC<WhyUsProps> = ({ data }) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   return (
     <section ref={ref} id="whyUs" className="py-24 lg:py-28 xl:py-32 bg-bg-primary overflow-hidden relative">
       <SectionHeader
-        title={whyUsData.title}
-        subtitle={whyUsData.subtitle}
+        title={data.header.title}
+        subtitle={data.header.subtitle}
         isIntersecting={isIntersecting}
       />
       <SectionSplitter bottom={false} />
@@ -29,7 +33,7 @@ const WhyUs: FC = () => {
           animate={isIntersecting ? 'visible' : 'hidden'}
           variants={animationVariants.staggerContainer}
         >
-          {whyUsData.features.slice(0,3).map((feature, index) => (
+          {data.features.slice(0,3).map((feature, index) => (
             <FeatureCard
               key={index}
               icon={feature.icon}
@@ -40,7 +44,7 @@ const WhyUs: FC = () => {
           ))}
         </motion.div>
 
-        <Stats stats={whyUsData.stats} isIntersecting={isIntersecting} />
+        <Stats stats={data.stats} isIntersecting={isIntersecting} />
       </div>
     </section>
   );

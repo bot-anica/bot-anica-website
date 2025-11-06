@@ -6,7 +6,7 @@ import { SectionHeadersService } from './SectionHeadersService';
 export class SuccessStoriesService {
   private static modules: Map<string, any> = new Map();
 
-  private static async loadModule(courseUrlParam: string) {
+  private static async loadCourseModule(courseUrlParam: string) {
     if (this.modules.has(courseUrlParam)) {
       return this.modules.get(courseUrlParam);
     }
@@ -28,29 +28,14 @@ export class SuccessStoriesService {
     }
   }
 
-  static async getStatistic(courseUrlParam: string): Promise<Statistic[] | null> {
-    const mod = await this.loadModule(courseUrlParam);
-    return mod ? mod.STATISTIC : null;
-  }
-
-  static async getTestimonials(courseUrlParam: string): Promise<Testimonial[] | null> {
-    const mod = await this.loadModule(courseUrlParam);
-    return mod ? mod.TESTIMONIALS : null;
-  }
-
-  static async getCTABlock(courseUrlParam: string): Promise<SectionBottomCTA | null> {
-    const mod = await this.loadModule(courseUrlParam);
-    return mod ? mod.SUCCESS_STORIES_CTA_BLOCK : null;
-  }
-
-  static async getData(courseUrlParam: string): Promise<SuccessStoriesData | null> {
-    const mod = await this.loadModule(courseUrlParam);
+  static async getCourseData(courseUrlParam: string): Promise<SuccessStoriesData | null> {
+    const mod = await this.loadCourseModule(courseUrlParam);
     if (!mod) {
       return null;
     }
 
-    const header = await SectionHeadersService.getHeader(courseUrlParam, 'successStories');
-    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'bottom');
+    const header = await SectionHeadersService.getCourseHeader(courseUrlParam, 'successStories');
+    const bgImages = await SectionBGImagesService.getCourseBGImages(courseUrlParam, 'bottom');
     
     const { STATISTIC: stats, TESTIMONIALS: testimonials, SUCCESS_STORIES_CTA_BLOCK: ctaBlock } = mod;
 

@@ -23,7 +23,7 @@ export interface WhySpecialSectionData {
 
 export interface SectionHeaderProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 export interface ProblemSolutionSectionHeaderProps {
@@ -89,7 +89,7 @@ export interface CTAItem {
 export interface HeroTitle {
   main: string;
   highlight: string;
-  additional: string;
+  additional?: string;
 }
 
 export interface HeroImages {
@@ -101,7 +101,7 @@ export interface HeroImages {
   smallVertical?: string,
 }
 
-export interface HeroData {
+export interface CourseHeroData {
   title: HeroTitle;
   subtitle: string;
   benefits: string[];
@@ -111,6 +111,17 @@ export interface HeroData {
   };
   images: Record<'rightImages' | 'imagesInText', HeroImages>;
   bgImages: PartialSectionBGImagesProps;
+}
+
+export interface HomeHeroData {
+  title: HeroTitle;
+  subtitle: string;
+  text: string;
+  cta: {
+    primary: CTAItem;
+    secondary: CTAItem;
+  };
+  image: string;
 }
 
 export interface PathToSuccessStep {
@@ -129,24 +140,34 @@ export interface PathToSuccessData {
   bgImages: PartialSectionBGImagesProps;
 }
 
-export interface ProblemSolutionItem {
+export interface CourseProblemSolutionItem {
   problem: string;
   solution: string;
   icon: any;
 }
 
-export interface HomeProblemSolutionData {
-  header: ProblemSolutionSectionHeaderProps;
-  items: ProblemSolutionItem[];
+export interface HomeProblem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface HomeSolution {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface CourseProblemSolutionData {
+  header: SectionHeaderProps;
+  items: CourseProblemSolutionItem[];
   ctaBlock: SectionBottomCTA;
   bgImages: PartialSectionBGImagesProps;
 }
 
-export interface ProblemSolutionData {
+export interface HomeProblemSolutionData {
   header: SectionHeaderProps;
-  items: ProblemSolutionItem[];
-  ctaBlock: SectionBottomCTA;
-  bgImages: PartialSectionBGImagesProps;
+  items: [HomeProblem, HomeSolution][];
 }
 
 export interface Statistic {
@@ -195,6 +216,10 @@ export interface ReviewsData {
   bgImages: PartialSectionBGImagesProps;
 }
 
+export interface HomeTechStackData {
+  header: SectionHeaderProps;
+}
+
 export interface Lesson {
   id: number;
   title: string;
@@ -232,7 +257,7 @@ export interface FAQItem {
 export interface FAQData {
   header: SectionHeaderProps;
   faqs: FAQItem[];
-  bgImages: PartialSectionBGImagesProps;
+  bgImages?: PartialSectionBGImagesProps;
 }
 
 export interface PricingPlan {
@@ -326,4 +351,67 @@ export interface Course {
   urlParam: string;
   description: string;
   tariffs: Tariff[];
+}
+
+export interface CourseCatalogItem {
+  titleMain: string;
+  titleHighlight: string;
+  titleAdditional: string;
+  description: string;
+  tags: string[];
+  icon: string;
+  name: string;
+  urlParam: string;
+  image: string;
+  bgImages: PartialSectionBGImagesProps;
+}
+
+export interface CourseCatalogItemAdditionalData {
+  tags: string[];
+  icon: string;
+}
+
+export interface CourseCatalogData {
+  header: SectionHeaderProps;
+  courses: CourseCatalogItem[];
+}
+
+export interface HowItWorksStep {
+  title: string;
+  description: string;
+  image: string;
+  icon?: string;
+}
+
+export interface HowItWorksData {
+  header: SectionHeaderProps;
+  steps: HowItWorksStep[];
+}
+
+export interface WhyUsFeature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface WhyUsStat {
+  number: string;
+  label: string;
+}
+
+export interface WhyUsData {
+  header: SectionHeaderProps;
+  features: WhyUsFeature[];
+  stats: WhyUsStat[];
+}
+
+export interface HomeAuthorData {
+  text: string;
+  githubLink: string;
+  email: string;
+}
+
+export interface HomeAboutAuthorData {
+  header: SectionHeaderProps;
+  authorData: HomeAuthorData;
 }

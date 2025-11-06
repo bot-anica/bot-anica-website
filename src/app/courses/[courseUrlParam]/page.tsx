@@ -72,14 +72,14 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     pricingData,
     faqData,
   ] = await Promise.all([
-    HeroService.getData(courseUrlParam),
-    ProblemSolutionService.getData(courseUrlParam),
-    WhySpecialService.getData(courseUrlParam),
-    CourseProgramService.getData(courseUrlParam),
-    ReviewsService.getData(courseUrlParam),
-    SuccessStoriesService.getData(courseUrlParam),
-    PricingService.getData(courseUrlParam),
-    FaqService.getData(courseUrlParam),
+    HeroService.getCourseData(courseUrlParam),
+    ProblemSolutionService.getCourseData(courseUrlParam),
+    WhySpecialService.getCourseData(courseUrlParam),
+    CourseProgramService.getCourseData(courseUrlParam),
+    ReviewsService.getCourseData(courseUrlParam),
+    SuccessStoriesService.getCourseData(courseUrlParam),
+    PricingService.getCourseData(courseUrlParam),
+    FaqService.getCourseData(courseUrlParam),
   ]);
 
   return (

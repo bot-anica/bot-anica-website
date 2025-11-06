@@ -6,6 +6,7 @@ import StackIcon from 'tech-stack-icons';
 import { NeonTechIcon, PostgreSqlIcon, PyCharmIcon, TelegramIcon } from './icons';
 import { SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { HomeTechStackData } from '@/types/sections';
 
 const technologies = [
   'python',
@@ -61,7 +62,11 @@ const MarqueeSkeleton: FC = () => (
   </div>
 )
 
-const TechStack: FC = () => {
+interface TechStackProps {
+  data: HomeTechStackData
+}
+
+const TechStack: FC<TechStackProps> = ({ data }) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const [mounted, setMounted] = useState(false);
 
@@ -74,8 +79,8 @@ const TechStack: FC = () => {
       <SectionSplitter />
 
       <SectionHeader
-        title="Технологический стек"
-        subtitle="Инструменты и технологии, которые вы будете использовать в процессе обучения."
+        title={data.header.title}
+        subtitle={data.header.subtitle}
         isIntersecting={isIntersecting}
       />
       <div className="relative flex overflow-hidden before:bg-gradient-to-r before:from-bg-primary before:to-bg-primary/0 before:absolute before:top-0 before:left-0 before:right-0 before:w-32 before:h-full before:z-10 after:bg-gradient-to-l after:from-bg-primary after:to-bg-primary/0 after:absolute after:top-0 after:right-0 after:bottom-0 after:w-32 after:h-full after:z-10">

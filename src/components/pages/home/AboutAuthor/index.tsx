@@ -3,19 +3,23 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 
-import { aboutAuthorData } from '@/constants/home/aboutAuthor';
 import { SectionHeader } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { animationVariants } from '@/utils/animations';
+import { HomeAboutAuthorData } from '@/types/sections';
 
-const AboutAuthor: FC = () => {
+interface AboutAuthorProps {
+  data: HomeAboutAuthorData
+}
+
+const AboutAuthor: FC<AboutAuthorProps> = ({ data }) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   return (
     <section ref={ref} id="aboutAuthor" className="py-24 lg:py-28 xl:py-32 bg-bg-secondary relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <SectionHeader
-          title={aboutAuthorData.title}
+          title={data.header.title}
           isIntersecting={isIntersecting}
         />
 
@@ -26,7 +30,7 @@ const AboutAuthor: FC = () => {
           variants={animationVariants.fadeInUp}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <p>“{aboutAuthorData.text}”</p>
+          <p>“{data.authorData.text}”</p>
         </motion.blockquote>
       </div>
     </section>

@@ -7,10 +7,10 @@ import ProblemSolutionItems from './ProblemSolutionItems';
 import { SectionBackground, SectionSplitter, SectionHeader, SectionBottomCTA } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { useProblemSolutionAnimations } from '@/hooks/useProblemSolutionAnimations';
-import { ProblemSolutionData } from '@/types/sections';
+import { CourseProblemSolutionData } from '@/types/sections';
 
 interface ProblemSolutionProps {
-  data: ProblemSolutionData
+  data: CourseProblemSolutionData
 }
 
 const ProblemSolution: FC<ProblemSolutionProps> = ({data}) => {

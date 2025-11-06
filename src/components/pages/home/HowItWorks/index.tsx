@@ -3,20 +3,24 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 
-import { howItWorksData } from '@/constants/home/howItWorks';
 import StepCard from './StepCard';
 import { SectionHeader, SectionSplitter } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { animationVariants } from '@/utils/animations';
+import { HowItWorksData } from '@/types/sections';
 
-const HowItWorks: FC = () => {
+interface HowItWorksProps {
+  data: HowItWorksData
+}
+
+const HowItWorks: FC<HowItWorksProps> = ({ data }) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
 
   return (
     <section ref={ref} id="howItWorks" className="py-24 lg:py-28 xl:py-32 bg-bg-primary overflow-hidden relative">
       <SectionHeader
-        title={howItWorksData.title}
-        subtitle={howItWorksData.subtitle}
+        title={data.header.title}
+        subtitle={data.header.subtitle}
         isIntersecting={isIntersecting}
         titleClassName="max-w-2xl"
       />
@@ -29,10 +33,10 @@ const HowItWorks: FC = () => {
           animate={isIntersecting ? 'visible' : 'hidden'}
           variants={animationVariants.staggerContainer}
         >
-          {howItWorksData.steps.map((step, index) => (
+          {data.steps.map((step, index) => (
             <motion.div key={index} variants={animationVariants.fadeInUp} className="relative z-10">
               <StepCard
-                step={step.step}
+                step={index + 1}
                 title={step.title}
                 description={step.description}
                 image={step.image}
