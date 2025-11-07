@@ -21,7 +21,7 @@ const MarqueeItems: FC<MarqueeItemsProps> = ({ allItems, isCopy }) => {
     github: {name: 'GitHub', icon: <StackIcon name="github" variant={iconVariant} className='w-16 h-16 object-contain ' />},
     flask: {name: 'Flask', icon: <StackIcon name="flask" variant={iconVariant} className='w-16 h-16 object-contain ' />},
     pycharm: {name: 'PyCharm', icon: <PyCharmIcon className='w-16 h-16 object-contain ' />},
-    telegram: {name: 'Telegram', icon: <TelegramIcon className='w-16 h-16 object-contain ' />},
+    telegram: {name: 'Telegram API', icon: <TelegramIcon className='w-16 h-16 object-contain ' />},
     postgresql: {name: 'PostgreSQL', icon: <PostgreSqlIcon className='w-16 h-16 object-contain ' />},
     neontech: {name: 'Neon.com', icon: <NeonTechIcon className='w-16 h-16 object-contain ' />},
   };
