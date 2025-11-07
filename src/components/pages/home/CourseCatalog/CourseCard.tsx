@@ -25,7 +25,7 @@ const CourseCard: FC<CourseCardProps> = ({
       className="relative h-full flex flex-col"
     >
       <Card
-        className="relative p-6 rounded-xl overflow-hidden bg-bg-secondary"
+        className="relative p-4 md:p-5 lg:p-6 rounded-xl overflow-hidden bg-bg-secondary"
         childrenWrapperClassName="flex flex-col h-full"
         bgImages={course.bgImages || undefined}
       >

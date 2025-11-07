@@ -1,5 +1,6 @@
 import { SwiperOptions } from "swiper/types";
 import { ButtonVariant, ButtonSize, ButtonIconPosition } from "./common";
+import { ReactNode } from "react";
 
 export interface Stat {
   number: string;
@@ -414,4 +415,9 @@ export interface HomeAuthorData {
 export interface HomeAboutAuthorData {
   header: SectionHeaderProps;
   authorData: HomeAuthorData;
+}
+
+export interface TechStackItem {
+  name: string;
+  icon: ReactNode;
 }

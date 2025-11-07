@@ -30,8 +30,8 @@ const ColumnHeader: React.FC<ColumnHeaderProps> = ({ title, subtitle, isIntersec
       transition={{ delay: 0.3, duration: 0.6, ease: 'easeInOut' }}
       className={`mb-4 ${colorConfigs[type].titleText} ${className}`}
     >
-      <h3 className="text-3xl font-bold">{title}</h3>
-      <p className="text-text-tertiary text-sm">{subtitle}</p>
+      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">{title}</h3>
+      <p className="text-text-tertiary text-xs md:text-sm">{subtitle}</p>
     </motion.div>
   );
 };

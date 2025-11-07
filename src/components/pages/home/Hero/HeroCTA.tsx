@@ -15,7 +15,7 @@ const HeroCTA: FC<HeroCTAProps> = ({ cta, variants }) => {
   return (
     <motion.div 
       variants={variants}
-      className="mt-8 flex justify-center md:justify-start gap-4"
+      className="mb-4 lg:mb-3 xl:mb-6 flex flex-col md:flex-row justify-center gap-4"
     >
       {Object.entries(cta).map(([key, item]) => (
         <Button

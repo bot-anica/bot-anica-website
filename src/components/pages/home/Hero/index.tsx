@@ -18,16 +18,16 @@ const Hero: FC<HeroProps> = ({ data }) => {
   const { containerVariants, itemVariants } = useHeroAnimations();
 
   return (
-    <section className="relative bg-background py-20 md:py-32 lg:py-40 max-h-screen">
-      <div className="absolute right-0 bottom-0 left-0 z-10 h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
-      <div className="absolute right-0 bottom-0 left-0 z-10 h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
+    <section className="relative bg-bg-primary py-20 md:py-32 lg:py-40 max-h-screen">
+      <div className="absolute right-0 bottom-0 left-0 z-10 h-50 md:h-30 lg:h-40 xl:h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
+      <div className="absolute right-0 bottom-0 left-0 z-10 h-50 md:h-30 lg:h-40 xl:h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
 
       <div className="container mx-auto px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid gap-12 lg:gap-16 items-center"
+          className="grid gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center"
         >
           <div className="flex flex-col items-center text-center">
             <HeroTitle title={data.title} variants={itemVariants} />

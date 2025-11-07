@@ -10,7 +10,7 @@ const HeroCommunity: FC<HeroCommunityProps> = ({ text, variants }) => {
   return (
     <motion.p 
       variants={variants}
-      className="mt-6 text-sm text-text-tertiary"
+      className="text-xs md:text-sm text-text-tertiary"
     >
       {text}
     </motion.p>

@@ -32,7 +32,7 @@ const ProblemSolutionSection: FC<ProblemSolutionSectionProps> = ({ data }) => {
           isIntersecting={isIntersecting}
         />
 
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
+        <div className="relative grid grid-cols-2 gap-4 md:gap-x-6 md:gap-y-3 lg:gap-x-8 lg:gap-y-4">
           <div className="ml-auto">
             <ColumnHeader
               title="Проблема"
@@ -52,10 +52,11 @@ const ProblemSolutionSection: FC<ProblemSolutionSectionProps> = ({ data }) => {
               type="solution"
             />
           </div>
-
+        </div>
+        <div className="relative grid sm:grid-cols-2 gap-4 md:gap-x-6 md:gap-y-3 lg:gap-x-8 lg:gap-y-4">
           {data.items.map((item, index) => (
             <React.Fragment key={index}>
-              <div className="w-full max-w-md ml-auto flex items-stretch">
+              <div className="w-full max-w-9/12 sm:max-w-md mr-auto md:mr-0 md:ml-auto flex items-stretch">
                 <ColumnItem
                   index={index}
                   item={item[0]}
@@ -63,7 +64,7 @@ const ProblemSolutionSection: FC<ProblemSolutionSectionProps> = ({ data }) => {
                   type="problem"
                 />
               </div>
-              <div className="w-full max-w-md mr-auto flex items-stretch">
+              <div className="w-full max-w-9/12 sm:max-w-md ml-auto md:ml-0 md:mr-auto flex items-stretch">
                 <ColumnItem
                   index={index}
                   item={item[1]}
