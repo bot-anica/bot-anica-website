@@ -18,7 +18,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
   const { containerVariants, itemVariants } = useHeroAnimations();
 
   return (
-    <section className="relative bg-bg-primary py-20 md:py-32 lg:py-40 max-h-screen">
+    <section className="relative bg-bg-primary py-28 md:py-32 lg:py-40 max-h-screen">
       <div className="absolute right-0 bottom-0 left-0 z-10 h-50 md:h-30 lg:h-40 xl:h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
       <div className="absolute right-0 bottom-0 left-0 z-10 h-50 md:h-30 lg:h-40 xl:h-50 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-bg-primary/0" />
 

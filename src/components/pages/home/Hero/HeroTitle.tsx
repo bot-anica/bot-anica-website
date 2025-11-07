@@ -11,7 +11,7 @@ const HeroTitle: FC<HeroTitleProps> = ({ title, variants }) => {
   return (
     <motion.h1 
       variants={variants}
-      className="mb-5 xl:mb-6 text-3xl md:text-4xl xl:text-5xl font-extrabold text-text-primary leading-tight"
+      className="mb-5 xl:mb-6 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-text-primary leading-tight"
     >
       <span>{title.main}</span>
       {title.highlight && (
