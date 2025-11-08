@@ -22,4 +22,9 @@ export class WhySpecialService {
       bgImages,
     };
   }
+
+  static async validateWhySpecialPointIndex(courseUrlParam: string, index: number): Promise<boolean> {
+    const { WHY_SPECIAL_POINTS } = await import(`@/constants/${courseUrlParam}/whySpecial`);
+    return index >= 0 && index < WHY_SPECIAL_POINTS.length;
+  }
 }

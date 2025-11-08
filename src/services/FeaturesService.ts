@@ -9,9 +9,9 @@ export class FeaturesService {
   }
 
   static async getData(courseUrlParam: string): Promise<FeaturesData> {
-    const header = await SectionHeadersService.getHeader(courseUrlParam, 'features');
+    const header = await SectionHeadersService.getCourseHeader(courseUrlParam, 'features');
     const features = await FeaturesService.getAllFeatures(courseUrlParam);
-    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'features');
+    const bgImages = await SectionBGImagesService.getCourseBGImages(courseUrlParam, 'features');
 
     return {
       header,

@@ -10,13 +10,13 @@ import HeroTitle from './HeroTitle';
 import HeroImageInText from './HeroImageInText';
 import HeroRightImage from './HeroRightImage';
 
-import { HeroData } from '@/types/sections';
+import { CourseHeroData } from '@/types/sections';
 import { SectionBackground, SectionSplitter } from '@/components/common';
 import { useHeroAnimations } from '@/hooks/useHeroAnimations';
 import HeroFreeCourseLabel from './HeroFreeCourseLabel';
 
 interface HeroProps {
-  data: HeroData;
+  data: CourseHeroData;
   courseIsFree?: boolean;
 }
 

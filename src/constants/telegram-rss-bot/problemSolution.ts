@@ -1,6 +1,6 @@
-import { ProblemSolutionItem, SectionBottomCTA } from '@/types/sections';
+import { CourseProblemSolutionItem, SectionBottomCTA } from '@/types/sections';
 
-export const PROBLEM_SOLUTION_ITEMS: ProblemSolutionItem[] = [
+export const PROBLEM_SOLUTION_ITEMS: CourseProblemSolutionItem[] = [
   {
     problem: "Сложная архитектура",
     solution: "Профессиональная архитектура",

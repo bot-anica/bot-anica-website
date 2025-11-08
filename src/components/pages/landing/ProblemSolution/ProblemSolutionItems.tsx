@@ -3,7 +3,7 @@ import { motion, type Variants } from 'framer-motion';
 
 import ProblemSolutionVertical from './ProblemSolutionVertical';
 
-import { ProblemSolutionItem as ProblemSolutionItemType } from '@/types/sections';
+import { CourseProblemSolutionItem as ProblemSolutionItemType } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
 
 interface ProblemSolutionItemsProps {

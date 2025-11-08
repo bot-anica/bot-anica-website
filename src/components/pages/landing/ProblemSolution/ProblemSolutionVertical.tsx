@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion, type Variants } from 'framer-motion';
 
-import { ProblemSolutionItem as ProblemSolutionItemType } from '@/types/sections';
+import { CourseProblemSolutionItem as ProblemSolutionItemType } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
 
 interface ProblemSolutionVerticalProps {

@@ -10,6 +10,7 @@ import { useAnimatedSection } from '@/hooks/useAnimatedSection';
 interface ReviewCardProps {
   review: Review;
   index: number;
+  isIntersecting: boolean;
 }
 
 const cardVariants = {
@@ -25,12 +26,9 @@ const cardVariants = {
   }),
 };
 
-const ReviewCard: FC<ReviewCardProps> = ({ review, index }) => {
-  const { ref, isIntersecting } = useAnimatedSection();
-
+const ReviewCard: FC<ReviewCardProps> = ({ review, index, isIntersecting }) => {
   return (
     <motion.div
-      ref={ref}
       custom={index}
       initial="hidden"
       variants={cardVariants}

@@ -15,10 +15,10 @@ export class PathToSuccessService {
   }
 
   static async getData(courseUrlParam: string): Promise<PathToSuccessData> {
-    const header = await SectionHeadersService.getHeader(courseUrlParam, 'pathToSuccess');
+    const header = await SectionHeadersService.getCourseHeader(courseUrlParam, 'pathToSuccess');
     const steps = await PathToSuccessService.getPathSteps(courseUrlParam);
     const images = await PathToSuccessService.getPathToSuccessImages(courseUrlParam);
-    const bgImages = await SectionBGImagesService.getBGImages(courseUrlParam, 'pathToSuccess');
+    const bgImages = await SectionBGImagesService.getCourseBGImages(courseUrlParam, 'pathToSuccess');
 
     return {
       header,
