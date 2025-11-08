@@ -7,15 +7,16 @@ import { Stat } from '@/types/sections';
 interface StatsSectionProps {
   stats: Stat[];
   isIntersecting: boolean;
+  className?: string;
 }
 
-const StatsSection: FC<StatsSectionProps> = ({ stats, isIntersecting }) => {
+const StatsSection: FC<StatsSectionProps> = ({ stats, isIntersecting, className }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: 0.8 }}
-      className="bg-gradient-to-br from-brand-pink/5 via-brand-blue-light/5 to-brand-pink/5 rounded-2xl lg:rounded-3xl p-6 md:p-8 lg:p-10 border border-brand-pink/20"
+      className={`bg-gradient-to-br from-brand-pink/5 via-brand-blue-light/5 to-brand-pink/5 rounded-2xl lg:rounded-3xl p-6 md:p-8 lg:p-10 border border-brand-pink/20 ${className}`}
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {stats.map((stat, index) => (

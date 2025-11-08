@@ -30,6 +30,7 @@ const ProblemSolutionSection: FC<ProblemSolutionSectionProps> = ({ data }) => {
           )}
           subtitle={data.header.subtitle}
           isIntersecting={isIntersecting}
+          className="max-w-lg mx-auto"
         />
 
         <div className="relative grid grid-cols-2 gap-4 md:gap-x-6 md:gap-y-3 lg:gap-x-8 lg:gap-y-4">

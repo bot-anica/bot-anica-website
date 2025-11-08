@@ -26,9 +26,9 @@ const HowItWorks: FC<HowItWorksProps> = ({ data }) => {
       />
       <SectionSplitter />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-md md:max-w-7xl lg:max-w-max lg:container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16 relative"
+          className="flex justify-center flex-wrap gap-12 md:gap-16 items-stretch relative"
           initial="hidden"
           animate={isIntersecting ? 'visible' : 'hidden'}
           variants={animationVariants.staggerContainer}

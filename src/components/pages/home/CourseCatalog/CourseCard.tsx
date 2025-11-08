@@ -22,10 +22,10 @@ const CourseCard: FC<CourseCardProps> = ({
       initial={{ opacity: 0, y: 30 }}
       animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.2, ease: "easeInOut" }}
-      className="relative h-full flex flex-col"
+      className="relative self-stretch flex flex-col"
     >
       <Card
-        className="relative p-4 md:p-5 lg:p-6 rounded-xl overflow-hidden bg-bg-secondary"
+        className="relative h-full max-w-96 p-4 md:p-5 lg:p-6 rounded-xl overflow-hidden bg-bg-secondary"
         childrenWrapperClassName="flex flex-col h-full"
         bgImages={course.bgImages || undefined}
       >
@@ -37,18 +37,18 @@ const CourseCard: FC<CourseCardProps> = ({
           index === 2 && "bg-brand-purple"
         )} />
 
-        <div className="mb-12 flex items-center gap-4">
+        <div className="mb-6 md:mb-8 lg:mb-12 grid grid-cols-[40px_1fr] md:grid-cols-[48px_1fr] lg:grid-cols-[56px_1fr] items-center gap-2 md:gap-3 lg:gap-4">
           {/* Icon */}
-          <div className={cn("w-14 h-14 rounded-lg flex items-center justify-center",
+          <div className={cn("w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-lg flex items-center justify-center",
             index === 0 && "bg-brand-blue-light",
             index === 1 && "bg-brand-pink",
             index === 2 && "bg-brand-purple"
           )}>
-            <Icon name={course.icon} className="w-8 h-8 text-white" />
+            <Icon name={course.icon} className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
           </div>
 
           {/* Course Name */}
-          <div className="text-2xl font-bold text-text-primary">
+          <div className="text-xl lg:text-2xl font-bold text-text-primary">
             {course.name}
           </div>
         </div>
@@ -59,14 +59,14 @@ const CourseCard: FC<CourseCardProps> = ({
         </div> */}
 
         {/* Title */}
-        <h3 className="text-lg font-semibold text-text-primary mb-4">
+        <h3 className="text-base md:text-lg font-semibold text-text-primary mb-3 lg:mb-4">
           <span>{course.titleMain} </span>
           <span className="text-brand-pink">{course.titleHighlight} </span>
           <span>{course.titleAdditional}</span>
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-text-secondary mb-4">{course.description}</p>
+        <p className="text-sm text-text-secondary mb-2 md:mb-3 lg:mb-4">{course.description}</p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">

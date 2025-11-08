@@ -43,6 +43,7 @@ const TechStack: FC<TechStackProps> = ({ data }) => {
         title={data.header.title}
         subtitle={data.header.subtitle}
         isIntersecting={isIntersecting}
+        className="max-w-lg mx-auto"
       />
       <div className="relative flex overflow-hidden md:before:bg-gradient-to-r md:before:from-bg-primary md:before:to-bg-primary/0 md:before:absolute md:before:top-0 md:before:left-0 md:before:right-0 md:before:w-32 md:before:h-full before:z-10 md:after:bg-gradient-to-l md:after:from-bg-primary md:after:to-bg-primary/0 md:after:absolute md:after:top-0 md:after:right-0 md:after:bottom-0 md:after:w-32 md:after:h-full md:after:z-10">
         {mounted ? (

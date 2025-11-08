@@ -20,10 +20,11 @@ const CourseCatalog: FC<CourseCatalogProps> = ({ data }) => {
         title={data.header.title}
         subtitle={data.header.subtitle}
         isIntersecting={isIntersecting}
+        className="max-w-lg mx-auto"
       />
       <SectionSplitter />
 
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">  
+      <div className="container mx-auto px-4 flex justify-center flex-wrap gap-8 md:gap-10 lg:gap-16 items-stretch">  
         {data.courses.map((course, index) => (
           <CourseCard
             key={course.urlParam}
