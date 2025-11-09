@@ -24,11 +24,11 @@ const AboutAuthor: FC<AboutAuthorProps> = ({ data }) => {
         />
 
         <motion.blockquote
-          className="text-lg lg:text-xl text-text-secondary/90 my-8"
           initial="hidden"
           animate={isIntersecting ? 'visible' : 'hidden'}
           variants={animationVariants.fadeInUp}
           transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-base md:text-lg lg:text-xl text-text-secondary/90"
         >
           <p>“{data.authorData.text}”</p>
         </motion.blockquote>
