@@ -29,7 +29,7 @@ const WhyUs: FC<WhyUsProps> = ({ data }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 md:gap-4 md:mb-4 lg:gap-8 lg:mb-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 md:gap-8 md:mb-8 lg:gap-10 lg:mb-10"
           initial="hidden"
           animate={isIntersecting ? 'visible' : 'hidden'}
           variants={animationVariants.staggerContainer}
