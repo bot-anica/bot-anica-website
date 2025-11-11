@@ -16,16 +16,17 @@ interface SupportCardProps {
   footerText: string;
   isExternalLink?: boolean;
   color?: keyof typeof iconWrapperColorVariants;
+  className?: string;
 }
 
-const SupportCard: FC<SupportCardProps> = ({ icon, title, description, linkHref, linkText, footerText, isExternalLink, color }) => {
+const SupportCard: FC<SupportCardProps> = ({ icon, title, description, linkHref, linkText, footerText, isExternalLink, color, className }) => {
   const iconWrapperClassName = cn(
     'flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center',
     color && iconWrapperColorVariants[color]
   );
 
   return (
-    <div className="bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue-light/15">
+    <div className={`bg-bg-primary rounded-xl p-4 md:p-5 lg:p-6 flex gap-4 border border-brand-blue-light/15 ${className || ''}`}>
       <div className={iconWrapperClassName}>
         {icon}
       </div>

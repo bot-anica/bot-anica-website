@@ -14,16 +14,16 @@ const NextStepCard: FC<NextStepCardProps> = ({ step, index }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: index * 0.1 }}
-    className="relative bg-bg-primary rounded-2xl p-6 transition-all duration-300 border border-border-primary hover:border-brand-pink/30 h-full flex flex-col overflow-hidden"
+    className="relative bg-bg-primary rounded-2xl p-5 md:p-6 transition-all duration-300 border border-border-primary hover:border-brand-pink/30 h-full flex flex-col overflow-hidden"
   >
     <div className={`absolute top-1/2 -right-4 -translate-y-1/2 opacity-5`}>
       <Icon name={step.icon} className="w-32 h-32 text-brand-blue-light" />
     </div>
-    <div className="flex items-center gap-3 mb-4 relative z-10">
-      <div className="w-10 h-10 bg-transparent border-2 border-brand-blue-light/30 rounded-full flex items-center justify-center text-brand-blue-light font-bold text-sm">
+    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4 relative z-10">
+      <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-transparent border-2 border-brand-blue-light/30 rounded-full flex items-center justify-center text-brand-blue-light font-bold text-sm">
         {index + 1}
       </div>
-      <h3 className="text-md font-bold text-text-primary leading-tight flex-1">
+      <h3 className="text-base font-bold text-text-primary leading-tight flex-1">
         {step.title}
       </h3>
     </div>

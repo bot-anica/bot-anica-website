@@ -10,8 +10,8 @@ const PaymentSupport: FC = () => {
         icon={<Mail className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />}
         title="Напишите нам"
         description="Опишите проблему, и мы поможем вам с оплатой"
-        linkHref="mailto:support@botanica.com"
-        linkText="support@botanica.com"
+        linkHref="mailto:bot.anica.course@gmail.com"
+        linkText="bot.anica.course@gmail.com"
         footerText="Отвечаем в течение 2 часов"
         color="blue"
       />
@@ -19,9 +19,9 @@ const PaymentSupport: FC = () => {
         icon={<Send className="w-5 h-5 md:w-6 md:h-6 text-green-600" />}
         title="Telegram поддержка"
         description="Быстрая помощь в нашем телеграм-канале"
-        linkHref="https://t.me/botanica_support"
-        linkText="@botanica_support"
-        footerText="Онлайн с 9:00 до 21:00"
+        linkHref="https://t.me/bot_anica"
+        linkText="@bot_anica"
+        footerText="Онлайн с 8:00 до 20:00 по UTC"
         isExternalLink={true}
         color="green"
       />

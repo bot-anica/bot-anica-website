@@ -13,7 +13,7 @@ export interface PaymentLog {
   currency?: string;
 }
 
-export const usePaymentSuccess = () => {
+export const usePaymentLogs = () => {
   const [paymentLog, setPaymentLog] = useState<PaymentLog | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

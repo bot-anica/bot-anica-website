@@ -7,8 +7,27 @@ import { ButtonVariant } from '@/types/common';
 import PaymentLayout from '../common/PaymentLayout';
 import PaymentSupport from '../common/PaymentSupport';
 import FailHeader from './FailHeader';
+import { PaymentLog } from '@/hooks/usePaymentLogs';
 
-const FailPayment: FC = () => {
+const causesList = [
+  'Недостаточно средств на карте',
+  'Технические неполадки платежной системы',
+  'Ограничения банка на онлайн-платежи',
+  'Оплата была отменена пользователем',
+];
+
+const solutionsList = [
+  'Проверьте баланс карты',
+  'Попробуйте другую карту',
+  'Обратитесь в банк',
+  'Свяжитесь с поддержкой',
+];
+
+interface FailPaymentProps {
+  paymentLog: PaymentLog | null;
+}
+
+const FailPayment: FC<FailPaymentProps> = ({ paymentLog }) => {
   return (
     <PaymentLayout header={<FailHeader />}>
       <div className="block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15"></div>
@@ -22,43 +41,23 @@ const FailPayment: FC = () => {
           <div>
             <h4 className="font-semibold text-text-primary">Частые причины:</h4>
             <ul className="mt-2 space-y-2 xl:space-y-3 text-text-secondary">
-              <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-accent-special flex-shrink-0" />
-                <span className="text-sm">Недостаточно средств на карте</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-accent-special flex-shrink-0" />
-                <span className="text-sm">Технические неполадки платежной системы</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-accent-special flex-shrink-0" />
-                <span className="text-sm">Ограничения банка на онлайн-платежи</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <XCircle className="w-5 h-5 text-accent-special flex-shrink-0" />
-                <span className="text-sm">Оплата была отменена пользователем</span>
-              </li>
+              {causesList.map((cause) => (
+                <li key={cause} className="flex items-center gap-2 sm:gap-3">
+                  <XCircle className="w-5 h-5 text-accent-special flex-shrink-0" />
+                  <span className="text-sm">{cause}</span>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-text-primary">Что можно сделать:</h4>
             <ul className="mt-2 space-y-2 xl:space-y-3 text-text-secondary">
-              <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-text-result-badge flex-shrink-0" />
-                <span className="text-sm">Проверьте баланс карты</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-text-result-badge flex-shrink-0" />
-                <span className="text-sm">Попробуйте другую карту</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-text-result-badge flex-shrink-0" />
-                <span className="text-sm">Обратитесь в банк</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <CheckCircle2 className="w-5 h-5 text-text-result-badge flex-shrink-0" />
-                <span className="text-sm">Свяжитесь с поддержкой</span>
-              </li>
+              {solutionsList.map((solution) => (
+                <li key={solution} className="flex items-center gap-2 sm:gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-text-result-badge flex-shrink-0" />
+                  <span className="text-sm">{solution}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -66,8 +65,8 @@ const FailPayment: FC = () => {
 
       <div className="text-center px-8 sm:px-0">
         <div className="flex flex-col gap-4 sm:flex-row justify-center">
-          <Button>Попробовать еще раз</Button>
-          <Button variant={ButtonVariant.SECONDARY}>
+          <Button to={`/courses/${paymentLog?.course.urlParam}/prepayment?tariffId=${paymentLog?.tariff.id}`}>Попробовать еще раз</Button>
+          <Button to={`/courses/${paymentLog?.course.urlParam}#pricing`} variant={ButtonVariant.SECONDARY}>
             Выбрать другой тариф
           </Button>
         </div>
