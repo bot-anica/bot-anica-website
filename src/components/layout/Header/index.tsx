@@ -1,21 +1,22 @@
 "use client"; 
 
 import { FC, useState, useEffect } from 'react';
+import { useParams, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-import HeaderMobileMenu from './HeaderMobileMenu';
-import { cn } from '../../../utils/cn';
-import HeaderLogoLink from './HeaderLogoLink';
+import { ModeToggle } from '@/components/ui/mode-toggle';
+import { useHeader } from '@/hooks/useHeader';
+import { cn } from '@/utils/cn';
 import HeaderCTAButtons from './HeaderCTAButtons';
-import { useHeader } from '../../../hooks/useHeader';
-import HeaderNavigation from './HeaderNavigation';
+import HeaderLogoLink from './HeaderLogoLink';
+import HeaderMobileMenu from './HeaderMobileMenu';
 import HeaderMobileMenuButton from './HeaderMobileMenuButton';
-import { ModeToggle } from '../../ui/mode-toggle';
-import { usePathname } from 'next/navigation';
+import HeaderNavigation from './HeaderNavigation';
 
 const Header: FC = () => {
   const headerData = useHeader();
   const pathname = usePathname();
+  const { courseUrlParam } = useParams();
   const isPrepaymentPage = /^\/courses\/[^/]+\/prepayment$/.test(pathname);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +50,12 @@ const Header: FC = () => {
   }
 
   const ctaButtons = headerData?.ctaButtons || [];
-  const navigationLinks = headerData?.navigationLinks || [];
+  const navigationLinks = (headerData?.navigationLinks || []).map(link => {
+    return {
+      ...link,
+      link: isPrepaymentPage && courseUrlParam ? `/courses/${courseUrlParam}${link.link}` : link.link
+    };
+  });
 
   return (
     <motion.header
