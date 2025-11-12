@@ -10,9 +10,10 @@ interface WhySpecialPointItemProps {
   point: WhySpecialPoint;
   isActive: boolean;
   onClick: () => void;
+  isIntersecting?: boolean;
 }
 
-const WhySpecialPointItem: FC<WhySpecialPointItemProps> = ({ point, isActive, onClick }) => {
+const WhySpecialPointItem: FC<WhySpecialPointItemProps> = ({ point, isActive, onClick, isIntersecting }) => {
   return (
     <Button
       onClick={onClick}

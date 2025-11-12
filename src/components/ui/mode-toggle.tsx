@@ -24,7 +24,7 @@ export function ModeToggle() {
   }
 
   return (
-    <Button onClick={toggleTheme} variant={ButtonVariant.SECONDARY} size={ButtonSize.ICON} aria-label="Поменять тему">
+    <Button onClick={toggleTheme} variant={ButtonVariant.SECONDARY} size={ButtonSize.ICON} aria-label="Поменять тему" className="cursor-pointer">
       <Icon name="Sun" className={`absolute h-[1.2rem] w-[1.2rem] ${theme == 'dark' ? 'scale-100' : 'scale-0'} transition-all`} />
       <Icon name="Moon" className={`absolute h-[1.2rem] w-[1.2rem] ${theme == 'dark' ? 'scale-0' : 'scale-100'} transition-all`} />
       <span className="sr-only">Поменять тему</span>

@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { HelpCircle } from 'lucide-react';
 
+import { Button } from '@/components/common';
+import { ButtonVariant, ButtonSize } from '@/types/common';
+
 interface FAQBannerProps {
   isIntersecting: boolean;
 }
@@ -22,6 +25,9 @@ const FAQBanner: React.FC<FAQBannerProps> = ({ isIntersecting }) => {
       <p className="text-text-secondary text-sm md:text-base">
         Все материалы курса содержат детальные объяснения и пошаговые инструкции для самостоятельного изучения
       </p>
+      <Button to="#pricing" variant={ButtonVariant.PRIMARY} size={ButtonSize.SM} className="mt-4 md:mt-6 lg:mt-8">
+        Начать обучение
+      </Button>
     </motion.div>
   );
 };

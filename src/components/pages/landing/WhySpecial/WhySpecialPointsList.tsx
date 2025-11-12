@@ -25,7 +25,7 @@ const WhySpecialPointsList: FC<WhySpecialPointsListProps> = ({
       initial="hidden"
       animate={isIntersecting ? 'visible' : 'hidden'}
       variants={animationVariants.staggerContainer}
-      className={`grid grid-flow-col lg:grid-flow-row lg:space-x-0 lg:space-y-4 -mb-1 lg:mb-0`}
+      className={`grid grid-flow-col lg:grid-flow-row lg:space-x-0 lg:space-y-4 lg:mb-0`}
     >
       {points.map((whySpecialPoint: WhySpecialPoint, index: number) => (
         <motion.div key={index} variants={animationVariants.fadeInUp} className="relative z-10">

@@ -1,16 +1,23 @@
-import type { FC } from 'react';
-import { memo } from 'react';
+import { FC, memo } from 'react';
+import { motion } from 'framer-motion';
 
 import { WhySpecialPoint } from '@/types/sections';
 import Icon from '@/components/ui/Icon';
+import { animationVariants } from '@/utils/animations';
 
 interface WhySpecialPointContentProps {
   point: WhySpecialPoint;
+  isIntersecting?: boolean;
 }
 
-const WhySpecialPointContent: FC<WhySpecialPointContentProps> = ({ point }) => {
+const WhySpecialPointContent: FC<WhySpecialPointContentProps> = ({ point, isIntersecting }) => {
   return (
-    <div>
+    <motion.div
+      initial="hidden"
+      animate={isIntersecting ? 'visible' : 'hidden'}
+      variants={animationVariants.fadeInRight}
+      transition={{ delay: 0.5, duration: 0.5 }}
+    >
       <div className="flex items-center gap-4 mb-4 lg:mb-6">
         <div className="p-2 md:p-3 rounded-lg md:rounded-xl" style={{ background: `${point.color}33` }}>
           <Icon name={point.icon} className="w-6 h-6 md:w-8 md:h-8" style={{ color: point.color }} />
@@ -42,7 +49,7 @@ const WhySpecialPointContent: FC<WhySpecialPointContentProps> = ({ point }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

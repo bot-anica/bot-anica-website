@@ -16,7 +16,7 @@ export const useHeader = () => {
     } else if (!courseUrlParam && pathname === "/") {
       HeaderService.getHomePageData().then(setHeaderData);
     }
-  }, [courseUrlParam]);
+  }, [courseUrlParam, pathname]);
 
   return headerData;
 };

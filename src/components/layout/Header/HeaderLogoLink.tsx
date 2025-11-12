@@ -9,7 +9,7 @@ const HeaderLogoLink: FC = () => {
   const dimensions = useImageDimensions("/images/Logo_without_bg.svg");
 
   return (
-    <Link href="/">
+    <Link href="/" className="cursor-pointer">
       {dimensions && <Image src="/images/Logo_without_bg.svg" alt="Logo" className="h-8 w-auto" width={dimensions.width} height={dimensions.height} />}
     </Link>
   );
