@@ -1,25 +1,31 @@
-import { FooterData, LinkItem } from '../types/sections';
-import { COURSES } from "@/constants/courseRegistry";
-
-const isValidCourse = (courseUrlParam: string) => COURSES.some(course => course.urlParam === courseUrlParam);
+import { FOOTER_DESCRIPTION, FOOTER_NAVIAGTION_LINKS } from '@/constants/common/footer';
+import { Course, FooterData, LinkItem } from '../types/sections';
+import { CourseService } from './CourseService';
 
 export class FooterService {
-  static async getCourseDescription(courseUrlParam: string): Promise<string> {
-    if (!isValidCourse(courseUrlParam)) return '';
-    const { COURSE_DESCRIPTION } = await import(`@/constants/${courseUrlParam}/footer`);
-    return COURSE_DESCRIPTION;
+  static async getDescription(): Promise<string> {
+    return FOOTER_DESCRIPTION;
   }
 
-  static async getNavigationLinks(courseUrlParam: string): Promise<LinkItem[]> {
-    if (!isValidCourse(courseUrlParam)) return [];
-    const { FOOTER_NAVIAGTION_LINKS } = await import(`@/constants/${courseUrlParam}/footer`);
+  static async getNavigationLinks(): Promise<LinkItem[]> {
     return FOOTER_NAVIAGTION_LINKS;
   }
 
-  static async getData(courseUrlParam: string): Promise<FooterData> {
-    const courseDescription = await FooterService.getCourseDescription(courseUrlParam);
-    const navigationLinks = await FooterService.getNavigationLinks(courseUrlParam);
+  static async getNavigationLinksForCourses(): Promise<LinkItem[]> {
+    const coursesData = await CourseService.getAllCourses();
+    const courseLinks: LinkItem[] = coursesData.map((course: Course) => ({
+      link: `/courses/${course.urlParam}`,
+      text: course.name,
+    }));
 
-    return { courseDescription, navigationLinks }
+    return courseLinks;
+  }
+
+  static async getData(): Promise<FooterData> {
+    const description = await FooterService.getDescription();
+    const navigationLinks = await FooterService.getNavigationLinks();
+    const courseLinks = await FooterService.getNavigationLinksForCourses();
+
+    return { description, navigationLinks, courseLinks }
   }
 }

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import FAQItem from './FAQItem';
-import { FAQItem as FAQItemType } from '../../../../types/sections';
+import { FAQItem as FAQItemType } from '../../../types/sections';
 
 interface FAQListProps {
   faqs: FAQItemType[];

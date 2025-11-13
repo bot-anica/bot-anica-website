@@ -1,3 +1,6 @@
+import { ButtonVariant, ButtonSize } from "@/types/common";
+import { FAQBanner } from "@/types/sections";
+
 export const FAQS = [
   {
     question: 'Нужен ли опыт для старта?',
@@ -16,3 +19,15 @@ export const FAQS = [
     answer: 'Да, доступ к курсу и всем его будущим обновлениям остается у вас навсегда. Без скрытых платежей и подписок.',
   },
 ];
+
+export const FAQ_BANNER: FAQBanner = {
+  icon: 'Rocket',
+  title: 'Начните бесплатно.',
+  subtitle: 'Получите полный доступ к нашему курсу по основам Python и сделайте первый шаг к новой карьере.',
+  cta: {
+    text: 'Получить курс',
+    link: '/courses/python-basics',
+    buttonVariant: ButtonVariant.PRIMARY,
+    buttonSize: ButtonSize.SM,
+  },
+}

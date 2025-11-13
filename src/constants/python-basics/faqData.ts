@@ -1,3 +1,6 @@
+import { ButtonSize, ButtonVariant } from "@/types/common";
+import { FAQBanner } from "@/types/sections";
+
 export interface FAQ {
   question: string;
   answer: string;
@@ -41,3 +44,15 @@ export const FAQS: FAQ[] = [
     answer: "В базовом курсе мы изучаем работу с файлами, CSV и JSON. Работа с базами данных будет рассмотрена в продвинутом курсе Python."
   }
 ];
+
+export const FAQ_BANNER: FAQBanner = {
+  icon: 'HelpCircle',
+  title: 'Не нашли ответ?',
+  subtitle: 'Все материалы курса содержат детальные объяснения и пошаговые инструкции для самостоятельного изучения',
+  cta: {
+    text: 'Начать обучение',
+    link: '#pricing',
+    buttonVariant: ButtonVariant.PRIMARY,
+    buttonSize: ButtonSize.SM,
+  },
+}

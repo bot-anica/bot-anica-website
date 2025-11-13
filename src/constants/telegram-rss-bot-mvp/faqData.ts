@@ -1,3 +1,6 @@
+import { ButtonVariant, ButtonSize } from "@/types/common";
+import { FAQBanner } from "@/types/sections";
+
 export interface FAQ {
   question: string;
   answer: string;
@@ -42,3 +45,15 @@ export const FAQS: FAQ[] = [
     answer: "Нет, в этой версии бота мы используем простое хранение данных в файле для отслеживания опубликованных постов. Это упрощает разработку и запуск для начинающих."
   }
 ];
+
+export const FAQ_BANNER: FAQBanner = {
+  icon: 'HelpCircle',
+  title: 'Не нашли ответ?',
+  subtitle: 'Все материалы курса содержат детальные объяснения и пошаговые инструкции для самостоятельного изучения',
+  cta: {
+    text: 'Начать обучение',
+    link: '#pricing',
+    buttonVariant: ButtonVariant.PRIMARY,
+    buttonSize: ButtonSize.SM,
+  },
+}

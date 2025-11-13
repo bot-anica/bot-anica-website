@@ -97,7 +97,8 @@ import {
   Infinity,
   FolderKanban,
   Video,
-  Gem
+  Gem,
+  HelpCircle
 } from "lucide-react";
 
 const iconMap: Record<string, ComponentType < any >> = {
@@ -193,7 +194,8 @@ const iconMap: Record<string, ComponentType < any >> = {
   Infinity,
   FolderKanban,
   Video,
-  Gem
+  Gem,
+  HelpCircle
 };
 
 interface IconProps {

@@ -18,3 +18,7 @@ export type { ButtonProps } from './Button';
 export type { CardProps } from './card/Card';
 export type { SectionHeaderProps } from './section/SectionHeader';
 export type { BackgroundElementsProps } from './BackgroundElements';
+
+// FAQ
+export { default as FAQList } from './faq/FAQList';
+export { default as FAQBanner } from './faq/FAQBanner';

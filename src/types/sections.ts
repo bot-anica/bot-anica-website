@@ -255,10 +255,18 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface FAQBanner {
+  icon: string;
+  title: string;
+  subtitle: string;
+  cta: CTAItem;
+}
+
 export interface FAQData {
   header: SectionHeaderProps;
   faqs: FAQItem[];
   bgImages?: PartialSectionBGImagesProps;
+  banner: FAQBanner;
 }
 
 export interface PricingPlan {
@@ -281,8 +289,9 @@ export interface PricingPlansData {
 }
 
 export interface FooterData {
-  courseDescription: string;
+  description: string;
   navigationLinks: LinkItem[];
+  courseLinks: LinkItem[];
 }
 
 export interface LinkItem {

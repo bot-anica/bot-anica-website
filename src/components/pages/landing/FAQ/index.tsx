@@ -2,13 +2,10 @@
 
 import type { FC } from 'react';
 
-import FAQBanner from './FAQBanner';
-import FAQList from './FAQList';
-
 import { FAQData, Course, Currency, FAQItem } from '@/types/sections';
 import { useFAQ } from '@/hooks/useFAQ';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { SectionBackground, SectionHeader } from '@/components/common';
+import { FAQBanner, FAQList, SectionBackground, SectionHeader } from '@/components/common';
 
 interface FAQProps {
   data: FAQData,
@@ -20,7 +17,7 @@ const FAQ: FC<FAQProps> = ({data, course, courseIsFree}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const { openIndex, toggleFAQ } = useFAQ();
 
-  const { header, faqs, bgImages } = data
+  const { header, faqs, bgImages, banner } = data
   const { tariffs } = course
 
   if (!header || !faqs || !bgImages) {
@@ -43,10 +40,8 @@ const FAQ: FC<FAQProps> = ({data, course, courseIsFree}) => {
       <SectionBackground bgImages={bgImages} lazy />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <SectionHeader title={header.title} subtitle={header.subtitle} isIntersecting={isIntersecting} />
 
-        {/* FAQ Items */}
         <FAQList 
           faqs={courseIsFree ? faqs : [...faqs, currencyFAQ]} 
           openIndex={openIndex} 
@@ -54,8 +49,7 @@ const FAQ: FC<FAQProps> = ({data, course, courseIsFree}) => {
           isIntersecting={isIntersecting as boolean} 
         />
 
-        {/* Bottom Section */}
-        <FAQBanner isIntersecting={isIntersecting as boolean} />
+        <FAQBanner data={banner} isIntersecting={isIntersecting as boolean} />
       </div>
     </section>
   );
