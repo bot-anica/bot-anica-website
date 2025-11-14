@@ -1,5 +1,15 @@
 import Button from '@/components/common/Button';
+import { SEOService } from '@/services/SEOService';
 import { ButtonSize, ButtonVariant } from '@/types/common';
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const {defaultSEOConfig} = await SEOService.getNotFoundMetadata();
+  return {
+    title: `${defaultSEOConfig.title} - ${defaultSEOConfig.siteName}`,
+    robots: 'noindex, nofollow',
+  };
+}
 
 export default function NotFound() {
   return (

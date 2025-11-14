@@ -23,17 +23,20 @@ import { AboutAuthorService } from '@/services/AboutAuthorService';
 export async function generateMetadata(): Promise<Metadata> {
   const {defaultSEOConfig} = await SEOService.getHomeMetadata();
   return {
-    title: `${defaultSEOConfig.title} | ${defaultSEOConfig.siteName}`,
+    title: `${defaultSEOConfig.title} - ${defaultSEOConfig.siteName}`,
     description: defaultSEOConfig.description,
     keywords: defaultSEOConfig.keywords,
     openGraph: {
       title: defaultSEOConfig.title,
       description: defaultSEOConfig.description,
       type: 'website',
+      images: defaultSEOConfig.image,
     },
     twitter: {
       title: defaultSEOConfig.title,
       description: defaultSEOConfig.description,
+      card: 'summary_large_image',
+      images: defaultSEOConfig.image,
     },
   };
 }

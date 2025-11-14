@@ -307,14 +307,14 @@ export interface HeaderData {
 export interface SEOConfig {
   title: string | undefined,
   siteName: string,
-  description: string,
-  keywords: string,
-  image: string,
-  url: string | undefined,
-  locale: string,
-  twitterCard: 'summary_large_image',
-  type: 'website' | 'article',
-  noIndex: boolean | undefined
+  description?: string,
+  keywords?: string,
+  image?: string,
+  url?: string | undefined,
+  locale?: string,
+  twitterCard?: 'summary_large_image',
+  type?: 'website' | 'article',
+  noIndex?: boolean | undefined
 }
 
 export interface PageSEOConfig {

@@ -124,8 +124,8 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
 
 // Глобальные настройки SEO для сайта
 export const DEFAULT_SEO_CONFIG = {
-  title: undefined as string | undefined,
-  siteName: 'Курс по созданию Telegram-ботов',
+  title: 'Создание Telegram-ботов с нуля',
+  siteName: 'Bot Anica',
   description: 'Изучите создание Telegram-ботов с нуля. Практический курс с реальными проектами, автоматизацией и монетизацией. Получите навыки программирования и создайте своего первого бота.',
   keywords: 'telegram бот, курс программирования, python, автоматизация, чат-бот, разработка, обучение, программирование с нуля',
   image: '/og-cover.jpg',
@@ -134,19 +134,4 @@ export const DEFAULT_SEO_CONFIG = {
   twitterCard: 'summary_large_image' as const,
   type: 'website' as 'website' | 'article',
   noIndex: undefined as boolean | undefined
-};
-
-// Предустановленные конфигурации для разных страниц
-export const PAGE_SEO_CONFIGS = {
-  course: {
-    title: 'Создание Telegram-ботов с нуля',
-    description: 'Изучите создание Telegram-ботов с нуля. Практический курс с реальными проектами, автоматизацией и монетизацией. Получите навыки программирования и создайте своего первого бота.',
-    keywords: 'telegram бот, курс программирования, python, автоматизация, чат-бот, разработка, обучение, программирование с нуля'
-  },
-  payment: {
-    title: 'Оплата курса',
-    description: 'Выберите подходящий тариф и начните изучение создания Telegram-ботов. Безопасная оплата, мгновенный доступ к материалам.',
-    keywords: 'оплата курса, telegram бот, тарифы, обучение программированию',
-    noIndex: true // Скрываем страницу оплаты от индексации
-  },
 };

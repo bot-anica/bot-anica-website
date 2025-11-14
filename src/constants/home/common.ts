@@ -29,7 +29,7 @@ export const SECTION_HEADERS = {
 
 // Глобальные настройки SEO для сайта
 export const DEFAULT_SEO_CONFIG = {
-  title: 'Bot Anica | Курсы программирования на Python',
+  title: 'Курсы программирования на Python',
   siteName: 'Bot Anica',
   description: 'Практические курсы по программированию на Python. Обучение с нуля, создание реальных проектов и формирование портфолио. Начните свой путь в IT с Bot Anica.',
   keywords: 'программирование, python, курсы, обучение, основы, telegram бот, портфолио, portfolio, разработка, development, для начинающих, практика, проекты, IT, старт в IT',

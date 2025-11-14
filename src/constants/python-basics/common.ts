@@ -124,9 +124,9 @@ export const SECTION_BG_IMAGES: Record<string, PartialSectionBGImagesProps> = {
 
 // Глобальные настройки SEO для сайта
 export const DEFAULT_SEO_CONFIG = {
-  title: undefined as string | undefined,
-  siteName: 'Курс по основам Python для начинающих',
-  description: 'Изучите основы Python с нуля. Полный курс для начинающих с пошаговыми инструкциями и практическими заданиями. Получите навыки программирования и создавайте собственные проекты.',
+  title: 'Основы Python для начинающих',
+  siteName: 'Bot Anica',
+  description: 'Изучите основы Python с нуля. Полный курс для начинающих с 50+ практическими заданиями. Освойте программирование на Python и создавайте собственные проекты.',
   keywords: 'python, курс программирования, основы python, python для начинающих, обучение программированию, программирование с нуля, python уроки, python онлайн',
   image: '/og-cover.jpg',
   url: undefined as string | undefined,
@@ -134,19 +134,4 @@ export const DEFAULT_SEO_CONFIG = {
   twitterCard: 'summary_large_image' as const,
   type: 'website' as 'website' | 'article',
   noIndex: undefined as boolean | undefined
-};
-
-// Предустановленные конфигурации для разных страниц
-export const PAGE_SEO_CONFIGS = {
-  course: {
-    title: 'Основы Python для начинающих - полный курс с нуля',
-    description: 'Изучите основы Python с нуля. Полный курс для начинающих с 50+ практическими заданиями. Освойте программирование на Python и создавайте собственные проекты.',
-    keywords: 'python, курс программирования, основы python, python для начинающих, обучение программированию, программирование с нуля, python уроки, python онлайн'
-  },
-  payment: {
-    title: 'Оплата курса по основам Python',
-    description: 'Выберите подходящий тариф и начните изучение основ Python. Безопасная оплата, мгновенный доступ к материалам курса.',
-    keywords: 'оплата курса, python, тарифы, обучение программированию, курс python',
-    noIndex: true // Скрываем страницу оплаты от индексации
-  },
 };

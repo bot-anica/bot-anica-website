@@ -1,6 +1,9 @@
 import { AVAILABLE_PAGES, PageSEOConfig, SEOConfig, SEOData } from '../types/sections';
 import { COURSES } from "@/constants/courseRegistry";
 import { DEFAULT_SEO_CONFIG as HOME_DEFAULT_SEO_CONFIG } from '@/constants/home/common';
+import { DEFAULT_SEO_CONFIG as PAYMENT_RESULT_DEFAULT_SEO_CONFIG } from '@/constants/paymentResult/common';
+import { DEFAULT_SEO_CONFIG as PRE_PAYMENT_DEFAULT_SEO_CONFIG } from '@/constants/prePayment/common';
+import { DEFAULT_SEO_CONFIG as NOT_FOUND_DEFAULT_SEO_CONFIG } from '@/constants/notFound/common';
 
 const isValidCourse = (courseUrlParam: string) => COURSES.some(course => course.urlParam === courseUrlParam);
 
@@ -37,6 +40,36 @@ export class SEOService {
 
   static async getHomeMetadata(): Promise<SEOData> {
     const defaultSEOConfig = await SEOService.getDefaultHomeSEOConfig();
+
+    return { defaultSEOConfig }
+  }
+
+  static async getDefaultPaymentResultSEOConfig(): Promise<SEOConfig> {
+    return PAYMENT_RESULT_DEFAULT_SEO_CONFIG;
+  }
+
+  static async getPaymentResultMetadata(): Promise<SEOData> {
+    const defaultSEOConfig = await SEOService.getDefaultPaymentResultSEOConfig();
+
+    return { defaultSEOConfig }
+  }
+
+  static async getDefaultPrePaymentSEOConfig(): Promise<SEOConfig> {
+    return PRE_PAYMENT_DEFAULT_SEO_CONFIG;
+  }
+
+  static async getPrePaymentMetadata(): Promise<SEOData> {
+    const defaultSEOConfig = await SEOService.getDefaultPrePaymentSEOConfig();
+
+    return { defaultSEOConfig }
+  }
+
+  static async getDefaultNotFoundSEOConfig(): Promise<SEOConfig> {
+    return NOT_FOUND_DEFAULT_SEO_CONFIG;
+  }
+
+  static async getNotFoundMetadata(): Promise<SEOData> {
+    const defaultSEOConfig = await SEOService.getDefaultNotFoundSEOConfig();
 
     return { defaultSEOConfig }
   }
