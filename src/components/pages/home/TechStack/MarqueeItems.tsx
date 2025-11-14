@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { useTheme } from 'next-themes';
-import StackIcon from 'tech-stack-icons';
 
-import { NeonTechIcon, PostgreSqlIcon, PyCharmIcon, TelegramIcon } from './icons';
+import { FlaskIcon, GitHubIcon, GitIcon, NeonTechIcon, PostgreSqlIcon, PyCharmIcon, PythonIcon, TelegramIcon } from './icons';
 import MarqueeItem from './MarqueeItem';
 import { TechStackItem } from '@/types/sections';
 
@@ -16,10 +15,10 @@ const MarqueeItems: FC<MarqueeItemsProps> = ({ allItems, isCopy }) => {
   const iconVariant = theme === 'dark' ? 'dark' : 'light';
 
   const iconMap: Record<string, TechStackItem> = {
-    python: {name: 'Python', icon: <StackIcon name="python" variant={iconVariant} className='w-16 h-16 object-contain ' />},
-    git: {name: 'Git', icon: <StackIcon name="git" variant={iconVariant} className='w-16 h-16 object-contain ' />},
-    github: {name: 'GitHub', icon: <StackIcon name="github" variant={iconVariant} className='w-16 h-16 object-contain ' />},
-    flask: {name: 'Flask', icon: <StackIcon name="flask" variant={iconVariant} className='w-16 h-16 object-contain ' />},
+    python: {name: 'Python', icon: <PythonIcon className='w-16 h-16 object-contain ' />},
+    git: {name: 'Git', icon: <GitIcon className='w-16 h-16 object-contain ' />},
+    github: {name: 'GitHub', icon: <GitHubIcon variant={iconVariant} className='w-16 h-16 object-contain ' />},
+    flask: {name: 'Flask', icon: <FlaskIcon variant={iconVariant} className='w-16 h-16 object-contain ' />},
     pycharm: {name: 'PyCharm', icon: <PyCharmIcon className='w-16 h-16 object-contain ' />},
     telegram: {name: 'Telegram API', icon: <TelegramIcon className='w-16 h-16 object-contain ' />},
     postgresql: {name: 'PostgreSQL', icon: <PostgreSqlIcon className='w-16 h-16 object-contain ' />},
