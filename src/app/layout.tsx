@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col">
+        <SpeedInsights />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
