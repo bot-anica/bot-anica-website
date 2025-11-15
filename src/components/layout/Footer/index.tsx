@@ -8,7 +8,7 @@ import FooterCopyright from "./FooterCopyright";
 import { FooterService } from "@/services/FooterService";
 
 export default async function Footer() {
-  const { description, courseLinks, navigationLinks } = await Promise.resolve(FooterService.getData());
+  const { description, courseLinks, navigationLinks } = await FooterService.getData();
 
   return (
     <footer className="bg-brand-pink/15 text-text-secondary pt-8 pb-4 md:pt-10 md:pb-6 lg:pt-14 lg:pb-8">
