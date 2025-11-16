@@ -28,7 +28,7 @@ const CustomInput: FC<CustomInputProps> = ({
 }) => (
   <div className="mb-4 md:mb-5 lg:mb-6">
     <label htmlFor={id} className="block text-text-secondary text-xs md:text-sm font-medium mb:font-semibold lg:font-bold md:mb-1 lg:mb-2">
-      {label} {!required && "(необязательно)"}
+      {label} {!required && "(не обязательно)"}
     </label>
     <input
       type={type}

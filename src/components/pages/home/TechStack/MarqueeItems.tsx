@@ -12,7 +12,7 @@ interface MarqueeItemsProps {
 
 const MarqueeItems: FC<MarqueeItemsProps> = ({ allItems, isCopy }) => {
   const { theme } = useTheme();
-  const iconVariant = theme === 'dark' ? 'dark' : 'light';
+  const iconVariant = theme === 'dark' ? 'light' : 'dark';
 
   const iconMap: Record<string, TechStackItem> = {
     python: {name: 'Python', icon: <PythonIcon className='w-16 h-16 object-contain ' />},
