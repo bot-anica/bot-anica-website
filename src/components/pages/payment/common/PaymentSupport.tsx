@@ -10,8 +10,8 @@ const PaymentSupport: FC = () => {
         icon={<Mail className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />}
         title="Напишите нам"
         description="Опишите проблему, и мы поможем вам с оплатой"
-        linkHref="mailto:bot.anica.course@gmail.com"
-        linkText="bot.anica.course@gmail.com"
+        linkHref="mailto:support@anica.space"
+        linkText="support@anica.space"
         footerText="Отвечаем в течение 2 часов"
         color="blue"
       />

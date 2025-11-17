@@ -8,7 +8,7 @@ const FooterContacts: FC = () => {
   const { showToast } = useToast();
 
   const handleMailClick = () => {    
-    const email = "bot.anica.course@gmail.com";
+    const email = "support@anica.space";
     
     navigator.clipboard.writeText(email).then(() => {
       showToast("Email скопирован в буфер обмена");
@@ -40,7 +40,7 @@ const FooterContacts: FC = () => {
         <Send size={26} />
       </a>
       <a
-        href="mailto:bot.anica.course@gmail.com"
+        href="mailto:support@anica.space"
         target="_blank"
         rel="noopener noreferrer"
         className="text-text-secondary hover:text-text-primary transition-colors duration-200"
