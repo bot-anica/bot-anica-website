@@ -40,7 +40,7 @@ const GetFreeTariffForm: FC<GetFreeTariffFormProps> = ({
 
   return (
     <form onSubmit={formik.handleSubmit} className="flex-1">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-text-primary mb-4 md:mb-5 lg:mb-6">Данные для получения материалов тарифа</h2>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-4 md:mb-5 lg:mb-6">Данные для получения материалов тарифа</h2>
       <CustomInput
         id="name"
         name="name"
@@ -66,7 +66,7 @@ const GetFreeTariffForm: FC<GetFreeTariffFormProps> = ({
         error={formik.touched.email && formik.errors.email ? formik.errors.email : null}
       />
       {apiError && (
-        <div className="bg-accent-special/25 border border-red-400accent-special test-sm md:text-base text-accent-special-dark px-1.5 py-2 md:px-3 md:py-2 lg:px-4 lg:py-3 rounded relative mb-4" role="alert">
+        <div className="bg-accent-special/50 border border-accent-special test-sm md:text-base text-accent-special px-3 py-2 rounded relative mb-4" role="alert">
           <strong className="font-medium md:font-semibold lg:font-bold">Ошибка!</strong>
           <span className="inline ml-2">{apiError}</span>
         </div>
@@ -85,7 +85,7 @@ const GetFreeTariffForm: FC<GetFreeTariffFormProps> = ({
           "Получить материалы"
         )}
       </Button>
-      <p className="max-w-sm text-xs text-text-tertiary text-center mb-4 md:mb-6 lg:mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
+      <p className="max-w-sm text-xs text-text-tertiary text-center mb-6 md:mb-7 lg:mb-8 mx-auto">Нажимая кнопку, вы соглашаетесь с условиями предоставления услуг</p>
     </form>
   );
 };

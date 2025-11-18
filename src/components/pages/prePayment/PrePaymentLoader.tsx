@@ -5,10 +5,10 @@ const OrderDetailsSkeleton: FC = () => (
     <div className="h-7 lg:h-8 bg-bg-hover rounded w-1/3 mb-4 md:mb-5 lg:mb-6"></div>
 
     {/* Course Name */}
-    <div className="h-5 sm:h-6 lg:h-7 bg-bg-hover rounded w-1/2 sm:mb-1 md:mb-2"></div>
+    <div className="h-6 lg:h-7 bg-bg-hover rounded w-1/2 mb-1 md:mb-2"></div>
     
     {/* Tariff Name */}
-    <div className="h-5 sm:h-6 lg:h-7 bg-brand-pink/50 rounded-full w-1/3 mb-4 md:mb-5 lg:mb-6"></div>
+    <div className="h-6 md:h-7 bg-brand-pink/50 rounded-full w-1/3 mb-4 md:mb-5 lg:mb-6"></div>
     
     {/* Features */}
     <div className="h-5 md:h-6 lg:h-7 bg-bg-hover rounded w-1/3 mb-2 md:mb-3 lg:mb-4"></div>
@@ -36,20 +36,20 @@ const PaymentFormSkeleton: FC = () => (
     <div className="h-7 lg:h-8 bg-bg-hover rounded w-1/2 mb-4 md:mb-5 lg:mb-6"></div>
     
     {/* Input */}
-    <div className="h-4 md:h-5 bg-bg-hover rounded w-1/4 mb-0.5 md:mb-1 lg:mb-2"></div>
-    <div className="border border-brand-blue-light/15 rounded w-full mb-4 md:mb-5 lg:mb-6 flex items-center py-1.5 px-2 md:py-2 md:px-3">
+    <div className="h-4 bg-bg-hover rounded w-1/4 mb-1"></div>
+    <div className="border border-bg-hover rounded w-full mb-4 md:mb-5 lg:mb-6 flex items-center py-2 px-3">
       <div className="h-5 bg-bg-hover rounded w-1/4"></div>
     </div>
     
     {/* Input */}
-    <div className="h-4 md:h-5 bg-bg-hover rounded w-1/3 mb-0.5 md:mb-1 lg:mb-2"></div>
-    <div className="border border-brand-blue-light/15 rounded w-full mb-4 md:mb-5 lg:mb-6 flex items-center py-1.5 px-2 md:py-2 md:px-3">
+    <div className="h-4 md:h-5 bg-bg-hover rounded w-1/3 mb-1"></div>
+    <div className="border border-bg-hover rounded w-full mb-4 md:mb-5 lg:mb-6 flex items-center py-2 px-3">
       <div className="h-5 bg-bg-hover rounded w-1/4"></div>
     </div>
     
     {/* Input */}
-    <div className="h-4 md:h-5 bg-bg-hover rounded w-1/12 mb-0.5 md:mb-1 lg:mb-2"></div>
-    <div className="border border-brand-blue-light/15 rounded w-full mb-1 flex items-center py-1.5 px-2 md:py-2 md:px-3">
+    <div className="h-4 md:h-5 bg-bg-hover rounded w-2/12 mb-1"></div>
+    <div className="border border-bg-hover rounded w-full mb-1 flex items-center py-2 px-3">
       <div className="h-5 bg-bg-hover rounded w-1/4"></div>
     </div>
     <div className="h-5 bg-bg-hover rounded w-2/3 mb-4 md:mb-5 lg:mb-6"></div>
@@ -58,7 +58,8 @@ const PaymentFormSkeleton: FC = () => (
     <div className="h-12 rounded-lg bg-gradient-to-r from-brand-pink/20 to-brand-blue/20 w-full mb-2 md:mb-3 lg:mb-4"></div>
     
     {/* Warning */}
-    <div className="h-8 bg-bg-hover rounded w-11/12 mb-4 md:mb-6 lg:mb-8 mx-auto"></div>
+    <div className="h-4 bg-bg-hover rounded w-11/12 mb-1 mx-auto"></div>
+    <div className="h-4 bg-bg-hover rounded w-5/12 mb-6 md:mb-7 lg:mb-8 mx-auto"></div>
     
     {/* Security Message */}
     <div className="border border-brand-blue-light/15 rounded-xl w-full p-4 md:p-5 lg:p-6 mx-auto flex gap-4">
