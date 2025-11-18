@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
     baseClasses,
     variantClasses[variant as ButtonVariant],
     sizeClasses[size as ButtonSize],
-    disabled && 'blur-xs cursor-not-allowed',
+    disabled && 'cursor-not-allowed',
     className
   );
 
