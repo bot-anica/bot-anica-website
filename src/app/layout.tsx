@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import { ToastProvider } from "@/context/ToastContext";
 import ScrollToAnchor from "@/components/common/ScrollToAnchor";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Bot Anica",
@@ -21,6 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <Head>
+        {/* Cloudflare Web Analytics */}
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "115ca70baa5841afa78826ceca51a859"}'></script>
+      </Head>
       <body className="min-h-screen flex flex-col">
         <SpeedInsights />
         <ThemeProvider
