@@ -1,5 +1,4 @@
 import { Tariff } from "@/types/sections";
-import { getUserIp } from "@/utils/userIp";
 
 export class TariffService {
   static async getTariffsByCourseId(courseId: number): Promise<Tariff[]> {
