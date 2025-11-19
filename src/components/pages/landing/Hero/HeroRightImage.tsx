@@ -15,7 +15,7 @@ const HeroRightImage: FC<HeroRightImageProps> = ({ images, itemVariants }) => {
   const minSize = availableSizes[availableSizes.length - 1]
 
   return (
-    <motion.picture variants={itemVariants}>
+    <motion.picture variants={itemVariants} animate="visible" initial="hidden">
       <RightImageSources images={images}/>
       <RightImageDefault images={images} minSize={minSize as keyof HeroImages}/>
     </motion.picture>
