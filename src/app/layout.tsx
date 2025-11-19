@@ -22,10 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <Head>
-        {/* Cloudflare Web Analytics */}
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "115ca70baa5841afa78826ceca51a859"}'></script>
-      </Head>
       <body className="min-h-screen flex flex-col">
         <SpeedInsights />
         <ThemeProvider
