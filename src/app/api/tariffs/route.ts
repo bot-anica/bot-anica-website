@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const course = searchParams.get('course');
+  const userIp = req.headers.get('x-user-ip');
 
   if (!course) {
     return NextResponse.json({ message: 'Course is required' }, { status: 400 });
@@ -23,6 +24,7 @@ export async function GET(req: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey,
+        'x-user-ip': userIp || '',
       },
     });
 

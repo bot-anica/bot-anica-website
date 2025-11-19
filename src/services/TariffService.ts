@@ -1,8 +1,19 @@
-import { Tariff } from "../types/sections";
+import { Tariff } from "@/types/sections";
+import { getUserIp } from "@/utils/userIp";
 
 export class TariffService {
   static async getTariffsByCourseId(courseId: number): Promise<Tariff[]> {
-    const response = await fetch(`/api/tariffs?course=${courseId}`, {method: "GET"});
+    const ip = await getUserIp();
+    
+    const response = await fetch(
+      `/api/tariffs?course=${courseId}`,
+      {
+        method: "GET",
+        headers: {
+          "x-user-ip": ip ?? "",
+        }
+      }
+    );
 
     console.log("TariffService response:", response);
 
