@@ -4,7 +4,8 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const course = searchParams.get('course');
-  const userIp = req.headers.get('x-user-ip');
+  const res = await fetch("https://api64.ipify.org?format=json");
+  const { ip: userIp } = await res.json();
 
   if (!course) {
     return NextResponse.json({ message: 'Course is required' }, { status: 400 });
