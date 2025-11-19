@@ -9,7 +9,6 @@ export const useCourseTariffs = (courseId: number) => {
 
   useEffect(() => {
     const fetchTariffs = async () => {
-      console.log("Fetching tariffs for courseId:", courseId);
       if (!courseId) return;
 
       try {
