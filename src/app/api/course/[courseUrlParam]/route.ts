@@ -1,13 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest, { params }: { params: { courseUrlParam: string } }) {
+export async function GET(req: NextRequest, context: { params: Promise<{ courseUrlParam: string }> }) {
+  const { courseUrlParam } = await context.params;
+
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     req.headers.get('x-real-ip') ||
     '';
 
   const backendResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/courses/url/${params.courseUrlParam}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/courses/url/${courseUrlParam}`,
     {
       method: 'GET',
       headers: {
