@@ -21,7 +21,6 @@ import WhySpecial from '@/components/pages/landing/WhySpecial';
 import CourseNotFound from '@/components/pages/course/CourseNotFound';
 import { SuccessStoriesService } from '@/services/SuccessStoriesService';
 import SuccessStories from '@/components/pages/landing/SuccessStories';
-import { checkIsCourseFree } from '@/utils/course';
 
 export async function generateMetadata({ params }: { params: Promise<{ courseUrlParam: string }> }): Promise<Metadata> {
   try {
@@ -62,8 +61,6 @@ export default async function LandingPage({ params }: { params: Promise<{ course
     return <CourseNotFound />;
   }
 
-  const isCourseFree = checkIsCourseFree(course);
-
   const [
     heroData,
     problemSolutionData,
@@ -86,14 +83,14 @@ export default async function LandingPage({ params }: { params: Promise<{ course
 
   return (
     <Suspense fallback={<div className="min-h-screen" />}>
-      <Hero data={heroData} courseIsFree={isCourseFree} />
+      <Hero data={heroData} courseId={course.id} />
       <ProblemSolution data={problemSolutionData} />
       <WhySpecial data={whySpecialData} />
       <CourseProgram data={courseProgramData} showSectionSplitter={reviewsData != undefined} />
       {reviewsData && <Reviews data={reviewsData} showSectionSplitter={successStoriesData != undefined} />}
       {successStoriesData && <SuccessStories data={successStoriesData} />}
-      <PricingPlans data={pricingData} course={course} courseIsFree={isCourseFree} />
-      <FAQ data={faqData} course={course} courseIsFree={isCourseFree} />
+      <PricingPlans data={pricingData} courseId={course.id} />
+      <FAQ data={faqData} courseId={course.id} />
     </Suspense>
   );
 }

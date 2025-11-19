@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC } from 'react';
+import { useMemo, type FC } from 'react';
 import { motion } from 'framer-motion';
 
 import HeroCTA from './HeroCTA';
@@ -14,14 +14,22 @@ import { CourseHeroData } from '@/types/sections';
 import { SectionBackground, SectionSplitter } from '@/components/common';
 import { useHeroAnimations } from '@/hooks/useHeroAnimations';
 import HeroFreeCourseLabel from './HeroFreeCourseLabel';
+import { useCourseTariffs } from '@/hooks/useCourseTariffs';
+import { checkIsCourseFree } from '@/utils/course';
 
 interface HeroProps {
   data: CourseHeroData;
-  courseIsFree?: boolean;
+  courseId: number;
 }
 
-const Hero: FC<HeroProps> = ({data, courseIsFree}) => {
+const Hero: FC<HeroProps> = ({data, courseId}) => {
   const { containerVariants, itemVariants } = useHeroAnimations();
+  const { tariffs, isLoading: tariffsLoading, error } = useCourseTariffs(courseId);
+
+  const courseIsFree = useMemo(() => {
+    if (!tariffs) return false;
+    return checkIsCourseFree(tariffs);
+  }, [tariffs]);
 
   const {title, subtitle, benefits, cta, images, bgImages} = data
 

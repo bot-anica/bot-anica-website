@@ -1,10 +1,10 @@
-import { Course, Tariff, TariffPrice } from "@/types/sections";
+import { Tariff, TariffPrice } from "@/types/sections";
 
-export function checkIsCourseFree(course: Course): boolean {
-  if (!course || !course.tariffs || course.tariffs.length === 0) {
+export function checkIsCourseFree(tariffs: Tariff[]): boolean {
+  if (!tariffs || tariffs.length === 0) {
     return false;
   }
-  return course.tariffs.every((tariff: Tariff) => checkIsTariffFree(tariff));
+  return tariffs.every((tariff: Tariff) => checkIsTariffFree(tariff));
 }
 
 export function checkIsTariffFree(tariff: Tariff): boolean {

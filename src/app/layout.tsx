@@ -8,7 +8,6 @@ import Footer from "@/components/layout/Footer";
 import { ToastProvider } from "@/context/ToastContext";
 import ScrollToAnchor from "@/components/common/ScrollToAnchor";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Bot Anica",

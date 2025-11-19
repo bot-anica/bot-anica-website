@@ -4,23 +4,30 @@ import { FC, useMemo, useState, useEffect } from 'react';
 
 import { SectionBackground, BackgroundElements, SectionHeader } from '@/components/common';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { Course, Currency, PricingPlansData, Tariff } from '@/types/sections';
+import { Currency, PricingPlansData, Tariff } from '@/types/sections';
+import { useCourseTariffs } from '@/hooks/useCourseTariffs';
 
 import PricingPlansGrid from './PricingPlansGrid';
 import PricingPlansPayment from './PricingPlansPayment';
+import { checkIsCourseFree } from '@/utils/course';
 
 interface CourseProgramProps {
-  data: PricingPlansData,
-  course: Course;
-  courseIsFree?: boolean;
+  data: PricingPlansData;
+  courseId: number;
 }
 
-const PricingPlans: FC<CourseProgramProps> = ({data, course, courseIsFree}) => {
+const PricingPlans: FC<CourseProgramProps> = ({data, courseId}) => {
   const [ref, isIntersecting] = useIntersectionObserver() as [React.RefObject<HTMLElement>, boolean, boolean];
   const [selectedCurrency, setSelectedCurrency] = useState<Currency | null>(null);
 
+  const { tariffs, isLoading: tariffsLoading, error } = useCourseTariffs(courseId);
+
+  const courseIsFree = useMemo(() => {
+    if (!tariffs) return false;
+    return checkIsCourseFree(tariffs);
+  }, [tariffs]);
+
   const { header, bgImages, popularPlanImages } = data
-  const { tariffs } = course
 
   const availableCurrencies = useMemo((): Currency[] => {
     if (!tariffs || tariffs.length === 0) {
@@ -57,7 +64,17 @@ const PricingPlans: FC<CourseProgramProps> = ({data, course, courseIsFree}) => {
     return [...activePlans, ...disabledPlans];
   }, [tariffs]);
 
-  const isLoading = !selectedCurrency;
+  const isLoading = tariffsLoading || !selectedCurrency;
+
+  if (error) {
+    return (
+      <section id="pricing" className="py-24 lg:py-28 xl:py-32 relative overflow-hidden bg-brand-pink/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <p>Error loading pricing plans. Please try again later.</p>
+        </div>
+      </section>
+    );
+  }
 
   if (!header || !bgImages) {
     return null; // Or a loading spinner
