@@ -9,7 +9,11 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ message: 'Course is required' }, { status: 400 });
   }
 
-  const userIp = req.headers.get("x-user-ip") || "0.0.0.0";
+  const userIp =
+    req.headers.get("cf-connecting-ip") ||
+    req.headers.get("x-forwarded-for")?.split(",")[0] ||
+    req.headers.get("x-real-ip") ||
+    "0.0.0.0";
 
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';

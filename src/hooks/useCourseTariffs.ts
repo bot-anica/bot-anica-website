@@ -8,23 +8,13 @@ export const useCourseTariffs = (courseId: number) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchUserIp = async () => {
-      try {
-        const res = await fetch("https://api64.ipify.org?format=json");
-        const data = await res.json();
-        return data.ip ?? null;
-      } catch {
-        return null;
-      }
-    };
-
-    const fetchTariffs = async (userId: string | undefined) => {
+    const fetchTariffs = async () => {
       console.log("Fetching tariffs for courseId:", courseId);
       if (!courseId) return;
 
       try {
         setIsLoading(true);
-        const fetchedTariffs = await TariffService.getTariffsByCourseId(courseId, userId);
+        const fetchedTariffs = await TariffService.getTariffsByCourseId(courseId);
         setTariffs(fetchedTariffs);
       } catch (err) {
         console.log(err)
@@ -34,7 +24,7 @@ export const useCourseTariffs = (courseId: number) => {
       }
     };
 
-    fetchUserIp().then(fetchTariffs);
+    fetchTariffs();
   }, [courseId]);
 
   return { tariffs, isLoading, error };
