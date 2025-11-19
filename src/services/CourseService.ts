@@ -1,8 +1,8 @@
 import { Course } from "../types/sections";
 
 export class CourseService {
-  static async getCourseByUrlParam(urlParam: string): Promise<Course> {
-    const response = await fetch(`/api/course/${urlParam}`, {
+  static async getCourseByUrlParam(courseUrlParam: string): Promise<Course> {
+    const response = await fetch(`/api/course/${courseUrlParam}`, {
       method: "GET",
     });
 
