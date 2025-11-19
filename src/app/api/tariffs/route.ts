@@ -4,12 +4,12 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const course = searchParams.get('course');
-  const res = await fetch("https://api64.ipify.org?format=json");
-  const { ip: userIp } = await res.json();
 
   if (!course) {
     return NextResponse.json({ message: 'Course is required' }, { status: 400 });
   }
+
+  const userIp = req.headers.get("x-user-ip") || "0.0.0.0";
 
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
