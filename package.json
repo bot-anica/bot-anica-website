@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.2.0",
     "formik": "^2.4.6",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.542.0",
