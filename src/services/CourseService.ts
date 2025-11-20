@@ -1,12 +1,13 @@
-import { Course } from "../types/sections";
+import { Course } from "@/types/sections";
+import { getBaseUrl } from "@/utils/getBaseUrl";
 
 export class CourseService {
   static async getCourseByUrlParam(courseUrlParam: string): Promise<Course> {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/courses/url/${courseUrlParam}`,
+      `${getBaseUrl()}/courses/url/${courseUrlParam}`,
       {
-      method: "GET",
-      headers: {
+        method: "GET",
+        headers: {
           "x-api-key": process.env.API_KEY || "",
         },
       },
@@ -21,7 +22,7 @@ export class CourseService {
 
   static async getAllCourses(): Promise<Course[]> {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/courses`,
+      `${getBaseUrl()}/courses`,
       {
         method: "GET",
         headers: {
