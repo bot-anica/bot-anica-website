@@ -33,7 +33,7 @@ const FailPayment: FC<FailPaymentProps> = ({ paymentLog }) => {
       <div className="block sm:hidden w-[calc(100% - 32px)] mx-8 h-px bg-brand-blue-light/15"></div>
 
       <div className="bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue-light/15 p-8">
-        <h3 className="text-xl font-bold text-text-primary">Анализ проблемы</h3>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary">Анализ проблемы</h3>
         <p className="text-sm text-text-tertiary">
           Возможные причины неудачной оплаты
         </p>
