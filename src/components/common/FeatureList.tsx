@@ -33,11 +33,11 @@ const FeatureList: FC<FeatureListProps> = ({ features, isIntersecting, cardIndex
           );
         }
         return (
-          <li key={featureIndex} className="flex items-center gap-2 sm:gap-3 text-text-secondary">
+          <li key={featureIndex} className="flex items-center gap-2 text-text-secondary text-sm lg:text-base">
             <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 bg-brand-pink/10 rounded-full flex items-center justify-center mt-0.5">
               <Check className="w-2 h-2 sm:w-3 sm:h-3 text-brand-pink" />
             </div>
-            <span className="text-sm">{feature}</span>
+            <span>{feature}</span>
           </li>
         );
       })}

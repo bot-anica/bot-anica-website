@@ -18,7 +18,7 @@ const NextSteps: FC<NextStepsProps> = ({ data }) => {
     <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-5xl h-full mx-auto p-8 sm:py-8 relative z-10 bg-bg-primary sm:rounded-lg sm:border sm:border-brand-blue-light/15">
       <div className="flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-6 md:gap-4 mb-4 md:mb-6">
         <div className='md:mb-2 lg:mb-4'>
-          <h3 className='text-lg md:text-xl lg:text-2xl font-bold text-text-primary'>{header.title}</h3>
+          <h3 className='text-xl sm:text-2xl md:text-3xl font-bold text-text-primary'>{header.title}</h3>
           <p className='mt-2 text-sm md:text-base text-text-secondary'>{header.subtitle}</p>
         </div>
 
