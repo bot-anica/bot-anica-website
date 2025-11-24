@@ -20,6 +20,7 @@ const CardPrice: FC<CardPriceProps> = ({ price }) => {
       <span className="text-4xl sm:text-5xl font-bold text-brand-pink">
         {priceNumber ? <span className="text-brand-pink/50">{priceCurrencySymbol}</span> : ""}
         {priceNumber ? (discountPriceNumber || priceNumber) : 'FREE'}
+        {(priceNumber && !priceCurrencySymbol) ? ` ${price.currency.code}` : ""}
       </span>
     </div>
   );
