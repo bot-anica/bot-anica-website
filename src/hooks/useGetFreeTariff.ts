@@ -24,6 +24,7 @@ export const useGetFreeTariff = (course: Course, tariff: Tariff) => {
         currencyCode: priceInfo.currency.code,
         email: values.email,
         name: values.name || undefined,
+        paymentMethodId: undefined,
       });
       localStorage.setItem('userEmail', values.email);
       window.location.href = paymentUrl;

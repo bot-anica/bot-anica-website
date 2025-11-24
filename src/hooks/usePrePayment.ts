@@ -13,7 +13,7 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
   }, []);
 
   const availableCurrencies = useMemo((): Currency[] => {
-    return tariff.prices.map(price => price.currency);
+    return tariff.prices.map(price => price.currency).sort((a, b) => b.order - a.order);
   }, [tariff]);
 
   const selectedCurrencyForOrderDetails = useMemo(() => {

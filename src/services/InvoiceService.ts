@@ -1,12 +1,12 @@
 interface CreatePaymentDto {
   currency: string;
-  paymentMethodId: number;
   urlSuccess: string;
   urlFail: string;
   courseId: number;
   tariffId: number;
   email: string;
   customerName?: string;
+  paymentMethodId?: number;
 }
 
 interface CreatePaymentResponse {
@@ -27,7 +27,7 @@ export class InvoiceService {
     currencyCode: string;
     email: string;
     name?: string;
-    paymentMethodId: number;
+    paymentMethodId?: number;
   }): Promise<string> {
     const PAYMENT_RESULT_URL = `${process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000'}/payment/result`; // Default for development
 

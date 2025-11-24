@@ -16,7 +16,7 @@ const PaymentMethods: FC<PaymentMethodsProps> = ({
 }) => {
   return (
     <div className="flex flex-wrap justify-center gap-3">
-      {currencies.sort((a, b) => b.id - a.id).map((currency) => (
+      {currencies.map((currency) => (
         <button
           key={currency.code}
           onClick={() => onCurrencyChange(currency)}

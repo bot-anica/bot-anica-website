@@ -33,7 +33,7 @@ const PricingPlans: FC<CourseProgramProps> = ({data, courseId}) => {
     if (!tariffs || tariffs.length === 0) {
       return [];
     }
-    return tariffs[0].prices.map(price => price.currency);
+    return tariffs[0].prices.map(price => price.currency).sort((a, b) => b.order - a.order);
   }, [tariffs]);
 
   useEffect(() => {

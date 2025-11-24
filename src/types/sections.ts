@@ -336,6 +336,7 @@ export interface Currency {
   name: string;
   code: string;
   symbol: string;
+  order: number;
 }
 
 export interface TariffPrice {
