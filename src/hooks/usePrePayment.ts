@@ -37,6 +37,10 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
         throw new Error("Информация о цене для выбранной валюты не найдена.");
       }
 
+      if (!values.paymentMethodId) {
+        throw new Error("Пожалуйста, выберите метод оплаты.");
+      }
+      
       const paymentUrl = await InvoiceService.createInvoice({
         courseId: course.id,
         courseUrlParam: course.urlParam,
@@ -44,6 +48,7 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
         currencyCode: values.selectedCurrencyCode,
         email: values.email,
         name: values.name || undefined,
+        paymentMethodId: values.paymentMethodId,
       });
       localStorage.setItem('userEmail', values.email);
       window.location.href = paymentUrl;

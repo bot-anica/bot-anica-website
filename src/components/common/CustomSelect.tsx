@@ -3,15 +3,15 @@
 import { FC, useState, useRef, useEffect, useCallback } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-interface Option {
-  value: string;
+interface Option extends Record<string, any> {
+  value: string | number;
   label: string;
 }
 
 interface CustomSelectProps {
   options: Option[];
-  selectedValue: string;
-  onValueChange: (value: string) => void;
+  selectedValue: string | number | undefined;
+  onValueChange: (value: string | number | undefined) => void;
   label?: string;
   id?: string;
   error?: string | null; // Added error prop
@@ -37,7 +37,7 @@ const CustomSelect: FC<CustomSelectProps> = ({
     setFocusedIndex(-1); // Reset focused index when toggling
   }, []);
 
-  const handleOptionClick = useCallback((value: string) => {
+  const handleOptionClick = useCallback((value: string | number | undefined) => {
     onValueChange(value);
     setIsOpen(false);
   }, [onValueChange]);

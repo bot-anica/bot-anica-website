@@ -1,6 +1,6 @@
 interface CreatePaymentDto {
   currency: string;
-  paymentSystem: string;
+  paymentMethodId: number;
   urlSuccess: string;
   urlFail: string;
   courseId: number;
@@ -27,16 +27,13 @@ export class InvoiceService {
     currencyCode: string;
     email: string;
     name?: string;
+    paymentMethodId: number;
   }): Promise<string> {
     const PAYMENT_RESULT_URL = `${process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000'}/payment/result`; // Default for development
 
     const createPaymentDto: CreatePaymentDto = {
-      // TODO: change back to dynamic amount and currency
-      // amount: data.amount,
-      // currency: data.currencyCode,
-      currency: "RUB",
-      
-      paymentSystem: "P2R",
+      currency: data.currencyCode,
+      paymentMethodId: data.paymentMethodId,
       urlFail: PAYMENT_RESULT_URL,
       urlSuccess: PAYMENT_RESULT_URL,
       courseId: data.courseId,

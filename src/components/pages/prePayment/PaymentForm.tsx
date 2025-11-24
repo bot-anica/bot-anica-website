@@ -1,10 +1,11 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useMemo } from 'react';
 import { Loader2 } from 'lucide-react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { CustomSelect, CustomInput, Button } from '@/components/common';
 import { Currency } from '@/types/sections';
+import { usePaymentMethods } from '@/hooks/usePaymentMethods';
 
 interface PaymentFormProps {
   availableCurrencies: Currency[];
@@ -17,6 +18,7 @@ interface PaymentFormProps {
 
 export interface PaymentFormValues {
   selectedCurrencyCode: string;
+  paymentMethodId?: number;
   name: string;
   email: string;
 }
@@ -29,8 +31,11 @@ const PaymentForm: FC<PaymentFormProps> = ({
   onCurrencyCodeChange,
   disabled,
 }) => {
+  const { paymentMethods, isLoading: isLoadingPaymentMethods, error: paymentMethodsError } = usePaymentMethods();
+
   const validationSchema = Yup.object({
     selectedCurrencyCode: Yup.string().required('Пожалуйста, выберите валюту'),
+    paymentMethodId: Yup.number().required('Пожалуйста, выберите метод оплаты'),
     name: Yup.string().optional(),
     email: Yup.string().email('Некорректный формат email').required('Пожалуйста, введите ваш email'),
   });
@@ -38,6 +43,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
   const formik = useFormik<PaymentFormValues>({
     initialValues: {
       selectedCurrencyCode: availableCurrencies[0]?.code || '',
+      paymentMethodId: undefined,
       name: '',
       email: '',
     },
@@ -48,9 +54,21 @@ const PaymentForm: FC<PaymentFormProps> = ({
     enableReinitialize: true, // Reinitialize form when availableCurrencies changes
   });
 
+  const filteredPaymentMethods = useMemo(() => {
+    if (!paymentMethods) return [];
+    return paymentMethods.filter(method => method.currency === formik.values.selectedCurrencyCode);
+  }, [paymentMethods, formik.values.selectedCurrencyCode]);
+
+  useEffect(() => {
+    if (paymentMethods) {
+      const newPaymentMethodId = filteredPaymentMethods.length > 0 ? filteredPaymentMethods[0].id : undefined;
+      if (formik.values.paymentMethodId !== newPaymentMethodId) {
+        formik.setFieldValue('paymentMethodId', newPaymentMethodId);
+      }
+    }
+  }, [filteredPaymentMethods, paymentMethods, formik.values.paymentMethodId, formik.setFieldValue]);
+
   // Update selectedCurrencyCode if availableCurrencies changes and current code is not valid
-  // This handles the case where initialValues might not have the correct default if availableCurrencies loads later
-  // or if the first currency changes.
   if (formik.values.selectedCurrencyCode === '' && availableCurrencies.length > 0) {
     formik.setFieldValue('selectedCurrencyCode', availableCurrencies[0].code);
   }
@@ -60,6 +78,8 @@ const PaymentForm: FC<PaymentFormProps> = ({
     onCurrencyCodeChange(formik.values.selectedCurrencyCode);
   }, [formik.values.selectedCurrencyCode, onCurrencyCodeChange]);
 
+  const paymentMethodOptions = filteredPaymentMethods.map(method => ({ value: method.id, label: method.name.trim() }));
+
   return (
     <form onSubmit={formik.handleSubmit} className="flex-1">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mb-4 md:mb-5 lg:mb-6">Данные для оплаты</h2>
@@ -68,11 +88,20 @@ const PaymentForm: FC<PaymentFormProps> = ({
         label="Валюта оплаты"
         options={availableCurrencies.map(currency => ({ value: currency.code, label: `${currency.name} (${currency.code})` }))}
         selectedValue={formik.values.selectedCurrencyCode}
-        onValueChange={(value: string) => {
+        onValueChange={(value) => {
           formik.setFieldValue('selectedCurrencyCode', value);
-          // No need to call onCurrencyCodeChange here directly, as useEffect will handle it
         }}
         error={formik.touched.selectedCurrencyCode && formik.errors.selectedCurrencyCode ? formik.errors.selectedCurrencyCode : null}
+      />
+      <CustomSelect
+        id="paymentMethodId"
+        label="Метод оплаты"
+        options={paymentMethodOptions}
+        selectedValue={formik.values.paymentMethodId}
+        onValueChange={(value) => {
+          formik.setFieldValue('paymentMethodId', value);
+        }}
+        error={formik.touched.paymentMethodId && formik.errors.paymentMethodId ? formik.errors.paymentMethodId : null}
       />
       <CustomInput
         id="name"
@@ -124,3 +153,4 @@ const PaymentForm: FC<PaymentFormProps> = ({
 };
 
 export default PaymentForm;
+
