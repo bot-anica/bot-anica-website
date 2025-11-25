@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
-import { Course, Tariff, Currency } from '@/types/sections';
+import { Course, Currency, Tariff } from '@/types/sections';
 import { InvoiceService } from '@/services/InvoiceService';
 import { PaymentFormValues } from '@/components/pages/prePayment/PaymentForm';
 
@@ -7,8 +7,6 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [apiError, setApiError] = useState<string | null>(null);
   const [formSelectedCurrencyCode, setFormSelectedCurrencyCode] = useState<string>('');
-
-  console.log('Tariff prices:', tariff.prices);
 
   const handleCurrencyCodeChange = useCallback((currencyCode: string) => {
     setFormSelectedCurrencyCode(currencyCode);
