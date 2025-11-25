@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 import "./globals.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <GoogleTagManager gtmId="G-NTWNGH285K" />
       <body className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
