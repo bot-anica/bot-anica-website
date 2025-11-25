@@ -362,7 +362,6 @@ export interface Course {
   name: string;
   urlParam: string;
   description: string;
-  tariffs: Tariff[];
 }
 
 export interface CourseCatalogItem {
