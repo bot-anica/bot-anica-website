@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <GoogleTagManager gtmId="G-NTWNGH285K" />
+      <GoogleTagManager gtmId="G-DFZX7JHR55" />
       <body className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
