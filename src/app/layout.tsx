@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import "./globals.css";
 
@@ -21,7 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <GoogleTagManager gtmId="GT-MJMCW2J9" />
       <body className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
@@ -38,6 +37,7 @@ export default function RootLayout({
           </ToastProvider>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-DFZX7JHR55" />
     </html>
   );
 }
