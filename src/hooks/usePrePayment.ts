@@ -8,6 +8,8 @@ export const usePrePayment = (course: Course, tariff: Tariff) => {
   const [apiError, setApiError] = useState<string | null>(null);
   const [formSelectedCurrencyCode, setFormSelectedCurrencyCode] = useState<string>('');
 
+  console.log('Tariff prices:', tariff.prices);
+
   const handleCurrencyCodeChange = useCallback((currencyCode: string) => {
     setFormSelectedCurrencyCode(currencyCode);
   }, []);
