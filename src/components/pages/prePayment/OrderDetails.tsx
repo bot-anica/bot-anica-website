@@ -32,9 +32,9 @@ const OrderDetails: FC<OrderDetailsProps> = ({ course, tariff, selectedCurrency 
       <div className="flex justify-between items-center gap-4 border-t border-brand-blue-light/15 pt-4 md:pt-5 lg:pt-6">
         <div>
           <h4 className="text-base lg:text-lg font-bold text-text-primary">Итого:</h4>
-          <p className="text-xs md:text-sm text-text-secondary">{tariff.description}</p>
+          {price && <CardPrice price={price as TariffPrice} />}
+          <p className="shrink-0 text-xs md:text-sm text-text-secondary">{tariff.description}</p>
         </div>
-        {price && <CardPrice price={price as TariffPrice} />}
       </div>
     </div>
   );

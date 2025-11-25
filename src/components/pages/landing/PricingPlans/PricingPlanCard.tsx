@@ -45,7 +45,7 @@ const PricingPlanCard: FC<PricingPlanCardProps> = ({ plan, bgImages, isIntersect
         {plan.disabled && <Ribbon text="Совсем скоро!" />}
         <div className="flex-1">
           <CardHeader name={plan.name} />
-          <CardPrice price={price} />
+          <CardPrice price={price} className="mb-2 text-center" />
           <CardDescription description={plan.description} />
           <div className='mb-6 xl:mb-8'>
             <FeatureList features={plan.features} isIntersecting={isIntersecting} cardIndex={index} />
