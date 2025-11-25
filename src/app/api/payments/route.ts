@@ -3,6 +3,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getBaseUrl } from '@/utils/getBaseUrl';
 
 export async function POST(req: NextRequest) {
+  const userIp =
+    req.headers.get("cf-connecting-ip") ||
+    req.headers.get("x-forwarded-for")?.split(",")[0] ||
+    req.headers.get("x-real-ip") ||
+    "0.0.0.0";
+
   try {
     const body = await req.json();
     const apiUrl = getBaseUrl() || 'http://localhost:3001';
@@ -18,6 +24,7 @@ export async function POST(req: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey,
+        'x-user-ip': userIp || '',
       },
       body: JSON.stringify(body),
     });

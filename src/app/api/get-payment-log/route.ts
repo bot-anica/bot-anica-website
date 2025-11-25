@@ -11,6 +11,12 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ message: 'Email is required' }, { status: 400 });
   }
 
+  const userIp =
+    req.headers.get("cf-connecting-ip") ||
+    req.headers.get("x-forwarded-for")?.split(",")[0] ||
+    req.headers.get("x-real-ip") ||
+    "0.0.0.0";
+
   try {
     const apiUrl = getBaseUrl() || 'http://localhost:3001';
     const apiKey = process.env.API_KEY;
@@ -25,6 +31,7 @@ export async function GET(req: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': apiKey,
+        'x-user-ip': userIp || '',
       },
     });
 
