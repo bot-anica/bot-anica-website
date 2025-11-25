@@ -31,6 +31,7 @@ const CustomSelect: FC<CustomSelectProps> = ({
   const optionsRef = useRef<HTMLDivElement[]>([]);
 
   const selectedOption = options.find(option => option.value === selectedValue);
+  const disabled = options.length < 2;
 
   const handleToggle = useCallback(() => {
     setIsOpen(prev => !prev);
@@ -105,8 +106,8 @@ const CustomSelect: FC<CustomSelectProps> = ({
       )}
       <div
         id={id}
-        className={`appearance-none border ${error ? 'border-accent-special' : 'border-brand-blue-light/30'} rounded w-full py-2 px-3 text-text-secondary leading-tight focus:outline-none cursor-pointer flex justify-between items-center`}
-        onClick={handleToggle}
+        className={`flex justify-between items-center appearance-none border ${error ? 'border-accent-special' : ''} ${disabled ? 'border-brand-blue-light/15' : 'border-brand-blue-light/30'} rounded w-full py-2 px-3 text-text-secondary leading-tight focus:outline-none ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+        onClick={disabled ? () => null : handleToggle}
         onKeyDown={handleKeyDown as any} // Cast to any to satisfy TS, as KeyboardEvent is not directly assignable
         tabIndex={0} // Make div focusable
         role="combobox"
@@ -115,8 +116,13 @@ const CustomSelect: FC<CustomSelectProps> = ({
         aria-labelledby={id ? `${id}-label` : undefined} // Assuming label has an ID or is associated
         aria-activedescendant={focusedIndex !== -1 ? `${id}-option-${focusedIndex}` : undefined}
       >
-        <span className="text-sm md:text-base">{selectedOption ? selectedOption.label : 'Select an option'}</span>
-        <ChevronDown className={`w-3 h-3 md:w-4 md:h-4 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+        <span className={`text-sm md:text-base ${(disabled || !selectedOption) ? 'text-text-secondary' : 'text-text-primary'}`}>{selectedOption ? selectedOption.label : 'Select an option'}</span>
+        <div className="flex items-center space-x-2">
+          <div className="w-5 h-5 bg-bg-primary rounded-full flex items-center justify-center border border-brand-blue-light/30">
+            <span className="text-xs text-text-secondary">{options.length}</span>
+          </div>
+          <ChevronDown className={`w-3 h-3 md:w-4 md:h-4 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+        </div>
       </div>
       {error && <p className="text-accent-special text-xs md:text-sm sm:mt-0.5 md:mt-1">{error}</p>} {/* Error display */}
       {isOpen && (

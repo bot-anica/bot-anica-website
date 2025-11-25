@@ -56,7 +56,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
 
   const filteredPaymentMethods = useMemo(() => {
     if (!paymentMethods) return [];
-    return paymentMethods.filter(method => method.currency === formik.values.selectedCurrencyCode);
+    return paymentMethods.filter(method => method.currency === formik.values.selectedCurrencyCode || (method.currency === "USD" && ["USD", "USDT"].includes(formik.values.selectedCurrencyCode)));
   }, [paymentMethods, formik.values.selectedCurrencyCode]);
 
   useEffect(() => {
