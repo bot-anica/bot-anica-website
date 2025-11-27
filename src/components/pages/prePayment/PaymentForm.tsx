@@ -66,7 +66,7 @@ const PaymentForm: FC<PaymentFormProps> = ({
         formik.setFieldValue('paymentMethodId', newPaymentMethodId);
       }
     }
-  }, [filteredPaymentMethods, paymentMethods, formik.values.paymentMethodId, formik.setFieldValue]);
+  }, [filteredPaymentMethods, paymentMethods, formik.setFieldValue]);
 
   // Update selectedCurrencyCode if availableCurrencies changes and current code is not valid
   if (formik.values.selectedCurrencyCode === '' && availableCurrencies.length > 0) {
