@@ -31,4 +31,4 @@ export const HERO_CTA: Record<"primary" | "secondary", CTAItem> = {
   }
 }
 
-export const HERO_IMAGE: string = '/images/home/hero/HeroImg.png'
+export const HERO_IMAGE: string = '/images/home/hero/NewHeroImg.png'
