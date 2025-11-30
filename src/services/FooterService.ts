@@ -1,5 +1,5 @@
-import { FOOTER_DESCRIPTION, FOOTER_NAVIAGTION_LINKS } from '@/constants/common/footer';
-import { Course, FooterData, LinkItem } from '../types/sections';
+import { FOOTER_DESCRIPTION, FOOTER_NAVIGATION_LINKS } from '@/constants/common/footer';
+import { CourseLink, FooterData, LinkItem } from '../types/sections';
 import { CourseService } from './CourseService';
 
 export class FooterService {
@@ -8,12 +8,12 @@ export class FooterService {
   }
 
   static async getNavigationLinks(): Promise<LinkItem[]> {
-    return FOOTER_NAVIAGTION_LINKS;
+    return FOOTER_NAVIGATION_LINKS;
   }
 
-  static async getNavigationLinksForCourses(): Promise<LinkItem[]> {
-    const coursesData = await CourseService.getAllCourses();
-    const courseLinks: LinkItem[] = coursesData.map((course: Course) => ({
+  static async getCourseLinks(): Promise<LinkItem[]> {
+    const coursesData = await CourseService.getAllCoursesLinks();
+    const courseLinks: LinkItem[] = coursesData.map((course: CourseLink) => ({
       link: `/courses/${course.urlParam}`,
       text: course.name,
     }));
@@ -22,9 +22,11 @@ export class FooterService {
   }
 
   static async getData(): Promise<FooterData> {
-    const description = await FooterService.getDescription();
-    const navigationLinks = await FooterService.getNavigationLinks();
-    const courseLinks = await FooterService.getNavigationLinksForCourses();
+    const [description, navigationLinks, courseLinks] = await Promise.all([
+      this.getDescription(),
+      this.getNavigationLinks(),
+      this.getCourseLinks(),
+    ]);
 
     return { description, navigationLinks, courseLinks }
   }

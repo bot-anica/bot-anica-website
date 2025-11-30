@@ -7,6 +7,8 @@ import FooterContacts from "./FooterContacts";
 import FooterCopyright from "./FooterCopyright";
 import { FooterService } from "@/services/FooterService";
 
+export const revalidate = 86400;
+
 export default async function Footer() {
   const { description, courseLinks, navigationLinks } = await FooterService.getData();
 

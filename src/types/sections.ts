@@ -364,6 +364,11 @@ export interface Course {
   description: string;
 }
 
+export interface CourseLink {
+  name: string;
+  urlParam: string;
+}
+
 export interface CourseCatalogItem {
   titleMain: string;
   titleHighlight: string;
