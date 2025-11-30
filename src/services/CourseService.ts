@@ -45,7 +45,7 @@ export class CourseService {
       `${getBaseUrl()}/courses/url-params`,
       {
         method: "GET",
-        next: { revalidate: this.cacheDuration },
+        next: { tags: ['courses'], revalidate: this.cacheDuration },
         headers: {
           "x-api-key": process.env.API_KEY || "",
         },
@@ -64,7 +64,7 @@ export class CourseService {
       `${getBaseUrl()}/courses/links`,
       {
         method: "GET",
-        next: { revalidate: this.cacheDuration },
+        next: { tags: ['courses', 'footer'], revalidate: this.cacheDuration },
         headers: {
           "x-api-key": process.env.API_KEY || "",
         },
