@@ -13,7 +13,7 @@ const HeroImage: FC<HeroImageProps> = ({ image, variants }) => {
       variants={variants}
       className="flex justify-center items-center"
     >
-      <Image src={image} alt="" width={1200} height={600} />
+      <Image src={image} alt="Превью результатов курсов" width={1200} height={600} className="w-full h-auto" />
     </motion.div>
   );
 };

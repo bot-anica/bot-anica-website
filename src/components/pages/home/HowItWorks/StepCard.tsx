@@ -16,9 +16,9 @@ const StepCard: FC<StepCardProps> = ({ step, title, description, image }) => {
           <Image
             src={image}
             alt={title}
-            width={400}
-            height={256}
-            className="w-full h-full object-cover bg-bg-secondary"
+            fill
+            sizes="100%"
+            className="object-cover bg-bg-secondary"
           />
         </div>
         <div className="absolute -top-6 sm:-top-4 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:-left-4 w-12 h-12 rounded-full bg-gradient-to-br from-brand-blue to-brand-pink flex items-center justify-center">

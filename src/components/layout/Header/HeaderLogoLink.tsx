@@ -10,7 +10,7 @@ const HeaderLogoLink: FC = () => {
 
   return (
     <Link href="/" className="cursor-pointer">
-      {dimensions && <Image src="/images/Logo_without_bg.svg" alt="Logo" className="h-8 w-auto" width={dimensions.width} height={dimensions.height} />}
+      {dimensions && <Image src="/images/Logo_without_bg.svg" alt="Bot Anica logotype" className="h-8 w-auto" width={dimensions.width} height={dimensions.height} />}
     </Link>
   );
 };
