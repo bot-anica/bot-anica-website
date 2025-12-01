@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ courseUrl
       keywords: defaultSEOConfig.keywords,
       openGraph: {
         title: defaultSEOConfig.title,
+        siteName: defaultSEOConfig.siteName,
         description: defaultSEOConfig.description,
         type: 'website',
         images: defaultSEOConfig.image,

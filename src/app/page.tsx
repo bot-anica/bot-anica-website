@@ -21,24 +21,32 @@ import { WhyUsService } from '@/services/WhyUsService';
 import { AboutAuthorService } from '@/services/AboutAuthorService';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const {defaultSEOConfig} = await SEOService.getHomeMetadata();
-  return {
-    title: `${defaultSEOConfig.title} - ${defaultSEOConfig.siteName}`,
-    description: defaultSEOConfig.description,
-    keywords: defaultSEOConfig.keywords,
-    openGraph: {
-      title: defaultSEOConfig.title,
+  try {
+    const {defaultSEOConfig} = await SEOService.getHomeMetadata();
+    return {
+      title: `${defaultSEOConfig.title} - ${defaultSEOConfig.siteName}`,
       description: defaultSEOConfig.description,
-      type: 'website',
-      images: defaultSEOConfig.image,
-    },
-    twitter: {
-      title: defaultSEOConfig.title,
-      description: defaultSEOConfig.description,
-      card: 'summary_large_image',
-      images: defaultSEOConfig.image,
-    },
-  };
+      keywords: defaultSEOConfig.keywords,
+      openGraph: {
+        title: defaultSEOConfig.title,
+        siteName: defaultSEOConfig.siteName,
+        description: defaultSEOConfig.description,
+        type: 'website',
+        images: defaultSEOConfig.image,
+      },
+      twitter: {
+        title: defaultSEOConfig.title,
+        description: defaultSEOConfig.description,
+        card: 'summary_large_image',
+        images: defaultSEOConfig.image,
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Метаданные не найдены",
+      description: "Не удалось загрузить метаданные для главной страницы.",
+    };
+  }
 }
 
 export default async function HomePage() {

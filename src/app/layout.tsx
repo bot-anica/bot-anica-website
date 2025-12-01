@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 import "./globals.css";
@@ -9,11 +8,6 @@ import { ToastProvider } from "@/context/ToastContext";
 import ScrollToAnchor from "@/components/common/ScrollToAnchor";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
-export const metadata: Metadata = {
-  title: "Bot Anica",
-  description: "Course landing page",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +15,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Bot Anica",
+          "url": "https://anica.space",
+          "logo": "https://anica.space/logo.png",
+          "sameAs": [
+            "https://t.me/bot_anica",
+            "https://www.youtube.com/@bot_anica",
+          ]
+        })}
+        </script>
+      </head>
       <body className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
