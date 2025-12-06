@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 import "./globals.css";
@@ -7,6 +8,36 @@ import Footer from "@/components/layout/Footer";
 import { ToastProvider } from "@/context/ToastContext";
 import ScrollToAnchor from "@/components/common/ScrollToAnchor";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SEOService } from '@/services/SEOService';
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const {defaultSEOConfig} = await SEOService.getHomeMetadata();
+    return {
+      title: `${defaultSEOConfig.title} - ${defaultSEOConfig.siteName}`,
+      description: defaultSEOConfig.description,
+      keywords: defaultSEOConfig.keywords,
+      openGraph: {
+        title: defaultSEOConfig.title,
+        siteName: defaultSEOConfig.siteName,
+        description: defaultSEOConfig.description,
+        type: 'website',
+        images: defaultSEOConfig.image,
+      },
+      twitter: {
+        title: defaultSEOConfig.title,
+        description: defaultSEOConfig.description,
+        card: 'summary_large_image',
+        images: defaultSEOConfig.image,
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Метаданные не найдены",
+      description: "Не удалось загрузить метаданные для главной страницы.",
+    };
+  }
+}
 
 export default function RootLayout({
   children,
